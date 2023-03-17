@@ -26,12 +26,8 @@
     overflow: hidden;
     align-items: stretch;
 
-    @include breakpoint('md') {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-    }
     @include breakpoint('lg') {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
 
     .product-block {
