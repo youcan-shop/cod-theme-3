@@ -294,23 +294,6 @@ input:not([type=radio]),
   object-fit: cover;
 }
 
-.yc-upload {
-  border: 1px dashed var(--yc-neutral-light-color);
-  width: 100%;
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  cursor: pointer;
-}
-.yc-upload input {
-  display: none;
-}
-.yc-upload .upload-msg {
-  margin-left: 5px;
-}
-
 .yc-number {
   padding: 10px 25px;
   border: 1px solid var(--yc-neutral-light-color);
