@@ -1,7 +1,7 @@
 {
   "general":{
     "show_more_button": "شاهد المزيد",
-    "size_big_message": "المرجو تحميل صورة أقل من 2mb"
+    "large_image_size": "المرجو تحميل صورة أقل من 2mb"
   },
   "navbar": {
     "search": {
