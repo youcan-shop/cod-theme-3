@@ -256,9 +256,9 @@
 
         .yc-upload-preview {
           display: none;
-          background: #F9F9F9;
+          background: white;
+          border: 1px solid #e1e1e1;
           height: auto;
-          border-radius: 8px;
           padding: 14px 18px;
 
           .yc-upload-wrapper {
