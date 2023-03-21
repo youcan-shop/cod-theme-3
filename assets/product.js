@@ -74,7 +74,7 @@ function uploadImage(element) {
       source.src = '';
       source.style.height = "40px";
       imageName.style.color = "red";
-      imageName.innerText = sizeBigMessage;
+      imageName.innerText = largeImageSizeMessage;
       imageSize.innerText = fileSizeInMB.toFixed(2) + " Mb";
     } else if(fileSizeInMB < 1) {
       imageName.style.color = "inherit";
