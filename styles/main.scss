@@ -250,6 +250,7 @@ input:not([type='radio']),
   border: 1px solid var(--yc-neutral-light-color);
   padding: 10px;
 }
+
 .yc-options-list {
   list-style-type: none;
   margin: 0;
@@ -259,7 +260,9 @@ input:not([type='radio']),
   align-items: center;
   gap: 14px;
 }
-.yc-options-item {
+
+.yc-options-item,
+.yc-colors-item {
   padding: 12px 18px;
   font-weight: 500;
   font-size: 14px;
@@ -350,41 +353,6 @@ input:not([type='radio']),
     height: 13px;
     border-radius: 50%;
     background-color: var(--yc-primary-color);
-  }
-}
-
-.yc-colors-select {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: start;
-  gap: 10px;
-
-  .color-item {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    border: 1px solid #E7E7E7;
-    cursor: pointer;
-
-    &:focus {
-      outline: none;
-    }
-
-    .preview {
-      display: block;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-    }
-
-    .value {
-      opacity: 0;
-    }
-
-    &.active {
-      padding: 4px;
-    }
   }
 }
 

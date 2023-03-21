@@ -128,7 +128,7 @@ function selectDefaultOptions(parentSection) {
         $('#yc-upload').value = '';
         break;
       case 'color_base_buttons':
-        option.querySelector('.color-item').classList.add('active');
+        option.querySelector('.yc-colors-item').classList.add('active');
         break;
     }
   });
@@ -176,7 +176,7 @@ function getSelectedOptions(parentSection) {
         break;
       case 'color_base_buttons':
         selectedOptions[optionName] =
-          option.querySelector('.color-item.active')?.innerText;
+          option.querySelector('.yc-colors-item.active')?.innerText;
         break;
     }
   });
@@ -416,11 +416,11 @@ function showSelectedVariants() {
     switch (variantType) {
       case 'textual_buttons':
         const textualButton =  variant.querySelector('.yc-options-item.active')?.textContent;
-        variantOption = createAndSetText(variantName, textualButton, 'yc-textual-item').element;
+        variantOption = createAndSetText(variantName, textualButton).element;
       break;
       case 'color_base_buttons':
-        const colorBaseButton = variant.querySelector('.color-item.active .preview')?.outerHTML;
-        variantOption = createAndSetText(variantName, colorBaseButton, 'colored-button').element;
+        const colorBaseButton = variant.querySelector('.yc-colors-item.active')?.textContent;
+        variantOption = createAndSetText(variantName, colorBaseButton).element;
         break;
       case 'radio_buttons':
         const radioButton = variant.querySelector('input:checked')?.value;
