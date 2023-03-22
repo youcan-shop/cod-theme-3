@@ -351,23 +351,21 @@ input:not([type='radio']),
 /* ----- custom dropdwown input ----- */
 /* ---------------------------------- */
 .dropdown-input {
+  position: relative;
+  border: 1px solid #ECECEC;
+  padding: 10px 15px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 570px;
+
   .dropbtn {
-    position: relative;
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 280px;
-    padding: 10px 15px;
-    border: 1px solid #ECECEC;
     text-align: start;
     gap: 6px;
     font-size: 14px;
     font-weight: 400;
-    cursor: pointer;
-
-    @include breakpoint('md') {
-      max-width: 350px;
-    }
 
     .dropdown-icon {
       position: absolute;
@@ -380,20 +378,21 @@ input:not([type='radio']),
   .dropdown-content {
     display: none;
     position: absolute;
+    top: 42px;
+    left: -1px;
     z-index: 1;
-    width: 100%;
-    max-width: 280px;
+    width: 100.4%;
     background: #FFFFFF;
     border: 1px solid #ECECEC;
     border-top: none;
 
     @include breakpoint('md') {
-      max-width: 350px;
+      width: 100.3%;
     }
 
     li {
       color: black;
-      padding: 10px;
+      padding: 10px 15px;
       margin: 3px auto;
       text-decoration: none;
       font-size: 13px;
@@ -411,7 +410,7 @@ input:not([type='radio']),
     }
   }
 
-  .black-border {
+  &.black-border {
     border-color: #000000;
   }
 

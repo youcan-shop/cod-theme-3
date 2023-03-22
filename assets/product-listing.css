@@ -103,6 +103,9 @@
 .sort-container {
   margin: 40px auto;
 }
+.sort-container #productDropdownFiltring {
+  max-width: 280px;
+}
 @media (min-width: 768px) {
   .sort-container #productDropdownFiltring .dropbtn {
     max-width: 280px;

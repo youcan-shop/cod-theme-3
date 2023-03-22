@@ -109,7 +109,10 @@
 .sort-container {
   margin: 40px auto;
 
+
+
   #productDropdownFiltring {
+    max-width: 280px;
     .dropbtn {
       @include breakpoint('md') {
         max-width: 280px;
