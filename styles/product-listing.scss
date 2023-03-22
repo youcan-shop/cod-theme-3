@@ -131,27 +131,31 @@
   }
 }
 
-.sort-container {
-  margin: 40px auto;
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
 
+  .sort-container {
+    display: flex;
+    align-items: flex-end;
 
+    #productDropdownFiltring {
+      max-width: 350px;
 
-  #productDropdownFiltring {
-    max-width: 350px;
+      .dropdown-content {
+        top: 45px;
+        a {
+          color: black;
+          padding: 10px;
+          margin: 3px auto;
+          text-decoration: none;
+          font-size: 13px;
+          font-weight: 400;
+          display: block;
 
-    .dropdown-content {
-      top: 45px;
-      a {
-        color: black;
-        padding: 10px;
-        margin: 3px auto;
-        text-decoration: none;
-        font-size: 13px;
-        font-weight: 400;
-        display: block;
-
-        &:hover {
-          background-color: #f1f1f1;
+          &:hover {
+            background-color: #f1f1f1;
+          }
         }
       }
     }
