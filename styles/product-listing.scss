@@ -112,16 +112,10 @@
 
 
   #productDropdownFiltring {
-    max-width: 280px;
-    .dropbtn {
-      @include breakpoint('md') {
-        max-width: 280px;
-      }
-    }
+    max-width: 350px;
+
     .dropdown-content {
-      @include breakpoint('md') {
-        max-width: 280px;
-      }
+      top: 45px;
       a {
         color: black;
         padding: 10px;

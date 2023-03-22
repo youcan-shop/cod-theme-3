@@ -104,17 +104,10 @@
   margin: 40px auto;
 }
 .sort-container #productDropdownFiltring {
-  max-width: 280px;
+  max-width: 350px;
 }
-@media (min-width: 768px) {
-  .sort-container #productDropdownFiltring .dropbtn {
-    max-width: 280px;
-  }
-}
-@media (min-width: 768px) {
-  .sort-container #productDropdownFiltring .dropdown-content {
-    max-width: 280px;
-  }
+.sort-container #productDropdownFiltring .dropdown-content {
+  top: 45px;
 }
 .sort-container #productDropdownFiltring .dropdown-content a {
   color: black;

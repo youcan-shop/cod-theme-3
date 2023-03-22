@@ -364,8 +364,12 @@ input:not([type='radio']),
     width: 100%;
     text-align: start;
     gap: 6px;
-    font-size: 14px;
-    font-weight: 400;
+
+    & * {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 120%;
+    }
 
     .dropdown-icon {
       position: absolute;
@@ -378,7 +382,7 @@ input:not([type='radio']),
   .dropdown-content {
     display: none;
     position: absolute;
-    top: 42px;
+    top: 38px;
     left: -1px;
     z-index: 1;
     width: 100.4%;
@@ -395,8 +399,9 @@ input:not([type='radio']),
       padding: 10px 15px;
       margin: 3px auto;
       text-decoration: none;
-      font-size: 13px;
       font-weight: 400;
+      font-size: 14px;
+      line-height: 120%;
       display: block;
       cursor: pointer;
 
