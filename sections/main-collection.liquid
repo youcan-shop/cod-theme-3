@@ -2,7 +2,7 @@
 {{ 'product-listing.css' | asset_url | stylesheet_tag }}
 
 {%- assign per_page = section.settings.items_per_page -%}
-<div class='yc-product-listing-container'>
+<div class='yc-product-listing-container container'>
   <div class="breadcrumbs-container">
     <div class="breadcrumbs-listings">
       <div class="listings__item">
@@ -27,7 +27,9 @@
   {%- paginate collection.products by per_page cod %}
     <div class='product-list'>
       {% for product in items %}
-        {% render 'product-preview', item: product %}
+        <div class="product-block">
+          {% render 'product-preview', item: product %}
+        </div>
       {% endfor %}
     </div>
 
