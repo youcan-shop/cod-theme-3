@@ -347,11 +347,10 @@ input:not([type=radio]),
   position: relative;
   display: flex;
   align-items: center;
-  border-radius: 4px;
   width: 100%;
   max-width: 280px;
   padding: 10px 15px;
-  border: 1px solid #E7E7E7;
+  border: 1px solid #ECECEC;
   text-align: start;
   gap: 6px;
   font-size: 14px;
@@ -370,15 +369,13 @@ input:not([type=radio]),
 }
 .dropdown-input .dropdown-content {
   display: none;
-  margin-top: 5px;
   position: absolute;
   z-index: 1;
   width: 100%;
   max-width: 280px;
   background: #FFFFFF;
   border: 1px solid #ECECEC;
-  box-shadow: 0px 10px 55px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
+  border-top: none;
 }
 @media (min-width: 768px) {
   .dropdown-input .dropdown-content {
@@ -401,8 +398,12 @@ input:not([type=radio]),
 .dropdown-input .dropdown-content li.selected {
   font-weight: bold;
 }
+.dropdown-input .black-border {
+  border-color: #000000;
+}
 .dropdown-input .show {
   display: block;
+  border-color: #000000;
 }
 
 /* --------------------------- */

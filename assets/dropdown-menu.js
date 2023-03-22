@@ -5,14 +5,17 @@ const dropdownOptions = dropdownContent?.querySelectorAll('li');
 function showDropDownMenu(customContent) {
   if(customContent) {
       customContent.classList.toggle('show');
+      dropdownBtn.classList.toggle('black-border');
   } else if (dropdownContent) {
       dropdownContent.classList.toggle('show');
+      dropdownBtn.classList.toggle('black-border');
   }
 }
 
 const hideDropDownMenu = (event) => {
   if (!event.target.matches('.dropbtn, .dropbtn *')) {
     dropdownContent?.classList.remove('show');
+    dropdownBtn?.classList.remove('black-border');
   }
 };
 
