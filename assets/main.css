@@ -280,6 +280,9 @@ input:not([type=radio]),
   border: 1px solid var(--yc-neutral-light-color);
 }
 
+/* ---------------------------------- */
+/* ----- custom radio button ----- */
+/* ---------------------------------- */
 .yc-radio input[type=radio] {
   display: none;
 }
@@ -309,6 +312,74 @@ input:not([type=radio]),
   height: 13px;
   border-radius: 50%;
   background-color: var(--yc-primary-color);
+}
+
+/* ---------------------------------- */
+/* ----- custom dropdwown input ----- */
+/* ---------------------------------- */
+.dropdown-input {
+  /* Style the dropdown content */
+}
+.dropdown-input .dropbtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 280px;
+  padding: 10px 15px;
+  border: 1px solid #E7E7E7;
+  text-align: start;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .dropdown-input .dropbtn {
+    max-width: 350px;
+  }
+}
+.dropdown-input .dropbtn .dropdown-icon {
+  position: absolute;
+  left: 0;
+  padding-left: 10px;
+}
+.dropdown-input .dropdown-content {
+  display: none;
+  margin-top: 5px;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  max-width: 280px;
+  background: #FFFFFF;
+  border: 1px solid #ECECEC;
+  box-shadow: 0px 10px 55px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+@media (min-width: 768px) {
+  .dropdown-input .dropdown-content {
+    max-width: 350px;
+  }
+}
+.dropdown-input .dropdown-content li {
+  color: black;
+  padding: 10px;
+  margin: 3px auto;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 400;
+  display: block;
+  cursor: pointer;
+}
+.dropdown-input .dropdown-content li:hover {
+  background-color: #f1f1f1;
+}
+.dropdown-input .dropdown-content li.selected {
+  font-weight: bold;
+}
+.dropdown-input .show {
+  display: block;
 }
 
 /* --------------------------- */
