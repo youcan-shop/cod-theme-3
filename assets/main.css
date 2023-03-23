@@ -343,11 +343,14 @@ input:not([type=radio]),
 .dropdown-input {
   position: relative;
   border: 1px solid #ECECEC;
-  padding: 10px 30px;
+  padding: 10px 15px;
   cursor: pointer;
   width: 100%;
   max-width: 570px;
   /* Style the dropdown content */
+}
+.dropdown-input .dropbtnSpace {
+  padding-left: 15px;
 }
 .dropdown-input .dropbtn {
   display: flex;
