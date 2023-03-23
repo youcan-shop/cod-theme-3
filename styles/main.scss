@@ -196,10 +196,6 @@ button {
 [dir='rtl'] {
   .yc-btn {
     flex-direction: row-reverse;
-
-    .yc-btn-responsive-icon {
-      transform: rotate(180deg);
-    }
   }
 }
 
@@ -358,10 +354,6 @@ input:not([type='radio']),
   width: 100%;
   max-width: 570px;
 
-  .dropbtnSpace {
-    padding-left: 15px;
-  }
-
   .dropbtn {
     display: flex;
     align-items: center;
@@ -417,6 +409,16 @@ input:not([type='radio']),
         font-weight: bold;
       }
     }
+  }
+
+  .dropbtnSpace {
+    padding-left: 15px;
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  .dropbtnSpace + .dropdown-content {
+      width: 100.9%;
   }
 
   &.black-border {

@@ -197,9 +197,6 @@ button:focus {
 [dir=rtl] .yc-btn {
   flex-direction: row-reverse;
 }
-[dir=rtl] .yc-btn .yc-btn-responsive-icon {
-  transform: rotate(180deg);
-}
 
 h1,
 h2,
@@ -349,9 +346,6 @@ input:not([type=radio]),
   max-width: 570px;
   /* Style the dropdown content */
 }
-.dropdown-input .dropbtnSpace {
-  padding-left: 15px;
-}
 .dropdown-input .dropbtn {
   display: flex;
   align-items: center;
@@ -401,6 +395,14 @@ input:not([type=radio]),
 }
 .dropdown-input .dropdown-content li.selected {
   font-weight: bold;
+}
+.dropdown-input .dropbtnSpace {
+  padding-left: 15px;
+  font-size: 13px;
+  font-weight: 400;
+}
+.dropdown-input .dropbtnSpace + .dropdown-content {
+  width: 100.9%;
 }
 .dropdown-input.black-border {
   border-color: #000000;
