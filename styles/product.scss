@@ -194,7 +194,7 @@
     }
     .product-options {
       display: grid;
-      gap: 27px;
+      gap: 24px;
 
       @include breakpoint('md') {
         gap: 30px;
@@ -326,7 +326,7 @@
     .product-option-title {
       text-transform: capitalize;
       margin-top: 0;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       font-weight: 700;
       font-size: 16px;
       line-height: 120%;

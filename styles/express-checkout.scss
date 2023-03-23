@@ -58,11 +58,11 @@ $sticky-checkout-padding: 20px;
 
   .sticky-product-details {
     overflow-y: scroll;
-    padding: 0 20px;
+    padding: 20px 20px 0 20px;
     margin-bottom: 90px;
 
     .options .product-quantity {
-      margin-top: 36px;
+      margin-top: 24px;
     }
   }
   .spacer {
@@ -73,13 +73,12 @@ $sticky-checkout-padding: 20px;
     width: 100%;
     position: fixed;
     bottom: 0;
-    padding: 16px 20px;
+    padding: 0 20px 20px 20px;
     background-color: white;
-    border-top: 1px solid #EBEBEB;
   }
 
-  .checkout-form {
-    padding-bottom: $sticky-checkout-padding;
+  .sticky-checkout-form #express-checkout-form {
+    padding: 0;
   }
 
   .step-2-wrapper {
@@ -92,20 +91,6 @@ $sticky-checkout-padding: 20px;
       max-width: 940px;
       padding: 0 20px;
       margin: 0 auto 100px auto;
-    }
-
-    .close-icon {
-      display: none;
-
-      @include breakpoint('md') {
-        display: block;
-      }
-    }
-
-    .back-icon {
-      @include breakpoint('md') {
-        display: none;
-      }
     }
   }
 
@@ -129,27 +114,36 @@ $sticky-checkout-padding: 20px;
     will-change: transform;
   }
 
-  .variant-card-1, .variant-card-2 {
-    margin-bottom: 15px;
+  .variant-panel {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--yc-neutral-light-color);
+    margin-bottom: 24px;
   }
 
-  .back-icon,
-  .close-icon {
-    width: 40px;
-    height: 40px;
-    background: white;
+  .variant-card {
+    margin-bottom: 16px;
+  }
+
+  .exit-button,
+  .back-button {
+    width: max-content;
+    background: transparent;
     color: #C8C8C8;
     position: absolute;
-    left: 20px;
-    top: -39px;
+    left: 14px;
+    top: -40px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 16pt;
     border-radius: 4px 4px 0 0;
 
-    @include breakpoint('md') {
-      left: unset;
+    ion-icon {
+    font-size: 37px;
+    color: white;
     }
   }
 

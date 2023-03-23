@@ -53,11 +53,11 @@
 }
 .yc-sticky-checkout .sticky-product-details {
   overflow-y: scroll;
-  padding: 0 20px;
+  padding: 20px 20px 0 20px;
   margin-bottom: 90px;
 }
 .yc-sticky-checkout .sticky-product-details .options .product-quantity {
-  margin-top: 36px;
+  margin-top: 24px;
 }
 .yc-sticky-checkout .spacer {
   margin-top: 20px;
@@ -66,12 +66,11 @@
   width: 100%;
   position: fixed;
   bottom: 0;
-  padding: 16px 20px;
+  padding: 0 20px 20px 20px;
   background-color: white;
-  border-top: 1px solid #EBEBEB;
 }
-.yc-sticky-checkout .checkout-form {
-  padding-bottom: 20px;
+.yc-sticky-checkout .sticky-checkout-form #express-checkout-form {
+  padding: 0;
 }
 .yc-sticky-checkout .step-2-wrapper {
   overflow-y: scroll;
@@ -84,19 +83,6 @@
     max-width: 940px;
     padding: 0 20px;
     margin: 0 auto 100px auto;
-  }
-}
-.yc-sticky-checkout .step-2-wrapper .close-icon {
-  display: none;
-}
-@media (min-width: 768px) {
-  .yc-sticky-checkout .step-2-wrapper .close-icon {
-    display: block;
-  }
-}
-@media (min-width: 768px) {
-  .yc-sticky-checkout .step-2-wrapper .back-icon {
-    display: none;
   }
 }
 .yc-sticky-checkout .step_1, .yc-sticky-checkout .step_2 {
@@ -115,29 +101,35 @@
   animation: slideFromBottom 0.2s ease-in-out;
   will-change: transform;
 }
-.yc-sticky-checkout .variant-card-1, .yc-sticky-checkout .variant-card-2 {
-  margin-bottom: 15px;
+.yc-sticky-checkout .variant-panel {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--yc-neutral-light-color);
+  margin-bottom: 24px;
 }
-.yc-sticky-checkout .back-icon,
-.yc-sticky-checkout .close-icon {
-  width: 40px;
-  height: 40px;
-  background: white;
+.yc-sticky-checkout .variant-card {
+  margin-bottom: 16px;
+}
+.yc-sticky-checkout .exit-button,
+.yc-sticky-checkout .back-button {
+  width: max-content;
+  background: transparent;
   color: #C8C8C8;
   position: absolute;
-  left: 20px;
-  top: -39px;
+  left: 14px;
+  top: -40px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 16pt;
   border-radius: 4px 4px 0 0;
 }
-@media (min-width: 768px) {
-  .yc-sticky-checkout .back-icon,
-  .yc-sticky-checkout .close-icon {
-    left: unset;
-  }
+.yc-sticky-checkout .exit-button ion-icon,
+.yc-sticky-checkout .back-button ion-icon {
+  font-size: 37px;
+  color: white;
 }
 @media (min-width: 768px) {
   .yc-sticky-checkout .sticky-desktop-wrapper {
