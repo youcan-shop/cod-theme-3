@@ -291,14 +291,14 @@
             "type": "product-reviews",
             "settings": {
                 "reviews_title": "توصيات من زبنائنا",
-                "product": "b44b2d2d-a29e-4fd2-9965-4825e2d8e64d"
+                "product": "b01a3054-7105-4a12-aaff-c9d9aaa45f48"
             }
         },
         "section_iugi49itahcmlhw": {
             "type": "main-video",
             "settings": {
-                "video_type": "facebook",
-                "video_link": "https:\/\/fb.watch\/jqAsJV3tr_\/",
+                "video_type": "youtube",
+                "video_link": "https:\/\/youtu.be\/lTRiuFIWV54",
                 "video_height": 500,
                 "video_width": 100
             }
