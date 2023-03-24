@@ -1,6 +1,6 @@
 {{ 'cart.css' | asset_url | stylesheet_tag }}
-<div class="container cart-bg-color">
-  <div class='yc-cart'>
+<div class="cart-bg-color">
+  <div class='yc-cart container'>
     {%- if cart and cart.items %}
       <div class='cart-table'>
     <div class="header-block">
@@ -16,46 +16,9 @@
         </a>
       </div>
       </div>
-      {% comment %}
-      <div class="table-container">
-      {% for item in cart.items %}
-        <div class="row cart__item" id='{{ item.id }}'>
-          <div class="cell">
-              <div class='product-image'>
-                <img loading='lazy' src='{{ item.image }}' alt='product-name'>
-              </div>
-          </div>
-          <div class='cell '>
-            <div class="product-title">{{ item.name }}</div>
-            <div class="product-variant">
-              {% comment %} To be added when variants are added on the backend {% endcomment %}
-            </div>
-            <div class='product-price'>{{ item.price | money }}</div>
-          </div>
-          <div class='cell'>
-            {%- render 'quantity-input', item: item -%}
-          </div>
-          <div class='cell total-price-table'>
-              <div
-                class='cart-item-loader-spinner hidden'
-                id='loading__{{ item.id }}'
-              >
-              <span class='spinner h-7 w-7'></span>
-            </div>
-            <span class="total-price">{{ item.price | times: item.quantity | money }}</span>
-          </div>
-          <div class="cell adjust-space close-btn">
-            <button onclick="removeItem('{{ item.id }}', '{{ item.product_variant_id }}')" class='yc-btn-close'>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-          </div>
-        </div>
-      {% endfor %}
-      </div>
-      {% endcomment %}
       <div class="table-container">
         {% for item in cart.items %}
-          <div class="table-columns">
+          <div class="table-columns" id='{{ item.id }}'>
             <div class='product-details'>
               <div class="product-image">
                 <img loading='lazy' src='{{ item.image }}' alt='product-name'>
@@ -67,8 +30,27 @@
                     <span>{{ variant[0] }}:{{ variant[1] }}</span>
                     <span class="variant-space"></span>
                   {% endfor %}
+                  <div class='product-price'>{{ item.price | money }}</div>
                 </div>
               </div>
+            </div>
+            <div class="product-quantity">
+              {%- render 'quantity-input', item: item -%}
+            </div>
+            <div class="total-price-table">
+              <div
+                  class='cart-item-loader-spinner hidden'
+                  id='loading__{{ item.id }}'
+                >
+                <span class='spinner h-7 w-7'></span>
+                </div>
+                <span class="total-price">{{ item.price | times: item.quantity | money }}</span>
+              </div>
+              <div class="close-btn">
+              <button onclick="removeItem('{{ item.id }}', '{{ item.product_variant_id }}')" class='yc-btn-close'>
+                <ion-icon name="trash-outline"></ion-icon>
+              </button>
+            </div>
             </div>
           </div>
         {% endfor %}

@@ -2,7 +2,8 @@
   background-color: #E9E9E9;
 }
 .cart-bg-color .yc-cart {
-  padding: 35px 0 35px;
+  padding-top: 35px;
+  padding-bottom: 35px;
 }
 .cart-bg-color .yc-cart .empty-cart ion-icon {
   --ionicon-stroke-width: 18px;
@@ -116,76 +117,111 @@
 .cart-bg-color .yc-cart .quantity-wrapper {
   width: fit-content;
   border: 1px solid #BDBDBD;
-  border-radius: 4px;
   display: flex;
   align-items: center;
+  padding: 8px 5px;
   flex-direction: row-reverse;
   background-color: white;
 }
 .cart-bg-color .yc-cart .quantity-wrapper button {
-  width: 34px !important;
-  min-width: 34px !important;
-  max-width: 34px !important;
-  height: 34px !important;
-  min-height: 34px !important;
-  max-height: 34px !important;
+  width: 34px;
   background-color: transparent;
   font-size: 18px;
-  color: #B7B7B7;
+  color: #000;
 }
 .cart-bg-color .yc-cart .quantity-wrapper input {
-  width: 34px !important;
-  min-width: 34px !important;
-  max-width: 34px !important;
-  height: 34px !important;
-  min-height: 34px !important;
-  max-height: 34px !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  background-color: white;
   display: flex;
-  font-weight: 600 !important;
-  font-size: 16px !important;
-  border: 0;
+  font-weight: 700;
+  font-size: 14px;
   align-items: center;
   justify-content: center;
   text-align: center;
-}
-@media screen and (max-width: 520px) {
-  .cart-bg-color .yc-cart .quantity-wrapper button, .cart-bg-color .yc-cart .quantity-wrapper input {
-    width: 26px !important;
-    min-width: 25px !important;
-    max-width: 25px !important;
-    height: 27px !important;
-    min-height: 27px !important;
-    max-height: 27px !important;
-  }
+  width: 46px;
+  border: 0;
+  height: 30px !important;
+  padding: 0;
 }
 .cart-bg-color .table-container {
-  display: flex;
   margin: 36px auto;
   background-color: #fff;
-  padding: 22px 18px;
 }
 .cart-bg-color .table-container .table-columns {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 0.9fr;
+  padding: 22px 18px;
+  grid-template-areas: "row1  row2  row3 row4";
   justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 }
 .cart-bg-color .table-container .table-columns .product-details {
   display: flex;
   align-items: center;
   gap: 18px;
+  max-width: 400px;
+  grid-area: row1;
 }
-.cart-bg-color .table-container .table-columns .product-details .product-image {
-  max-width: 108px;
-  height: auto;
+.cart-bg-color .table-container .table-columns .product-details .product-image img {
+  max-height: 110px;
+  max-width: 90px;
 }
 .cart-bg-color .table-container .table-columns .product-details .product-title {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 17px;
+}
+.cart-bg-color .table-container .table-columns .product-details .product-title span {
+  font-weight: 600;
+  font-size: 15px;
+}
+.cart-bg-color .table-container .table-columns .product-details .product-variants span {
+  font-size: 14px;
+  font-weight: 500;
+}
+.cart-bg-color .table-container .table-columns .product-details .product-variants .product-price {
+  display: none;
 }
 .cart-bg-color .table-container .table-columns .product-details .variant-space {
   padding: 0 5px;
+}
+.cart-bg-color .table-container .table-columns .product-quantity {
+  display: flex;
+  justify-content: center;
+  grid-area: row2;
+}
+.cart-bg-color .table-container .table-columns .total-price-table {
+  display: flex;
+  justify-content: center;
+  grid-area: row3;
+}
+.cart-bg-color .table-container .table-columns .total-price-table .total-price {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--yc-primary-color);
+}
+.cart-bg-color .table-container .table-columns .close-btn {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 20px;
+  color: #CBCBCB;
+  grid-area: row4;
+}
+@media (max-width: 768px) {
+  .cart-bg-color .table-container .table-columns {
+    align-items: flex-start;
+    grid-template-areas: "row1  row4" "row2  row3";
+  }
+  .cart-bg-color .table-container .table-columns .product-details {
+    max-width: 100%;
+    align-items: flex-start;
+  }
+  .cart-bg-color .table-container .table-columns .product-details .product-title {
+    gap: 6px;
+  }
+  .cart-bg-color .table-container .table-columns .product-quantity, .cart-bg-color .table-container .table-columns .total-price-table {
+    justify-content: flex-start;
+    margin-top: 16px;
+  }
+  .cart-bg-color .table-container .table-columns .quantity-wrapper {
+    padding: 5px 0;
+  }
 }
