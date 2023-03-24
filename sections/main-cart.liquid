@@ -55,7 +55,22 @@
       {% endcomment %}
       <div class="table-container">
         {% for item in cart.items %}
-          {% dump item %}
+          <div class="table-columns">
+            <div class='product-details'>
+              <div class="product-image">
+                <img loading='lazy' src='{{ item.image }}' alt='product-name'>
+              </div>
+              <div class="product-title">
+                <span>{{ item.name }}</span>
+                <div class="product-variants">
+                  {% for variant in item.variations %}
+                    <span>{{ variant[0] }}:{{ variant[1] }}</span>
+                    <span class="variant-space"></span>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
         {% endfor %}
       </div>
         <div class='summary-box h-fit'>

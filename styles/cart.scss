@@ -185,101 +185,135 @@
   }
 }
 
-.table-container {
-  display: flex;
-  flex-direction: column;
-  margin: 36px auto;
-  overflow-x: auto;
+// .table-container {
+//   display: flex;
+//   flex-direction: column;
+//   margin: 36px auto;
+//   overflow-x: auto;
 
-  .cart__item {
-    background: #FFFFFF;
-  }
+//   .cart__item {
+//     background: #FFFFFF;
+//   }
 
    
 
-  .row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+//   .row {
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//     justify-content: space-between;
+
+//     .cell {
+//       flex-basis: calc(100% / 5);
+//       text-align: start;
+//       padding: 10px;
+
+//       .product-title {
+//         font-weight: 400;
+//         font-size: 16.5px;
+//         margin-bottom: 10px;
+//         width: 86%;
+//       }
+
+//       .total-price {
+//         color: var(--yc-primary-color);
+//         font-weight: 700;
+//         font-size: 17px;
+//       }
+
+//       .product-image {
+//         img {
+//           width: 140px;
+//           height: 110px;
+//           object-fit: contain;
+//         }
+//       }
+//     }
+
+//     .adjust-space {
+//       flex-basis: calc(100% / 20);
+//       padding: 0;
+//     }
+
+//     .close-btn {
+//       font-size: 25px;
+//       color: #4B5565;
+//     }
+//   }
+  
+//   @media screen and (max-width: 767px) {
+//     .header {
+//       display: none;
+//     }
+  
+//     .row {
+//       flex-wrap: wrap;
+//       justify-content: center;
+//       align-items: start;
+
+//       .cell {
+//         .product-image img {
+//           width: 140px;
+//           height: 90px;
+//         }
+//       }
+//     }
+  
+//     .close-btn {
+//       button {
+//         position: absolute;
+//         left: 0;
+//         top: 0;
+//         margin: 10px;
+//       }
+//     }
+  
+//     .product-title {
+//       width: 87%;
+//     }
+//     .row .cell:first-child,
+//     .row .cell:nth-child(n+3) {
+//       flex-basis: 35%;
+//     }
+  
+//     .row .cell:nth-child(2),
+//     .row .cell:nth-child(n+4) {
+//       flex-basis: 65%;
+//     }
+//   }
+// }  
+
+.table-container {
+  display: flex;
+  margin: 36px auto;
+  background-color: #fff;
+  padding: 22px 18px;
+
+  .table-columns {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr .9fr;
     justify-content: space-between;
 
-    .cell {
-      flex-basis: calc(100% / 5);
-      text-align: start;
-      padding: 10px;
-
-      .product-title {
-        font-weight: 400;
-        font-size: 16.5px;
-        margin-bottom: 10px;
-        width: 86%;
-      }
-
-      .total-price {
-        color: var(--yc-primary-color);
-        font-weight: 700;
-        font-size: 17px;
-      }
+    .product-details {
+      display: flex;
+      align-items: center;
+      gap: 18px;
 
       .product-image {
-        img {
-          width: 140px;
-          height: 110px;
-          object-fit: contain;
-        }
+        max-width: 108px;
+        height: auto;
       }
-    }
 
-    .adjust-space {
-      flex-basis: calc(100% / 20);
-      padding: 0;
-    }
+      .product-title {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
 
-    .close-btn {
-      font-size: 25px;
-      color: #4B5565;
+      .variant-space {
+        padding: 0 5px;
+      }
+      }
     }
   }
-  
-  @media screen and (max-width: 767px) {
-    .header {
-      display: none;
-    }
-  
-    .row {
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: start;
-
-      .cell {
-        .product-image img {
-          width: 140px;
-          height: 90px;
-        }
-      }
-    }
-  
-    .close-btn {
-      button {
-        position: absolute;
-        left: 0;
-        top: 0;
-        margin: 10px;
-      }
-    }
-  
-    .product-title {
-      width: 87%;
-    }
-    .row .cell:first-child,
-    .row .cell:nth-child(n+3) {
-      flex-basis: 35%;
-    }
-  
-    .row .cell:nth-child(2),
-    .row .cell:nth-child(n+4) {
-      flex-basis: 65%;
-    }
-  }
-}  
 }

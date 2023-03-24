@@ -163,76 +163,29 @@
 }
 .cart-bg-color .table-container {
   display: flex;
-  flex-direction: column;
   margin: 36px auto;
-  overflow-x: auto;
+  background-color: #fff;
+  padding: 22px 18px;
 }
-.cart-bg-color .table-container .cart__item {
-  background: #FFFFFF;
-}
-.cart-bg-color .table-container .row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.cart-bg-color .table-container .table-columns {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 0.9fr;
   justify-content: space-between;
 }
-.cart-bg-color .table-container .row .cell {
-  flex-basis: 20%;
-  text-align: start;
-  padding: 10px;
+.cart-bg-color .table-container .table-columns .product-details {
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
-.cart-bg-color .table-container .row .cell .product-title {
-  font-weight: 400;
-  font-size: 16.5px;
-  margin-bottom: 10px;
-  width: 86%;
+.cart-bg-color .table-container .table-columns .product-details .product-image {
+  max-width: 108px;
+  height: auto;
 }
-.cart-bg-color .table-container .row .cell .total-price {
-  color: var(--yc-primary-color);
-  font-weight: 700;
-  font-size: 17px;
+.cart-bg-color .table-container .table-columns .product-details .product-title {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.cart-bg-color .table-container .row .cell .product-image img {
-  width: 140px;
-  height: 110px;
-  object-fit: contain;
-}
-.cart-bg-color .table-container .row .adjust-space {
-  flex-basis: 5%;
-  padding: 0;
-}
-.cart-bg-color .table-container .row .close-btn {
-  font-size: 25px;
-  color: #4B5565;
-}
-@media screen and (max-width: 767px) {
-  .cart-bg-color .table-container .header {
-    display: none;
-  }
-  .cart-bg-color .table-container .row {
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: start;
-  }
-  .cart-bg-color .table-container .row .cell .product-image img {
-    width: 140px;
-    height: 90px;
-  }
-  .cart-bg-color .table-container .close-btn button {
-    position: absolute;
-    left: 0;
-    top: 0;
-    margin: 10px;
-  }
-  .cart-bg-color .table-container .product-title {
-    width: 87%;
-  }
-  .cart-bg-color .table-container .row .cell:first-child,
-  .cart-bg-color .table-container .row .cell:nth-child(n+3) {
-    flex-basis: 35%;
-  }
-  .cart-bg-color .table-container .row .cell:nth-child(2),
-  .cart-bg-color .table-container .row .cell:nth-child(n+4) {
-    flex-basis: 65%;
-  }
+.cart-bg-color .table-container .table-columns .product-details .variant-space {
+  padding: 0 5px;
 }
