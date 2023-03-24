@@ -16,6 +16,7 @@
         </a>
       </div>
       </div>
+      {% comment %}
       <div class="table-container">
       {% for item in cart.items %}
         <div class="row cart__item" id='{{ item.id }}'>
@@ -50,6 +51,12 @@
           </div>
         </div>
       {% endfor %}
+      </div>
+      {% endcomment %}
+      <div class="table-container">
+        {% for item in cart.items %}
+          {% dump item %}
+        {% endfor %}
       </div>
         <div class='summary-box h-fit'>
             <div id='summary'>
