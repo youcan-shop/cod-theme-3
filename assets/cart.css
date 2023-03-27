@@ -110,7 +110,7 @@
   font-weight: 400;
   color: #000000;
   font-size: 12px;
-  width: 80%;
+  width: 90%;
 }
 .cart-bg-color .yc-cart-container .summary-box .price-wrapper .item-price {
   width: 20%;
@@ -204,15 +204,15 @@
 .cart-bg-color .table-container .table-columns .product-details .product-title {
   display: flex;
   flex-direction: column;
-  gap: 17px;
+  gap: 15px;
 }
 .cart-bg-color .table-container .table-columns .product-details .product-title span {
   font-weight: 600;
   font-size: 15px;
 }
 .cart-bg-color .table-container .table-columns .product-details .product-variants span {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 400;
 }
 .cart-bg-color .table-container .table-columns .product-details .product-variants .product-price {
   display: none;

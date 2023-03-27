@@ -123,7 +123,7 @@
         font-weight: 400;
         color: #000000;
         font-size: 12px;
-        width: 80%;
+        width: 90%;
       }
 
       .item-price {
@@ -228,7 +228,7 @@
         .product-title {
           display: flex;
           flex-direction: column;
-          gap: 17px;
+          gap: 15px;
 
           span {
             font-weight: 600;
@@ -238,8 +238,8 @@
 
         .product-variants {
           span {
-            font-size: 14px;
-            font-weight: 500;
+            font-size: 13px;
+            font-weight: 400;
           }
 
           .product-price {
