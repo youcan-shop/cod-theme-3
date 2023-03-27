@@ -16,9 +16,7 @@
   <div class="thankyou-page-container">
     <div class='thankyou-wrapper'>
         <div class='content-wrapper'>
-          <svg width="32" height="41" viewBox="0 0 32 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10.3075 15.2125L7.135 18.4075L13.75 25L25.4275 13.345L22.255 10.15L13.75 18.655M27.25 0.25H4.75C2.275 0.25 0.25 2.275 0.25 4.75V40.75L16 34L31.75 40.75V4.75C31.75 2.275 29.725 0.25 27.25 0.25ZM27.25 34L16 29.095L4.75 34V4.75H27.25V34Z" fill="black"/>
-          </svg>
+          <img src='{{ 'thankyou.png' | asset_url }}' alt='Thank you'>
           <div class="heading">
             <div class='title'>{{ section.settings.title }} <div class='subtitle'>{{ section.settings.subtitle }}</div></div>
           </div>
@@ -29,8 +27,8 @@
     </div>
     <div class="order-info">
       {% for variant in order.order_variants %}
-          <h2 class="variant-name">{{ variant.name }}</h2>
-          <h2 class="variant-price">{{ variant.price | money }}</h2>
+          <span class="variant-name">{{ variant.name }}</span>
+          <span class="variant-price">{{ variant.price | money }}</span>
       {% endfor %}
     </div>
     <div class="order-details">
