@@ -1,14 +1,14 @@
 {{ 'sticky-checkout.css' | asset_url | stylesheet_tag }}
 
 <div id="yc-sticky-checkout" class="yc-sticky-checkout">
-  <section class="sticky-container container">
-    <div class="step_1" id="checkout_step_1">
+  <section class="sticky-container container no-padding" id="checkout_container_1" >
+    <div class="step_1"  id="checkout_step_1">
       <div class="sticky-product-details">
         <div class="variant-panel">
           <span>
             {{ 'snippets.sticky-checkout.complete_following_options' | t }}
           </span>
-          <button class="exit-button" onclick="goToCheckoutStep(0)">
+          <button class="exit-button" onclick="hideCheckout()">
             <ion-icon name="close-outline"></ion-icon>
           </button>
         </div>
@@ -22,7 +22,7 @@
     </div>
     <div class="empty-spacer"></div>
   </section>
-  <section class="sticky-container container">
+  <section class="sticky-container container no-padding" id="checkout_container_2" >
     <div class="step_2" id="checkout_step_2">
       <div class="step-2-wrapper">
         <div class="variant-panel">
@@ -52,5 +52,20 @@
   </section>
 </div>
 
+<script>
+  function removePadding() {
+    if(window.innerWidth >= 768) {
+      document.querySelectorAll('#checkout_container_1, #checkout_container_2').forEach(element => element.classList.remove('no-padding'));
+    }
+  }
+  removePadding();
 
+  function dynamicHeight() {
+    const bottomWrapperHeight = $('.cta-bottom-wrapper');
 
+    $('.sticky-product-details').style.height = `calc(100% - ${bottomWrapperHeight.offsetHeight}px)`;
+    $('.step-2-wrapper').style.height = `calc(100% - ${bottomWrapperHeight.offsetHeight}px)`;
+  }
+
+  dynamicHeight();
+</script>

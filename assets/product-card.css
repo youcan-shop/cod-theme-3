@@ -1,7 +1,6 @@
 .yc-product-card {
   width: 100%;
   border: 1px solid var(--yc-neutral-light-color);
-  margin-top: 24px;
 }
 
 .yc-product-card .product-card-wrapper {

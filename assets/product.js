@@ -393,9 +393,10 @@ function responsiveStickyCheckout() {
   const options = $('.product-options');
 
   if(window.innerWidth >= 768) {
-    goToCheckoutStep(2);
+    document.querySelectorAll('#checkout_container_1, #checkout_container_2').forEach(element => element.classList.remove('no-padding'));
   } else if (window.innerWidth < 768) {
     goToCheckoutStep(1);
+    document.querySelectorAll('#checkout_container_1, #checkout_container_2').forEach(element => element.classList.add('no-padding'));
     teleport(options, '#checkout_step_1 .options');
     teleport(quantity, '#checkout_step_1 .options');
   }
@@ -494,15 +495,19 @@ function showSelectedQuantity() {
 // Sticky checkout steps conditions
 
 function goToCheckoutStep(step) {
-  $('#checkout_step_1').style.display = 'none';
-  $('#checkout_step_2').style.display = 'none';
+  document.querySelectorAll('#checkout_container_1, #checkout_step_1, #checkout_container_2, #checkout_step_2').forEach(
+    element => element.style.display = 'none');
 
   switch (step) {
     case 1:
-      $('#checkout_step_1').style.display = 'flex';
+      document.querySelectorAll('#checkout_container_1, #checkout_step_1').forEach(
+        element => element.style.display = 'flex');
+      document.querySelectorAll('#checkout_container_2, #checkout_step_2').forEach(
+        element => element.style.display = 'none');
       break;
     case 2:
-      $('#checkout_step_2').style.display = 'flex';
+      document.querySelectorAll('#checkout_container_2, #checkout_step_2').forEach(
+        element => element.style.display = 'flex');
       $(' #express-checkout-form').style.display = 'block';
       showSelectedVariants();
       showSelectedQuantity();
