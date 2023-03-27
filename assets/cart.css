@@ -68,9 +68,14 @@
   font-weight: 700;
   font-size: 14px;
 }
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
+  .cart-bg-color .yc-cart-container .cart-table .header-block {
+    flex-direction: column;
+    gap: 36px;
+    padding: 0 24px;
+  }
   .cart-bg-color .yc-cart-container .cart-table .header-block .checkout_cta {
-    display: none;
+    width: 90%;
   }
 }
 .cart-bg-color .yc-cart-container .summary-box {

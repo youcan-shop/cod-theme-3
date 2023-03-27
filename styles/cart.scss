@@ -73,9 +73,15 @@
           font-weight: 700;
           font-size: 14px;
         }
+      }
 
-        @media screen and (max-width: 768px) {
-          display: none;
+      @include max-screen('md') {
+        flex-direction: column;
+        gap: 36px;
+        padding: 0 24px;
+
+        .checkout_cta {
+         width: 90%;
         }
       }
     }
