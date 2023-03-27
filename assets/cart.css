@@ -153,7 +153,7 @@
   display: grid;
   padding: 22px 18px;
   grid-template-areas: "row1  row2  row3 row4";
-  grid-template-columns: auto auto 110px 20px;
+  grid-template-columns: 0.5fr auto 110px 20px;
   justify-content: space-between;
   align-items: center;
   border-width: 1px 0;
@@ -211,7 +211,7 @@
   color: #CBCBCB;
   grid-area: row4;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .cart-bg-color .table-container .table-columns {
     align-items: flex-start;
     grid-template-areas: "row1  row4" "row2  row3";
