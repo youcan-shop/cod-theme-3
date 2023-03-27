@@ -173,6 +173,7 @@
   .table-container {
     margin: 36px auto;
     background-color: #fff;
+    border-top: 1px solid #EBEBEB;
 
     .table-columns {
       display: grid;
@@ -181,8 +182,7 @@
       grid-template-columns: .5fr  auto 110px 20px;
       justify-content: space-between;
       align-items: center;
-      border-width: 1px 0;
-      border-color: #EBEBEB;
+      border-bottom: 1px solid #EBEBEB;
 
       .product-details {
         display: flex;
