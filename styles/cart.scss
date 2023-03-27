@@ -4,9 +4,24 @@
   background-color: #E9E9E9;
   overflow: auto;
 
-.yc-cart {
+.yc-cart-container {
   padding-top: 35px;
   padding-bottom: 35px;
+  max-width: 1440px !important;
+  margin: 0 auto;
+  padding: 35px 0;
+
+  @include breakpoint('md') {
+    padding: 35px 30px;
+  }
+
+  @include breakpoint('lg') {
+    padding: 35px 60px;
+  }
+
+  @include breakpoint('xl') {
+    padding: 35px 140px;
+  }
 
   .empty-cart {
     ion-icon {
@@ -131,6 +146,14 @@
       color: var(--yc-primary-color);
       font-weight: 700;
       font-size: 18px;
+    }
+
+    .checkout_cta_btn {
+      padding: 0 24px;
+
+      @include breakpoint('md') {
+        padding: 0;
+      }
     }
 
     @media screen and (max-width: 768px) {
