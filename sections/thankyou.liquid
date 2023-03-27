@@ -27,11 +27,6 @@
           </div>
         </div>
     </div>
-    <div class="orders-detail-wrapper">
-      {% comment %}
-      TO DO: Add variants when the data is provided
-      {% endcomment %}
-    </div>
     <div class="order-info">
       {% for variant in order.order_variants %}
           <h2 class="variant-name">{{ variant.name }}</h2>

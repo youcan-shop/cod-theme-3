@@ -27,6 +27,7 @@
 .thankyou-page-bg .thankyou-page-container .thankyou-wrapper .content-wrapper .heading {
   margin-top: 22px;
   line-height: 42px;
+  text-align: center;
 }
 .thankyou-page-bg .thankyou-page-container .thankyou-wrapper .content-wrapper .heading .title {
   display: block;
@@ -40,7 +41,6 @@
 .thankyou-page-bg .thankyou-page-container .thankyou-wrapper .content-wrapper .heading .subtitle {
   font-weight: 400;
   font-size: 24px;
-  text-align: center;
 }
 @media (max-width: 768px) {
   .thankyou-page-bg .thankyou-page-container .thankyou-wrapper .content-wrapper .heading .subtitle {

@@ -28,6 +28,7 @@
         .heading {
           margin-top: 22px;
           line-height: 42px;
+          text-align: center;
 
           .title {
             display: block;
@@ -41,7 +42,6 @@
           .subtitle {
             font-weight: 400;
             font-size: 24px;
-            text-align: center;
 
             @include max-screen('md') {
               font-size: 20px;
