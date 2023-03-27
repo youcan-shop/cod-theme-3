@@ -57,36 +57,37 @@
       </div>
         <div class='summary-box h-fit'>
             <div id='summary'>
-              <form name='promo'>
-                <div class='mb-7 w-full'>
-                <div class='border-b border-space'>
-                  <div class="flex gap-2">
-                  <input
-                    type='text'
-                    name='coupon'
-                    id='promo'
-                    placeholder='{{ "cart.summary.promo_input" | t }}'
-                    class='w-full'
+              <div class="input-wrapper">
+                <form name='promo'>
+                  <div class='mb-7 w-full'>
+                    <div class="flex gap-2">
+                    <input
+                      type='text'
+                      name='coupon'
+                      id='promo'
+                      placeholder='{{ "cart.summary.promo_input" | t }}'
+                      class='w-full'
+                    >
+                  <button
+                    type='submit'
+                    class='yc-btn-secondary'
                   >
-                <button
-                  type='submit'
-                  class='yc-btn-secondary'
-                >
-                  <span
-                    class='spinner hidden'
-                    id='loading__coupon'
-                  ></span>
-                  <span>{{ 'cart.summary.checkout_cta' | t }}</span>
-                </button>
-                </div>
-                </div>
-              </form>
+                    <span
+                      class='spinner hidden'
+                      id='loading__coupon'
+                    ></span>
+                    <span>{{ 'cart.summary.checkout_cta' | t }}</span>
+                  </button>
+                  </div>
+                  </div>
+                </form>
+              </div>
               {%- if cart and cart.items %}
               <div class="price-wrapper">
                 <div class='flex flex-col gap-1 price-box'>
                   {%- for item in cart.items %}
                     <div class='flex justify-between text-sm box' id='cart-item-{{ item.id }}'>
-                      <div class='products'>{{ 'cart.summary.product_name' | t }</div>
+                      <div class='products'>{{ 'cart.summary.product_name' | t }}</div>
                       <div class="hidden">
                         {%- render 'quantity-input', item: item -%}
                         <div class='product-price'>{{ item.price | money }}</div>
@@ -101,11 +102,13 @@
                   <span class="total">{{ 'cart.summary.total' | t }}</span>
                   <span class="item-total-price"></span>
                 </div>
+              </div>
+            </div>
+            <div class="checkout_cta_btn">
                 <a href='{{ cart.cart_submit_url }}' class='yc-btn mt-5 w-full'>
                   {{ 'cart.summary.checkout_cta' | t }}
                 </a>
               </div>
-            </div>
           </div>
         </div>
       </div>

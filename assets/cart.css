@@ -61,12 +61,15 @@
   width: 428px;
   float: left;
   margin-bottom: 60px;
-  padding: 24px 24px 20px;
+  border: 1px solid #EBEBEB;
+}
+.cart-bg-color .yc-cart .summary-box .input-wrapper {
+  padding: 24px 24px 0;
 }
 .cart-bg-color .yc-cart .summary-box input {
   background: #FFFFFF;
   border: 1px solid #BDBDBD;
-  padding: 12px 13px;
+  padding: 0 13px;
   font-weight: 500;
   font-size: 14px;
 }
@@ -76,7 +79,9 @@
 .cart-bg-color .yc-cart .summary-box .price-box .box {
   font-weight: 400;
   font-size: 16px;
-  margin-bottom: 20px;
+}
+.cart-bg-color .yc-cart .summary-box .price-wrapper {
+  padding: 0 24px 8px;
 }
 .cart-bg-color .yc-cart .summary-box .price-wrapper .products {
   font-weight: 400;
@@ -110,6 +115,7 @@
 @media screen and (max-width: 768px) {
   .cart-bg-color .yc-cart .summary-box {
     width: 100%;
+    margin-bottom: 30px;
   }
 }
 .cart-bg-color .yc-cart .quantity-wrapper {
