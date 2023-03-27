@@ -167,8 +167,8 @@
   grid-area: row1;
 }
 .cart-bg-color .table-container .table-columns .product-details .product-image img {
-  max-height: 110px;
-  max-width: 90px;
+  height: 110px;
+  width: 90px;
 }
 .cart-bg-color .table-container .table-columns .product-details .product-title {
   display: flex;
