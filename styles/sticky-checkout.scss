@@ -71,15 +71,29 @@
   .step-2-wrapper {
     overflow-y: scroll;
     padding: 20px;
+
+    .variant-panel {
+      @include max-screen('md') {
+        margin-bottom: unset;
+        padding-bottom: unset;
+        border-bottom: none;
+
+        span {
+          display: none;
+        }
+      }
+    }
   }
 
   .step_1, .step_2 {
+    position: relative;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
 
     @include breakpoint('md') {
+      position: unset;
       background-color: white;
       flex: 1 1 50%;
       order: 2;
@@ -106,6 +120,30 @@
       font-size: 16px;
       line-height: 150%;
     }
+
+  .exit-button,
+  .back-button {
+    width: max-content;
+    position: absolute;
+    top: -42px;
+    left: 20px;
+
+    @include breakpoint('md') {
+      position: unset;
+      top: unset;
+      left: unset;
+    }
+
+    ion-icon {
+      font-size: 37px;
+      color: #ffffff;
+
+      @include breakpoint('md') {
+        color: #000000;
+      }
+    }
+  }
+
   }
 
   .variant-card {
@@ -116,15 +154,5 @@
     }
   }
 
-  .exit-button,
-  .back-button {
-    width: max-content;
-    background: transparent;
-    border-radius: 4px 4px 0 0;
 
-    ion-icon {
-      font-size: 37px;
-      color: #000000;
-    }
-  }
 }
