@@ -382,6 +382,7 @@ function triggerCheckout(parentId) {
 
   window.addEventListener("resize", responsiveStickyCheckout);
 
+  // hide sticky checkout after click outside on Desktop version
   if (window.matchMedia("(min-width: 768px)").matches) {
     const firstCheckoutStep = $("#checkout_step_1");
     const secondCheckoutStep = $("#checkout_step_2");
@@ -394,8 +395,8 @@ function triggerCheckout(parentId) {
       }
     });
 
+    // remove css class padding class on desktop
     document.querySelectorAll('#checkout_container_1, #checkout_container_2').forEach(element => element.classList.remove('no-padding'));
-    $('.sticky-elements-container').style.display = 'none';
   }
 }
 
@@ -424,7 +425,6 @@ function hideCheckout() {
 
   $("body").style.overflow = "auto";
   overlay.style.zIndex = '95';
-  $('.sticky-elements-container').style.display = 'flex';
   window.removeEventListener('resize', responsiveStickyCheckout);
 
   if (options && quantity) {
