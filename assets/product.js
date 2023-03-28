@@ -395,6 +395,7 @@ function triggerCheckout(parentId) {
     });
 
     document.querySelectorAll('#checkout_container_1, #checkout_container_2').forEach(element => element.classList.remove('no-padding'));
+    $('.sticky-elements-container').style.display = 'none';
   }
 }
 
@@ -423,6 +424,7 @@ function hideCheckout() {
 
   $("body").style.overflow = "auto";
   overlay.style.zIndex = '95';
+  $('.sticky-elements-container').style.display = 'flex';
   window.removeEventListener('resize', responsiveStickyCheckout);
 
   if (options && quantity) {
