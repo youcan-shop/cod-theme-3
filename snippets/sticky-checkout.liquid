@@ -53,19 +53,11 @@
 </div>
 
 <script>
-  function removePadding() {
-    if(window.innerWidth >= 768) {
-      document.querySelectorAll('#checkout_container_1, #checkout_container_2').forEach(element => element.classList.remove('no-padding'));
-    }
-  }
-  removePadding();
-
   function dynamicHeight() {
     const bottomWrapperHeight = $('.cta-bottom-wrapper');
 
     $('.sticky-product-details').style.height = `calc(100% - ${bottomWrapperHeight.offsetHeight}px)`;
     $('.step-2-wrapper').style.height = `calc(100% - ${bottomWrapperHeight.offsetHeight}px)`;
   }
-
   dynamicHeight();
 </script>

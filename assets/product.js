@@ -341,10 +341,9 @@ function teleportCheckoutElements(parentSection) {
   options.parentElement.appendChild(optionsPlaceholder);
 
   // teleport elements
-  if (window.matchMedia("(max-width: 768px)").matches) {
-    teleport(options, '#checkout_step_1 .options');
-    teleport(quantity, '#checkout_step_1 .options');
-  }
+  teleport(options, '#checkout_step_1 .options');
+  teleport(quantity, '#checkout_step_1 .options');
+
 }
 
 function teleportProductName() {
@@ -375,17 +374,28 @@ function triggerCheckout(parentId) {
 
   teleportProductName();
 
-  if (window.matchMedia("(max-width: 768px)").matches) {
-    goToCheckoutStep(1);
-  } else {
-    goToCheckoutStep(2);
-  }
+  goToCheckoutStep(1);
 
   overlay.addEventListener('click', () => {
     hideCheckout();
   });
 
   window.addEventListener("resize", responsiveStickyCheckout);
+
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    const firstCheckoutStep = $("#checkout_step_1");
+    const secondCheckoutStep = $("#checkout_step_2");
+
+    document.addEventListener("mousedown", function(event) {
+      if(event.target !== firstCheckoutStep && !firstCheckoutStep.contains(event.target) && firstCheckoutStep.style.display === 'flex') {
+        hideCheckout();
+      } else if(event.target !== secondCheckoutStep && !secondCheckoutStep.contains(event.target) && secondCheckoutStep.style.display === 'flex') {
+        hideCheckout();
+      }
+    });
+
+    document.querySelectorAll('#checkout_container_1, #checkout_container_2').forEach(element => element.classList.remove('no-padding'));
+  }
 }
 
 function responsiveStickyCheckout() {
