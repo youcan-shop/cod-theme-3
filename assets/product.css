@@ -14,6 +14,13 @@
 .yc-single-product .margin-top {
   margin-top: 20px;
 }
+.yc-single-product .group-blocks {
+  display: flex;
+  gap: 18px;
+}
+.yc-single-product .group-blocks .static-add-to-cart {
+  flex-grow: 1;
+}
 .yc-single-product .product-images {
   width: calc(100% + 24px);
   margin: 0 -12px;
@@ -344,8 +351,9 @@
   align-items: center;
   justify-content: space-between;
   width: 151px;
+  height: 100%;
+  min-height: 48px;
   border: 1px solid #BDBDBD;
-  border-radius: 4px;
   padding: 5px;
   /* Hide input arrows in Chrome, Safari, Edge, Opera */
   /* Hide input arrows in Firefox */
@@ -376,9 +384,9 @@
   width: 25%;
   height: 100%;
   border: none;
-  color: #BDBDBD;
+  color: #000000;
   font-weight: 700;
-  font-size: 29px;
+  font-size: 20px;
   line-height: 120%;
   background: none;
   cursor: pointer;
