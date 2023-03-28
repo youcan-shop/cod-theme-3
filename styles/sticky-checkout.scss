@@ -24,6 +24,10 @@
     overflow-y: scroll;
     padding: 20px;
 
+    .variant-panel {
+      margin-bottom: unset;
+    }
+
     .options .product-quantity {
       margin-top: 24px;
     }
@@ -65,6 +69,14 @@
         display: block;
         flex: 1 1 50%;
       }
+    }
+
+    .product-options {
+      display: grid !important;
+    }
+
+    .product-quantity {
+      display: block !important;
     }
   }
 
@@ -121,29 +133,28 @@
       line-height: 150%;
     }
 
-  .exit-button,
-  .back-button {
-    width: max-content;
-    position: absolute;
-    top: -42px;
-    left: 20px;
-
-    @include breakpoint('md') {
-      position: unset;
-      top: unset;
-      left: unset;
-    }
-
-    ion-icon {
-      font-size: 37px;
-      color: #ffffff;
+    .exit-button,
+    .back-button {
+      width: max-content;
+      position: absolute;
+      top: -42px;
+      left: 20px;
 
       @include breakpoint('md') {
-        color: #000000;
+        position: unset;
+        top: unset;
+        left: unset;
+      }
+
+      ion-icon {
+        font-size: 37px;
+        color: #ffffff;
+
+        @include breakpoint('md') {
+          color: #000000;
+        }
       }
     }
-  }
-
   }
 
   .variant-card {

@@ -23,6 +23,9 @@
   overflow-y: scroll;
   padding: 20px;
 }
+.yc-sticky-checkout .sticky-product-details .variant-panel {
+  margin-bottom: unset;
+}
 .yc-sticky-checkout .sticky-product-details .options .product-quantity {
   margin-top: 24px;
 }
@@ -61,6 +64,12 @@
     display: block;
     flex: 1 1 50%;
   }
+}
+.yc-sticky-checkout .sticky-container .product-options {
+  display: grid !important;
+}
+.yc-sticky-checkout .sticky-container .product-quantity {
+  display: block !important;
 }
 .yc-sticky-checkout .step-2-wrapper {
   overflow-y: scroll;
