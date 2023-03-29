@@ -391,9 +391,8 @@
   justify-content: space-between;
   width: 151px;
   height: 100%;
-  height: 48px;
   border: 1px solid #BDBDBD;
-  padding: 5px;
+  padding: 8.5px 5px;
 
   /* Hide input arrows in Chrome, Safari, Edge, Opera */
   .quantity-input::-webkit-outer-spin-button,
@@ -413,8 +412,8 @@
     border: none;
     padding: 0 !important;
     font-weight: 700 !important;
-    font-size: 20px !important;
-    line-height: 120% !important;
+    font-size: 14px !important;
+    line-height: 150% !important;
     color: black;
   }
 
@@ -429,8 +428,8 @@
     border: none;
     color: #000000;
     font-weight: 700;
-    font-size: 20px;
-    line-height: 120%;
+    font-size: 14px;
+    line-height: 150%;
     background: none;
     cursor: pointer;
     transition: all 200ms ease-in-out;
