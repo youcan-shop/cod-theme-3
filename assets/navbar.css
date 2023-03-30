@@ -157,6 +157,9 @@
   padding: 12px 0;
   border: 0;
   width: 94%;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
 }
 #searchInputHolder .search-wrapper .close-search {
   color: #000;
