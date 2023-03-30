@@ -174,7 +174,7 @@ function openSearch() {
 
   searchHolder.style.opacity = '1';
   searchHolder.style.visibility = 'visible';
-  searchHolder.style.top = `${0 || noticeHeight}px`;
+  document.body.style.overflowY = 'hidden';
 }
 
 function closeSearch() {
@@ -188,6 +188,7 @@ function closeSearch() {
 
   searchHolder.style.opacity = '0';
   searchHolder.style.visibility = 'hidden';
+  document.body.style.overflowY = 'auto';
 }
 
 
