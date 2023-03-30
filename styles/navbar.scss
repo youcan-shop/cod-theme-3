@@ -175,11 +175,21 @@
   background: white;
 
   .search-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     input {
       color: #A8A8A8;
       padding: 12px 0;
       border: 0;
+      width: 94%;
+    }
+
+    .close-search {
+      color: #000;
+      font-size: 24px;
+      cursor: pointer;
     }
   }
 }

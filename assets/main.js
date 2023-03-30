@@ -99,6 +99,7 @@ const overlay = document.querySelector('.global-overlay');
 const drawer = document.querySelector('.navbar-drawer');
 const menuIcon = document.querySelector('.menu-toggler ion-icon');
 const drawerBtn = document.querySelector('.close-drawer-btn');
+const closeSearchBtn = document.querySelector('.close-search');
 
 const toggleDrawerIcon = () => {
   if (menuIcon.getAttribute('name') === 'menu-outline') {
@@ -189,7 +190,9 @@ function closeSearch() {
   searchHolder.style.visibility = 'hidden';
 }
 
+
 overlay.addEventListener('click', closeSearch);
+closeSearchBtn.addEventListener('click', closeSearch);
 
 /* ---------------------------------------------- */
 /* ----- Group Sticky elements in one place ----- */
