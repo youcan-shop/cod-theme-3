@@ -26,6 +26,8 @@
   </button>
 </div>
 
+{%- render 'cart-drawer' -%}
+
 {% javascript %}
   const ADD_TO_CART_EXPECTED_ERRORS = {
     select_variant: "{{ 'errors.select_variant' | t }}",
