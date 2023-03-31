@@ -18,6 +18,14 @@
       }
     {% endif %}
   {% endif %}
+
+  {% if block.type == 'add_to_cart' %}
+    {% if block.settings.is_sticky %}
+      .product-quantity .product-option-title {
+        display: block !important;
+      }
+    {% endif %}
+  {% endif %}
 {% endfor %}
 {%- endstyle -%}
 
@@ -44,7 +52,7 @@
   {% assign product_name = product.name %}
 
   <!-- prettier-ignore -->
-  {% render 'product-images-showcase', images: images, product_name: product_name, hidden: section.settings.hide_gallery, id: uniqID , view: 'mobile' -%}
+  {% render 'product-images-showcase', images: images, product_name: product_name, hidden: section.settings.hide_gallery, id: uniqID -%}
 
   <div class='product-details'>
     {%- for block in section.blocks -%}
@@ -116,8 +124,9 @@
 </div>
 
 <script defer>
+(function () {
 const products = {{ product.images.size }};
-const mobileSlider2 = new Splide(`#yc_slider_{{ uniqID }}.yc-slider__mobile`, {
+const mobileSlider2 = new Splide(`#yc_slider_{{ uniqID }}`, {
   arrows: false,
   drag: true,
   flickMaxPages: 1,
@@ -137,7 +146,7 @@ mobileSlider2.mount();
 function checkMediaQuery(e) {
   if (e.matches) {
     mobileSlider2.destroy();
-  } else {
+  } else if(!mobileSlider2.root) {
     mobileSlider2.mount();
   }
 }
@@ -145,5 +154,5 @@ function checkMediaQuery(e) {
 const mediaQuery = window.matchMedia('(min-width: 768px)');
 mediaQuery.addEventListener('change', checkMediaQuery);
 checkMediaQuery(mediaQuery);
-
+})();
 </script>

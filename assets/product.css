@@ -69,6 +69,9 @@
   transition: opacity 0.2s;
   background-size: 112%;
 }
+.yc-single-product .product-images .splide__slide {
+  display: block !important;
+}
 .yc-single-product .product-images .splide__pagination {
   display: flex !important;
   justify-content: center;
@@ -258,9 +261,8 @@
   align-items: center;
   justify-content: space-between;
   width: 151px;
-  height: 100%;
   border: 1px solid #BDBDBD;
-  padding: 8.5px 5px;
+  padding: 10.3px 5px;
   /* Hide input arrows in Chrome, Safari, Edge, Opera */
   /* Hide input arrows in Firefox */
 }

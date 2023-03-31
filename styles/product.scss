@@ -76,6 +76,10 @@
       background-size: 112%;
     }
 
+    .splide__slide {
+      display: block !important;
+    }
+
     .splide__pagination {
       display: flex !important;
       justify-content: center;
@@ -298,9 +302,8 @@
   align-items: center;
   justify-content: space-between;
   width: 151px;
-  height: 100%;
   border: 1px solid #BDBDBD;
-  padding: 8.5px 5px;
+  padding: 10.3px 5px;
 
   /* Hide input arrows in Chrome, Safari, Edge, Opera */
   .quantity-input::-webkit-outer-spin-button,
