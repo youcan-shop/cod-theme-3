@@ -22,12 +22,13 @@
   flex-grow: 1;
 }
 .yc-single-product .product-images {
-  width: calc(100% + 20px);
+  width: 100%;
+}
+.yc-single-product .product-images .splide {
   margin-right: -20px;
 }
 @media (min-width: 768px) {
-  .yc-single-product .product-images {
-    width: 100%;
+  .yc-single-product .product-images .splide {
     margin-right: unset;
   }
 }

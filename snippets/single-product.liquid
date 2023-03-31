@@ -136,10 +136,8 @@ mobileSlider2.mount();
 
 function checkMediaQuery(e) {
   if (e.matches) {
-    console.log('destroyed');
     mobileSlider2.destroy();
   } else {
-    console.log('mounted');
     mobileSlider2.mount();
   }
 }

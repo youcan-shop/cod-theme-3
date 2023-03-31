@@ -26,12 +26,14 @@
   }
 
   .product-images {
-    width: calc(100% + 20px);
-    margin-right: -20px;
+    width: 100%;
 
-    @include breakpoint('md') {
-      width: 100%;
-      margin-right: unset;
+    .splide {
+      margin-right: -20px;
+
+      @include breakpoint('md') {
+        margin-right: unset;
+      }
     }
 
     .img-zoomer-box {
