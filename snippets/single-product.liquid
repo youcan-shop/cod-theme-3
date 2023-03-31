@@ -4,6 +4,7 @@
 
 {%- assign snippetId = 0 | rand %}
 {% assign uniqID = 100 | rand: 2000 %}
+{% assign section_settings = section.settings %}
 
 {%- style -%}
 {% for block in section.blocks %}
@@ -52,7 +53,7 @@
   {% assign product_name = product.name %}
 
   <!-- prettier-ignore -->
-  {% render 'product-images-showcase', images: images, product_name: product_name, hidden: section.settings.hide_gallery, id: uniqID, banner_text: section.settings.banner_text, banner_text_background: section.settings.banner_text_background, banner_text_color: section.settings.banner_text_color, banner_price: section.settings.banner_price, banner_price_background: section.settings.banner_price_background, banner_price_color: section.settings.banner_price_color -%}
+  {% render 'product-images-showcase', images: images, product_name: product_name, hidden: section_settings.hide_gallery, id: uniqID, banner_text: section_settings.banner_text, banner_text_background: section_settings.banner_text_background, banner_text_color: section_settings.banner_text_color, banner_price: section_settings.banner_price, banner_price_background: section_settings.banner_price_background, banner_price_color: section_settings.banner_price_color -%}
 
   <div class='product-details'>
     {%- for block in section.blocks -%}
@@ -63,7 +64,7 @@
           {%- when 'product_price' -%}
             <div class='product-price-container top-spacing'>
               <h2 class='product-price'>{{ product.price | money }}</h2>
-              {% if section.settings.show_compare_at_price and product.compare_at_price != nil %}
+              {% if section_settings.show_compare_at_price and product.compare_at_price != nil %}
                 <div class="compare-container">
                   <h3 class="compare-price">
                     <del>{{ product.compare_at_price | money }}</del>
@@ -121,7 +122,7 @@ const products = {{ product.images.size }};
 const ycSlider = $('#yc_slider_{{ uniqID }}');
 
 if (ycSlider) {
-  const mobileSlider2 = new Splide(`#yc_slider_{{ uniqID }}`, {
+  const ycMobileSlider = new Splide(`#yc_slider_{{ uniqID }}`, {
     arrows: false,
     drag: true,
     flickMaxPages: 1,
@@ -136,15 +137,15 @@ if (ycSlider) {
     rewindSpeed: 1000
   });
 
-  mobileSlider2.mount();
+  ycMobileSlider.mount();
   let isSliderMounted = true;
 
   function checkMediaQuery(e) {
     if (e.matches && isSliderMounted === true) {
-      mobileSlider2.destroy();
+      ycMobileSlider.destroy();
       isSliderMounted = false;
     } else if(isSliderMounted === false) {
-      mobileSlider2.mount();
+      ycMobileSlider.mount();
       isSliderMounted = true;
     }
   }
