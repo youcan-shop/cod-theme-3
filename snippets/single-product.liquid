@@ -142,17 +142,21 @@ const mobileSlider2 = new Splide(`#yc_slider_{{ uniqID }}`, {
 });
 
 mobileSlider2.mount();
+let isSliderMounted = true;
 
 function checkMediaQuery(e) {
-  if (e.matches) {
+  if (e.matches && isSliderMounted === true) {
     mobileSlider2.destroy();
-  } else if(!mobileSlider2.root) {
+    isSliderMounted = false;
+  } else if(isSliderMounted === false) {
     mobileSlider2.mount();
+    isSliderMounted = true;
   }
 }
 
 const mediaQuery = window.matchMedia('(min-width: 768px)');
 mediaQuery.addEventListener('change', checkMediaQuery);
 checkMediaQuery(mediaQuery);
+
 })();
 </script>
