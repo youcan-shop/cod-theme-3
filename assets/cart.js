@@ -112,9 +112,6 @@ async function updateOnchange(cartItemId, productVariantId) {
   const quantity = input.value;
 
   await updateQuantity(cartItemId, productVariantId, quantity);
-  updateDOM(cartItemId, productVariantId, quantity);
-  updatePrice(cartItemId,productVariantId,quantity);
-  updateTotalPrice();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
