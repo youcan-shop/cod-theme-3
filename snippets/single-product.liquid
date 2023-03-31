@@ -44,7 +44,7 @@
   {% assign product_name = product.name %}
 
   <!-- prettier-ignore -->
-  {% render 'product-images-showcase', images: images, product_name: product_name, hidden: section.settings.hide_gallery, id: uniqID , view: 'desktop' -%}
+  {% render 'product-images-showcase', images: images, product_name: product_name, hidden: section.settings.hide_gallery, id: uniqID , view: 'mobile' -%}
 
   <div class='product-details'>
     {%- for block in section.blocks -%}
@@ -116,39 +116,27 @@
 </div>
 
 <script defer>
-(function() {
-  const products = {{ product.images.size }};
-  const desktopSlider = new Splide(`#yc_slider_{{ uniqID }}.yc-slider__desktop`, {
-    arrows: products > 3,
-    rewind: true,
-    perPage: Math.min(products, 4),
-    perMove: 1,
-    gap: '10px',
-    drag: 'free',
-    snap: true,
-    breakpoints: {
-      1024: {
-        perPage: Math.min(products, 3),
-      },
-      767: {
-        direction: 'ttb',
-        height: '255px',
-      },
+const products = {{ product.images.size }};
+const mobileSlider2 = new Splide(`#yc_slider_{{ uniqID }}.yc-slider__mobile`, {
+  arrows: false,
+  drag: true,
+  flickMaxPages: 1,
+  pagination: true,
+  paginationType: 'bullets',
+  gap:'4px',
+  perPage: 1,
+  rewind: true,
+  fixedWidth: '90%',
+  type: 'loop',
+  rewind: true,
+  rewindSpeed: 1000,
+
+  breakpoints: {
+    767: {
     },
-  });
-  const resizedIcons = () => {
-    if (products >= 3 && window.innerWidth < 1024 || products >= 4) {
-      document.querySelector('.yc-slider__desktop').style.padding = '0 40px';
-    }
-    if (products > 3) {
-      document.querySelector('.thumbnail-images').style.justifyContent = 'center';
-    }
-    if (window.innerWidth < 768) {
-      document.querySelector('.yc-slider__desktop').style.padding = '0';
-    }
-  }
-  desktopSlider.on('mounted', resizedIcons);
-  desktopSlider.on('resize', resizedIcons);
-  desktopSlider.mount();
-})();
+  },
+});
+
+mobileSlider2.mount();
+
 </script>
