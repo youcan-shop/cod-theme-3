@@ -132,19 +132,20 @@ const mobileSlider2 = new Splide(`#yc_slider_{{ uniqID }}.yc-slider__mobile`, {
   rewindSpeed: 1000
 });
 
-(function setupMediaQueryListener() {
-  const mediaQuery = window.matchMedia('(min-width: 768px)');
+mobileSlider2.mount();
 
-  function checkMediaQuery(e) {
-    if (e.matches) {
-      mobileSlider2.destroy();
-    } else {
-      mobileSlider2.mount();
-    }
+function checkMediaQuery(e) {
+  if (e.matches) {
+    console.log('destroyed');
+    mobileSlider2.destroy();
+  } else {
+    console.log('mounted');
+    mobileSlider2.mount();
   }
+}
 
-  mediaQuery.addListener(checkMediaQuery);
-  checkMediaQuery(mediaQuery);
-})();
+const mediaQuery = window.matchMedia('(min-width: 768px)');
+mediaQuery.addEventListener('change', checkMediaQuery);
+checkMediaQuery(mediaQuery);
 
 </script>
