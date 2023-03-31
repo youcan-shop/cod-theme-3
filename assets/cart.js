@@ -24,32 +24,58 @@ function updateCart(item, quantity, totalPriceSelector, cartItemId, productVaria
   const increase = input.nextElementSibling;
 
   const productPrice = inputHolder.querySelector('.product-price').innerText;
-  const currency = productPrice.split(' ')[0];
-  const price = productPrice.split(' ')[1];
+  
+  // Extract currency and price from the productPrice string
+  let currency = '';
+  let price = '';
+  
+  productPrice.split(' ').forEach((element) => {
+    if (isNaN(Number(element))) {
+      currency += element;
+    } else {
+      price += element;
+    }
+  });
+
   const totalPrice = inputHolder.querySelector(totalPriceSelector);
 
   decrease
     .querySelector('button')
     .setAttribute('onclick', `decreaseQuantity('${cartItemId}', '${productVariantId}', '${Number(quantity) - 1}')`);
+    
   increase
     .querySelector('button')
     .setAttribute('onclick', `increaseQuantity('${cartItemId}', '${productVariantId}', '${Number(quantity) + 1}')`);
 
   if (isNaN(quantity)) {
-    totalPrice.innerText = 0;
+    totalPrice.innerText = `${currency} ${0}`;
+    
   } else if (currency && price) {
     totalPrice.innerText = `${currency} ${price * quantity}`;
+    
   }
 }
 
 function updateTotalPrice() {
   let totalPrice = 0;
-  let currency;
+  let currency = '';
+  
   const itemPrices = document.querySelectorAll('.item-price');
+  
   itemPrices.forEach(itemPrice => {
-    currency = itemPrice.innerText.split(' ')[0];
-    const price = itemPrice.innerText.split(' ')[1];
-    totalPrice += Number(price);
+    let currentCurrency = '';
+    let currentPrice = '';
+
+    itemPrice.innerText.split(' ').forEach((element) => {
+      if (isNaN(Number(element))) {
+        currentCurrency += element;
+      } else {
+        currentPrice += element;
+      }
+    });
+
+    currency = currentCurrency;
+    totalPrice += Number(currentPrice);
   });
 
   const totalPriceElement = document.querySelector('.item-total-price');
