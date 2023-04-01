@@ -69,7 +69,19 @@ function attachRemoveItemListeners() {
 }
 
 async function removeCartItem(cartItemId, productVariantId) {
+  // Get the remove button and spinner elements for this cartItemId
+  const removeButton = document.querySelector(`[data-cart-item-id="${cartItemId}"]`);
+  const spinner = document.querySelector(`[data-spinner-id="${cartItemId}"]`);
+
   try {
+    // Hide the remove button and show the spinner
+    if (removeButton) {
+      removeButton.style.display = 'none';
+    }
+    if (spinner) {
+      spinner.style.display = 'block';
+    }
+
     const response = await youcanjs.cart.removeItem({
       cartItemId,
       productVariantId,
@@ -82,8 +94,18 @@ async function removeCartItem(cartItemId, productVariantId) {
     // Handle errors while removing the item from the cart
     // e.g., show an error message
     console.error('Error removing item from cart:', error);
-  }
+  } finally {
+    // Hide only spinner and do not display remove button again
+    if (spinner) {
+      spinner.style.display = 'none';
+      
+      // Update Cart Drawer to reflect changes in UI
+      updateCartDrawer();
+      
+     }
+   }
 }
+
 
 async function updateCartDrawer() {
   console.log('Updating cart drawer');
@@ -118,9 +140,16 @@ async function updateCartDrawer() {
         removeButton.setAttribute('data-cart-item-id', item.id);
         removeButton.setAttribute('data-product-variant-id', item.productVariant.id);
         
-        li.appendChild(removeButton);
-        
-        ul.appendChild(li);
+        // Add a spinner element (hidden by default) to each cart item
+    const spinner = document.createElement('div');
+    spinner.classList.add('spinner');
+    spinner.setAttribute('data-spinner-id', item.id);
+    spinner.style.display = 'none';
+
+    li.appendChild(removeButton);
+    li.appendChild(spinner);  // Add the spinner element here
+
+    ul.appendChild(li);
       }
     
       cartDrawerContent.appendChild(ul);
