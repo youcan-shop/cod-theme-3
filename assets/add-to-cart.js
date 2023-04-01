@@ -180,22 +180,11 @@ function toggleCartDrawer() {
 
   // Toggle the 'open' class on the cart drawer
   cartDrawer.classList.toggle('open');
+  document.querySelector('.cart-overlay').classList.toggle('open');
+
 }
 
 // Handle closing the cart drawer when clicking outside of it
-document.addEventListener('click', (event) => {
-  const cartDrawer = document.querySelector('.cart-drawer');
-  
-  if (event.target.closest('.cart-drawer')) return; // Click inside the cart drawer, do nothing
-  
-  if (event.target.closest('.add-to-cart')) return; // Click on add-to-cart button, do nothing
-
-  
-   if (cartDrawer.classList.contains('open')) {
-    toggleCartDrawer(); // Close the cart drawer
-   }
-});
-
 document.addEventListener('DOMContentLoaded', async () => {
   // Attach click event listener to the navbar cart icon
   document.querySelector('#navbar-cart-icon').addEventListener('click', toggleCartDrawer);
@@ -203,9 +192,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Attach click event listener to the cart drawer close button
   document.querySelector('.cart-drawer__close').addEventListener('click', toggleCartDrawer);
 
+  // Attach click event listener to the cart overlay
+  document.querySelector('.cart-overlay').addEventListener('click', toggleCartDrawer);
+
   // Update Cart Drawer on page load
   await updateCartDrawer();
 
   // Other code that depends on elements being available in the DOM
 });
-
