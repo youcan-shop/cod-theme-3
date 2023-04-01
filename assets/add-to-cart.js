@@ -113,7 +113,8 @@ async function updateCartDrawer() {
   try {
     const cartData = await youcanjs.cart.fetch();
     console.log(cartData);
-
+// Handle closing the cart drawer when clicking on the close button
+document.querySelector('.cart-drawer__close').addEventListener('click', toggleCartDrawer);
     const cartDrawerContent = document.querySelector('.cart-drawer__content');
 
     if (!cartDrawerContent) {
@@ -181,9 +182,6 @@ function toggleCartDrawer() {
   cartDrawer.classList.toggle('open');
 }
 
-// Handle closing the cart drawer when clicking on the close button
-document.querySelector('.cart-drawer__close').addEventListener('click', toggleCartDrawer);
-
 // Handle closing the cart drawer when clicking outside of it
 document.addEventListener('click', (event) => {
   const cartDrawer = document.querySelector('.cart-drawer');
@@ -197,3 +195,17 @@ document.addEventListener('click', (event) => {
     toggleCartDrawer(); // Close the cart drawer
    }
 });
+
+document.addEventListener('DOMContentLoaded', async () => {
+  // Attach click event listener to the navbar cart icon
+  document.querySelector('#navbar-cart-icon').addEventListener('click', toggleCartDrawer);
+
+  // Attach click event listener to the cart drawer close button
+  document.querySelector('.cart-drawer__close').addEventListener('click', toggleCartDrawer);
+
+  // Update Cart Drawer on page load
+  await updateCartDrawer();
+
+  // Other code that depends on elements being available in the DOM
+});
+
