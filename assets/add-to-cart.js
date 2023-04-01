@@ -46,6 +46,45 @@ async function addToCart(snippetId) {
   }
 }
 
+function attachRemoveItemListeners() {
+  document.querySelectorAll('.remove-item-btn').forEach((btn) =>
+    btn.addEventListener('click', async (event) => {
+      const cartItemId = event.target.getAttribute('data-cart-item-id');
+      const productVariantId = event.target.getAttribute('data-product-variant-id');
+
+      await removeCartItem(cartItemId, productVariantId);
+      
+      // Update the cart drawer after removing an item
+      await updateCartDrawer();
+      
+      // Update the total number of items in the cart badge
+      const cartBadge = document.querySelector('#cart-items-badge');
+      
+      if (cartBadge) {
+        const updatedCount = Number(cartBadge.innerHTML) - 1;
+        cartBadge.innerHTML = updatedCount;
+      }
+    })
+  );
+}
+
+async function removeCartItem(cartItemId, productVariantId) {
+  try {
+    const response = await youcanjs.cart.removeItem({
+      cartItemId,
+      productVariantId,
+    });
+
+    // Handle successful removal of the item from the cart
+    // e.g., update UI, show a success message, etc.
+
+  } catch (error) {
+    // Handle errors while removing the item from the cart
+    // e.g., show an error message
+    console.error('Error removing item from cart:', error);
+  }
+}
+
 async function updateCartDrawer() {
   console.log('Updating cart drawer');
 
@@ -71,10 +110,24 @@ async function updateCartDrawer() {
       for (const item of cartData.items) {
         const li = document.createElement('li');
         li.textContent = `${item.productVariant.product.name} - ${item.productVariant.variations.red} - Quantity: ${item.quantity}`;
+    
+        // Add a remove button to each cart item
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.classList.add('remove-item-btn');
+        removeButton.setAttribute('data-cart-item-id', item.id);
+        removeButton.setAttribute('data-product-variant-id', item.productVariant.id);
+        
+        li.appendChild(removeButton);
+        
         ul.appendChild(li);
       }
-
+    
       cartDrawerContent.appendChild(ul);
+    
+      // Attach event listeners to the newly added remove buttons
+      attachRemoveItemListeners();
+    
 
     } else {
       const p = document.createElement('p');
