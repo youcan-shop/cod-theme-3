@@ -1,8 +1,8 @@
 .cart-drawer {
   position: fixed;
   top: 0;
-  right: -450px; /* Set this equal to the width of your cart drawer */
-  width: 450px; /* Adjust this value based on your desired cart drawer width */
+  right: -100%;
+  width: 450px;
   height: 100%;
   background: #FFFFFF;
   overflow-y: auto;
@@ -119,6 +119,11 @@
   font-size: 14px;
   text-decoration-line: line-through;
   color: #757575;
+}
+@media (max-width: 768px) {
+  .cart-drawer {
+    width: 300px;
+  }
 }
 
 .cart-overlay {
