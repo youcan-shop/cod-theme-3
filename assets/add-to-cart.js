@@ -27,8 +27,8 @@ async function addToCart(snippetId) {
     const cartDrawer = document.querySelector('.cart-drawer');
 
     if (cart) {
-      let cartBadgeBudge = Number(cart.innerHTML);
-      cart.innerHTML = ++cartBadgeBudge;
+      let cartBadgeBudge = response.count;
+      cart.innerHTML = cartBadgeBudge;
       
       // Update the cart drawer
       if (cartDrawer) {
@@ -86,7 +86,7 @@ async function removeCartItem(cartItemId, productVariantId) {
       productVariantId,
     });
   } catch (error) {
-    console.error('Error removing item from cart:', error);
+    notify(error.message, 'error');
   } finally {
     if (spinner) {
       spinner.style.display = 'none';
@@ -183,7 +183,7 @@ async function updateCartDrawer() {
     }
 
   } catch (error) {
-    console.error(error);
+    notify(error.message, 'error');
   }
 }
 
