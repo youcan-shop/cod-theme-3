@@ -171,7 +171,7 @@ async function updateCartDrawer() {
           <span class="total-price">إجمالي المبلغ</span>
           <span class="currency-value">${cartData.total}</span>
         </div>
-        <a href='{{ routes.cart_url }}' class="yc-btn">الدفع</a>
+        <a href='${location.origin}/cart' class="yc-btn">الدفع</a>
       </div>
     `;
     cartDrawerContent.innerHTML += cartContainer;
