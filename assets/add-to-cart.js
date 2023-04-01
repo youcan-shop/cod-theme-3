@@ -107,14 +107,31 @@ async function removeCartItem(cartItemId, productVariantId) {
 }
 
 
+function cartTemplate(item) {
+  return `
+    <li class="cart-item">
+      <div class="item-body">
+        <img src="${item.productVariant.product.images[0].url}" />
+          ${item.productVariant.product.name} - ${item.productVariant.variations.red} - Quantity: ${item.quantity}
+          <button class="remove-item-btn" data-cart-item-id="${item.id}" data-product-variant-id="${item.productVariant.id}">Remove</button>
+          <div class="spinner" data-spinner-id="${item.id}" style="display: none;"></div>
+      </div>
+    </li>
+  `;
+}
+
 async function updateCartDrawer() {
+  const cartDrawerContent = document.querySelector('.cart-drawer__content');
+
   console.log('Updating cart drawer');
 
   try {
     const cartData = await youcanjs.cart.fetch();
-    console.log(cartData);
-// Handle closing the cart drawer when clicking on the close button
-document.querySelector('.cart-drawer__close').addEventListener('click', toggleCartDrawer);
+    console.log(cartData.count);
+
+    document.querySelector('.cart-drawer__close').addEventListener('click', toggleCartDrawer);
+
+    // Define cartDrawerContent here
     const cartDrawerContent = document.querySelector('.cart-drawer__content');
 
     if (!cartDrawerContent) {
@@ -125,40 +142,28 @@ document.querySelector('.cart-drawer__close').addEventListener('click', toggleCa
     // Clear existing content
     cartDrawerContent.innerHTML = '';
 
+    const cartHeader = `
+      <div class="header">
+        <h2 class="cart">سلتك <span>${cartData.count}</span></h2>
+      </div>
+    `;
+    cartDrawerContent.innerHTML += cartHeader;
+
+    
     // Check if the cart has items
     if (cartData.count > 0) {
       // Create a list of items in the cart
-      const ul = document.createElement('ul');
+      const products = document.createElement('ul');
 
       for (const item of cartData.items) {
-        const li = document.createElement('li');
-        li.textContent = `${item.productVariant.product.name} - ${item.productVariant.variations.red} - Quantity: ${item.quantity}`;
-    
-        // Add a remove button to each cart item
-        const removeButton = document.createElement('button');
-        removeButton.textContent = 'Remove';
-        removeButton.classList.add('remove-item-btn');
-        removeButton.setAttribute('data-cart-item-id', item.id);
-        removeButton.setAttribute('data-product-variant-id', item.productVariant.id);
-        
-        // Add a spinner element (hidden by default) to each cart item
-    const spinner = document.createElement('div');
-    spinner.classList.add('spinner');
-    spinner.setAttribute('data-spinner-id', item.id);
-    spinner.style.display = 'none';
-
-    li.appendChild(removeButton);
-    li.appendChild(spinner);  // Add the spinner element here
-
-    ul.appendChild(li);
+        products.innerHTML += cartTemplate(item);
       }
     
-      cartDrawerContent.appendChild(ul);
+      cartDrawerContent.appendChild(products);
     
       // Attach event listeners to the newly added remove buttons
       attachRemoveItemListeners();
     
-
     } else {
       const p = document.createElement('p');
       p.textContent = 'Your cart is currently empty.';
@@ -169,6 +174,7 @@ document.querySelector('.cart-drawer__close').addEventListener('click', toggleCa
     console.error(error);
   }
 }
+
 
 function toggleCartDrawer() {
   const cartDrawer = document.querySelector('.cart-drawer');
