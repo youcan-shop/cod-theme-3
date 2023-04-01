@@ -1,8 +1,10 @@
+
+
 .cart-drawer {
   position: fixed;
   top: 0;
-  right: -478px; /* Set this equal to the width of your cart drawer */
-  width: 478px; /* Adjust this value based on your desired cart drawer width */
+  right: -450px; /* Set this equal to the width of your cart drawer */
+  width: 450px; /* Adjust this value based on your desired cart drawer width */
   height: 100%;
   background: #FFFFFF;
   overflow-y: auto;
@@ -13,10 +15,16 @@
     right: 0;
   }
 
+  .empty-cart {
+    padding: 30px 24px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
   .cart-drawer__close {
     position: absolute;
     top: 13px;
-    left: 22px;
+    left: 13.5px;
     background-color: transparent;
     border: none;
     font-size: 36px;

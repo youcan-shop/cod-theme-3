@@ -130,8 +130,8 @@ function cartTemplate(item) {
             <span class="compare-price">${item.productVariant.compare_at_price}</span>
             <span class="price">${item.productVariant.price}</span>
           </div>
-          <button class="remove-item-btn" data-cart-item-id="${item.id}" data-product-variant-id="${item.productVariant.id}">
-            <ion-icon name="trash-outline"></ion-icon>
+          <button class="remove-item-btn">
+            <ion-icon data-cart-item-id="${item.id}" data-product-variant-id="${item.productVariant.id}" name="trash-outline"></ion-icon>
           </button>
           <div class="spinner" data-spinner-id="${item.id}" style="display: none;"></div>
         </div>
@@ -193,6 +193,7 @@ async function updateCartDrawer() {
     
     } else {
       const p = document.createElement('p');
+      p.classList.add('empty-cart');
       p.textContent = 'Your cart is currently empty.';
       cartDrawerContent.appendChild(p);
     }
@@ -230,6 +231,4 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Update Cart Drawer on page load
   await updateCartDrawer();
-
-  // Other code that depends on elements being available in the DOM
 });
