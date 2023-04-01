@@ -14,7 +14,7 @@
 }
 .cart-drawer .cart-drawer__close {
   position: absolute;
-  top: 12px;
+  top: 13px;
   left: 22px;
   background-color: transparent;
   border: none;
@@ -42,9 +42,33 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  color: #fff;
+}
+.cart-drawer .footer {
+  border-top: 1px solid #EBEBEB;
+  position: absolute;
+  bottom: 0;
+  padding: 26px 24px;
+  width: 100%;
+}
+.cart-drawer .footer .price-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.cart-drawer .footer .price-wrapper .total-price {
+  font-weight: 700;
+  font-size: 16px;
+}
+.cart-drawer .footer .price-wrapper .currency-value {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--yc-primary-color);
+}
+.cart-drawer .footer a {
+  margin-top: 24px;
 }
 .cart-drawer ul {
-  padding: 32px 24px;
+  margin: 0 24px;
 }
 .cart-drawer ul .cart-item img {
   width: 82px;
@@ -53,12 +77,43 @@
 .cart-drawer ul .cart-item .item-body {
   display: flex;
   gap: 16px;
+  border-bottom: 1px solid #EBEBEB;
+  padding: 32px 0;
+  position: relative;
 }
-.cart-drawer ul .cart-item .remove-item-btn {
-  display: flex;
+.cart-drawer ul .cart-item .remove-item-btn, .cart-drawer ul .cart-item .spinner {
+  position: absolute;
+  left: 0;
+  top: 30px;
 }
 .cart-drawer ul .cart-item .item-details {
-  display: block;
+  max-width: 195px;
+}
+.cart-drawer ul .cart-item .item-details .product-name {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+}
+.cart-drawer ul .cart-item .item-details .variants {
+  margin-top: 12px;
+  font-weight: 400;
+  font-size: 13.5px;
+}
+.cart-drawer ul .cart-item .item-details .product-price {
+  margin-top: 14px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.cart-drawer ul .cart-item .item-details .product-price .price {
+  font-weight: 700;
+  font-size: 18px;
+}
+.cart-drawer ul .cart-item .item-details .product-price .compare-price {
+  font-weight: 400;
+  font-size: 14px;
+  text-decoration-line: line-through;
+  color: #757575;
 }
 
 .cart-overlay {

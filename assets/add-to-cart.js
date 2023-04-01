@@ -108,13 +108,33 @@ async function removeCartItem(cartItemId, productVariantId) {
 
 
 function cartTemplate(item) {
+  // Loop through variations and create a string representation
+  const variationsArray = [];
+  for (const key in item.productVariant.variations) {
+    if (item.productVariant.variations.hasOwnProperty(key)) {
+      variationsArray.push(`${key}: ${item.productVariant.variations[key]}`);
+    }
+  }
+  const variationsString = variationsArray.join('&nbsp;&nbsp;');
+
   return `
     <li class="cart-item">
       <div class="item-body">
         <img src="${item.productVariant.product.images[0].url}" />
-          ${item.productVariant.product.name} - ${item.productVariant.variations.red} - Quantity: ${item.quantity}
-          <button class="remove-item-btn" data-cart-item-id="${item.id}" data-product-variant-id="${item.productVariant.id}">Remove</button>
+        <div class="item-details">
+          <p class="product-name">${item.productVariant.product.name}</p>
+          <div class="variants">
+            الكمية:${item.quantity} &nbsp;${variationsString}
+          </div>
+          <div class="product-price">
+            <span class="compare-price">${item.productVariant.compare_at_price}</span>
+            <span class="price">${item.productVariant.price}</span>
+          </div>
+          <button class="remove-item-btn" data-cart-item-id="${item.id}" data-product-variant-id="${item.productVariant.id}">
+            <ion-icon name="trash-outline"></ion-icon>
+          </button>
           <div class="spinner" data-spinner-id="${item.id}" style="display: none;"></div>
+        </div>
       </div>
     </li>
   `;
@@ -142,12 +162,19 @@ async function updateCartDrawer() {
     // Clear existing content
     cartDrawerContent.innerHTML = '';
 
-    const cartHeader = `
+    const cartContainer = `
       <div class="header">
         <h2 class="cart">سلتك <span>${cartData.count}</span></h2>
       </div>
+      <div class="footer">
+        <div class="price-wrapper">
+          <span class="total-price">إجمالي المبلغ</span>
+          <span class="currency-value">${cartData.total}</span>
+        </div>
+        <a href='{{ routes.cart_url }}' class="yc-btn">الدفع</a>
+      </div>
     `;
-    cartDrawerContent.innerHTML += cartHeader;
+    cartDrawerContent.innerHTML += cartContainer;
 
     
     // Check if the cart has items
