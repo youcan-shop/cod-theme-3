@@ -25,7 +25,9 @@
   },
   "cart": {
     "title": "عربة التسوق",
+    "cart": "سلتك",
     "items_count": "منتجات",
+    "total_amount": "إجمالي المبلغ",
     "items": {
       "quantity": "الكمية",
       "total": "المجموع",

@@ -112,7 +112,7 @@ function cartTemplate(item) {
         <div class="item-details">
           <p class="product-name">${item.productVariant.product.name}</p>
           <div class="variants">
-            الكمية:${item.quantity} &nbsp;${variationsString}
+          ${quantityVariant}:${item.quantity} &nbsp;${variationsString}
           </div>
           <div class="product-price">
             <span class="compare-price">${item.productVariant.compare_at_price}</span>
@@ -149,14 +149,14 @@ async function updateCartDrawer() {
 
     const cartContainer = `
       <div class="header">
-        <h2 class="cart">سلتك <span>${cartData.count}</span></h2>
+        <h2 class="cart">${cartName}<span> ${cartData.count}</span></h2>
       </div>
       <div class="footer">
         <div class="price-wrapper">
-          <span class="total-price">إجمالي المبلغ</span>
+          <span class="total-price">${totalAmount}</span>
           <span class="currency-value">${cartData.total}</span>
         </div>
-        <a href='${location.origin}/cart' class="yc-btn">الدفع</a>
+        <a href='${location.origin}/cart' class="yc-btn">${checkoutPayment}</a>
       </div>
     `;
     cartDrawerContent.innerHTML += cartContainer;

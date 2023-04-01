@@ -18,7 +18,9 @@
   },
   "cart": {
     "title": "Shopping Cart",
+    "cart": "your basket",
     "items_count": "items",
+    "total_amount": "Total",
     "items": {
       "quantity": "Quantity",
       "total": "Total",
