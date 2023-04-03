@@ -24,5 +24,7 @@
   const totalAmount = "{{ 'cart.total_amount' | t }}";
   const checkoutPayment = "{{ 'cart.summary.checkout_cta' | t }}";
   const emptyCart = "{{ 'cart.empty_cart' | t }}";
+  const defaultImage = '{{ "product-default.png" | asset_url }}';
+
 {% endjavascript %}
 {{ 'add-to-cart.js' | asset_url | script_tag_deferred }}
