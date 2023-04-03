@@ -128,6 +128,7 @@ async function removeItem(cartItemId, productVariantId) {
     document.getElementById(`cart-item-${cartItemId}`).remove();
 
     updateTotalPrice();
+    await updateCartDrawer();
     
     const cartItemsBadge = document.getElementById('cart-items-badge');
 
@@ -158,3 +159,5 @@ async function removeItem(cartItemId, productVariantId) {
     stopLoad(`#loading__${cartItemId}`);
   }
 }
+
+window.removeItem = removeItem;
