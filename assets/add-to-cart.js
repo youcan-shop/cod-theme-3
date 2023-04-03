@@ -104,6 +104,7 @@ function cartTemplate(item) {
     }
   }
   const variationsString = variationsArray.join('&nbsp;&nbsp;');
+  const variationsCheck = variationsString === 'default: default' ? '' : variationsString;
 
   return `
     <li class="cart-item">
@@ -112,10 +113,10 @@ function cartTemplate(item) {
         <div class="item-details">
           <p class="product-name">${item.productVariant.product.name}</p>
           <div class="variants">
-          ${quantityVariant}:${item.quantity} &nbsp;${variationsString}
+          ${quantityVariant}:${item.quantity} &nbsp;${variationsCheck}
           </div>
           <div class="product-price">
-            <span class="compare-price">${item.productVariant.compare_at_price}</span>
+            <span class="compare-price">${item.productVariant.compare_at_price ? item.productVariant.compare_at_price : ''}</span>
             <span class="price">${item.productVariant.price}</span>
           </div>
           <button class="remove-item-btn">
@@ -147,19 +148,13 @@ async function updateCartDrawer() {
     // Clear existing content
     cartDrawerContent.innerHTML = '';
 
-    const cartContainer = `
+    const headerContainer = `
       <div class="header">
         <h2 class="cart">${cartName}<span> ${cartData.count}</span></h2>
       </div>
-      <div class="footer">
-        <div class="price-wrapper">
-          <span class="total-price">${totalAmount}</span>
-          <span class="currency-value">${cartData.total}</span>
-        </div>
-        <a href='${location.origin}/cart' class="yc-btn">${checkoutPayment}</a>
-      </div>
     `;
-    cartDrawerContent.innerHTML += cartContainer;
+    
+    cartDrawerContent.innerHTML += headerContainer;
 
     
     // Check if the cart has items
@@ -182,11 +177,21 @@ async function updateCartDrawer() {
       cartDrawerContent.appendChild(p);
     }
 
+    const footerContainer = `
+        <div class="footer">
+          <div class="price-wrapper">
+            <span class="total-price">${totalAmount}</span>
+            <span class="currency-value">${cartData.total}</span>
+          </div>
+          <a href='${location.origin}/cart' class="yc-btn">${checkoutPayment}</a>
+        </div>
+    `;
+    cartDrawerContent.innerHTML += footerContainer;
+
   } catch (error) {
     notify(error.message, 'error');
   }
 }
-
 
 function toggleCartDrawer() {
   const cartDrawer = document.querySelector('.cart-drawer');
