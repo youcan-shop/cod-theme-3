@@ -111,7 +111,7 @@ function cartTemplate(item) {
   return `
     <li class="cart-item">
       <div class="item-body">
-        ${imageUrl ? `<img src="${imageUrl}" />` : ''}
+        ${imageUrl && `<img src="${imageUrl}" />`}
         <div class="item-details">
           <p class="product-name">${item.productVariant.product.name}</p>
           <div class="variants">
