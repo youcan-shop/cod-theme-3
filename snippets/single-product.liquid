@@ -65,11 +65,9 @@
             <div class='product-price-container top-spacing'>
               <h2 class='product-price'>{{ product.price | money }}</h2>
               {% if section_settings.show_compare_at_price and product.compare_at_price != nil %}
-                <div class="compare-container">
                   <h3 class="compare-price">
                     <del>{{ product.compare_at_price | money }}</del>
                   </h3>
-                </div>
               {% endif %}
             </div>
           {%- when 'general_review' -%}
