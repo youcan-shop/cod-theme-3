@@ -170,7 +170,7 @@ async function updateCartDrawer() {
     } else {
       const p = document.createElement('p');
       p.classList.add('empty-cart');
-      p.textContent = 'Your cart is currently empty.';
+      p.textContent = emptyCart;
       cartDrawerContent.appendChild(p);
     }
 

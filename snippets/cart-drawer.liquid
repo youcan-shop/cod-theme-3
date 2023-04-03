@@ -23,5 +23,6 @@
   const cartName = "{{ 'cart.cart' | t }}";
   const totalAmount = "{{ 'cart.total_amount' | t }}";
   const checkoutPayment = "{{ 'cart.summary.checkout_cta' | t }}";
+  const emptyCart = "{{ 'cart.empty_cart' | t }}";
 {% endjavascript %}
 {{ 'add-to-cart.js' | asset_url | script_tag_deferred }}
