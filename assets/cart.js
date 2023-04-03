@@ -134,7 +134,7 @@ async function removeItem(cartItemId, productVariantId) {
     const cartItems = document.querySelectorAll('.cart__item');
 
     if (cartItemsBadge) {
-      cartItemsBadge.innerText = parseInt(cartItemsBadge.innerText) + 1;
+      cartItemsBadge.innerText = parseInt(cartItemsBadge.innerText) - 1;
     }
 
     if (cartItems.length === 0) {
