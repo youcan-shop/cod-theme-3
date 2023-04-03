@@ -137,9 +137,6 @@ async function updateCartDrawer() {
 
     document.querySelector('.cart-drawer__close').addEventListener('click', toggleCartDrawer);
 
-    // Define cartDrawerContent here
-    const cartDrawerContent = document.querySelector('.cart-drawer__content');
-
     if (!cartDrawerContent) {
       console.error('Cart drawer content not found');
       return;
@@ -177,7 +174,7 @@ async function updateCartDrawer() {
       cartDrawerContent.appendChild(p);
     }
 
-    const footerContainer = `
+    const footerContainerHTML = `
         <div class="footer">
           <div class="price-wrapper">
             <span class="total-price">${totalAmount}</span>
@@ -186,7 +183,13 @@ async function updateCartDrawer() {
           <a href='${location.origin}/cart' class="yc-btn">${checkoutPayment}</a>
         </div>
     `;
-    cartDrawerContent.innerHTML += footerContainer;
+
+    // Create a DOM element for the footer container
+    const footerContainer = document.createElement('div');
+    footerContainer.innerHTML = footerContainerHTML;
+    
+    // Append the footer container to the cart drawer content
+    cartDrawerContent.appendChild(footerContainer);
 
   } catch (error) {
     notify(error.message, 'error');
