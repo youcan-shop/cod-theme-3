@@ -107,7 +107,7 @@ function cartTemplate(item) {
   const variationsCheck = variationsString === 'default: default' ? '' : variationsString;
 
   // Check if there's an image URL available
-  const imageUrl = item.productVariant.product.images.length > 0 ? item.productVariant.product.images[0].url : '';
+  const imageUrl = item.productVariant.product.images.length > 0 ? item.productVariant.product.images[0].url : '/store-front/images/product-default.png';
   return `
     <li class="cart-item">
       <div class="item-body">
