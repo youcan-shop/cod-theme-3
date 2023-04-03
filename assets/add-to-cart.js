@@ -106,10 +106,12 @@ function cartTemplate(item) {
   const variationsString = variationsArray.join('&nbsp;&nbsp;');
   const variationsCheck = variationsString === 'default: default' ? '' : variationsString;
 
+  // Check if there's an image URL available
+  const imageUrl = item.productVariant.product.images.length > 0 ? item.productVariant.product.images[0].url : '';
   return `
     <li class="cart-item">
       <div class="item-body">
-        <img src="${item.productVariant.product.images[0].url}" />
+        ${imageUrl ? `<img src="${imageUrl}" />` : ''}
         <div class="item-details">
           <p class="product-name">${item.productVariant.product.name}</p>
           <div class="variants">
