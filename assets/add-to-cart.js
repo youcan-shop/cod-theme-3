@@ -204,6 +204,12 @@ function toggleCartDrawer() {
     return;
   }
 
+  if (cartDrawer.classList.contains('open')) {
+    document.body.style.overflow = 'auto';
+  } else {
+    document.body.style.overflow = 'hidden';
+  }
+
   // Toggle the 'open' class on the cart drawer
   cartDrawer.classList.toggle('open');
   document.querySelector('.cart-overlay').classList.toggle('open');
