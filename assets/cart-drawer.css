@@ -95,6 +95,11 @@
   padding: 32px 0;
   position: relative;
 }
+@media (max-width: 768px) {
+  .cart-drawer ul .cart-item .item-body {
+    padding: 20px 0;
+  }
+}
 .cart-drawer ul .cart-item .remove-item-btn, .cart-drawer ul .cart-item .spinner {
   position: absolute;
   left: 0;
@@ -128,6 +133,11 @@
   font-size: 14px;
   text-decoration-line: line-through;
   color: #757575;
+}
+@media (max-width: 768px) {
+  .cart-drawer ul {
+    margin: 0 16px;
+  }
 }
 @media (max-width: 768px) {
   .cart-drawer {

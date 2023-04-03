@@ -110,6 +110,10 @@
         border-bottom: 1px solid #EBEBEB;
         padding: 32px 0;
         position: relative;
+
+        @include max-screen('md') {
+          padding: 20px 0;
+        }
       }
 
       .remove-item-btn, .spinner {
@@ -152,6 +156,10 @@
           }
         }
       }
+    }
+
+    @include max-screen('md') {
+      margin: 0 16px;
     }
   }
 
