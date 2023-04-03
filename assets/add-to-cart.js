@@ -154,7 +154,6 @@ async function updateCartDrawer() {
     `;
     
     cartDrawerContent.innerHTML += headerContainer;
-
     
     // Check if the cart has items
     if (cartData.count > 0) {
