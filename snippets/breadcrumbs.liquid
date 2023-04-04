@@ -13,7 +13,6 @@
     </div>
     {%- if template contains 'collection' -%}
       <div class="breadcrumbs-name">
-      {%- dump collection.products -%}
         <h1>{{ category.name }}</h1>
       </div>
       {%- else -%}
@@ -30,9 +29,6 @@
       </div>
       <div class="listings__item arrow">
         <img src='{{ 'left-arrow.png' | asset_url }}'>
-      </div>
-      <div class="first-listing">
-        {{ category.name }}
       </div>
       <div class="listings__item arrow">
         <img src='{{ 'left-arrow.png' | asset_url }}'>
