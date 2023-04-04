@@ -179,7 +179,7 @@ async function updateCartDrawer() {
         <div class="footer">
           <div class="price-wrapper">
             <span class="total-price">${CART_DRAWER_TRANSLATION.totalAmount}</span>
-            <span class="currency-value">${cartData.total}</span>
+            <span class="currency-value">${cartData.sub_total}</span>
           </div>
           <a href='${location.origin}/cart' class="yc-btn">${CART_DRAWER_TRANSLATION.checkoutPayment}</a>
         </div>
