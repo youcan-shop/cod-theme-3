@@ -128,27 +128,24 @@
     }
 
     .menu-item {
+      height: var(--yc-nav-height);
+      display: flex;
+      align-items: center;
+
       a {
-        display: flex;
-        align-items: center;
         color: var(--yc-nav-links-color);
         font-size: 15px;
         font-weight: 600;
-        height: 100%;
         text-decoration: none;
       }
     }
     
     .itemactive {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: var(--yc-nav-height);
       border-bottom: 3px solid var(--yc-primary-color);
       
       a {
         font-weight: 700;
-        height: fit-content;
+        margin-bottom: -4px;
       }
 
       @include breakpoint('md') {
