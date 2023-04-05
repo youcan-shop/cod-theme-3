@@ -118,19 +118,15 @@
   text-decoration: none;
 }
 .yc-header .yc-navbar .itemactive {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--yc-nav-height);
+  border-bottom: 3px solid var(--yc-primary-color);
 }
 .yc-header .yc-navbar .itemactive a {
   font-weight: 700;
-}
-.yc-header .yc-navbar .itemactive::after {
-  content: "";
-  position: absolute;
-  bottom: calc(-1 * var(--yc-nav-height) / 2.7);
-  left: 0;
-  width: 100%;
-  height: 3.6px;
-  background-color: var(--yc-primary-color);
+  height: fit-content;
 }
 .yc-header .yc-navbar .menu-item a,
 .yc-header .yc-navbar .corner a {

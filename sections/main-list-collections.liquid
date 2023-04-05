@@ -1,25 +1,6 @@
 {{ 'queries-handler.css' | asset_url | stylesheet_tag }}
 {{ 'collection-listing.css' | asset_url | stylesheet_tag }}
 
-{% style %}
-  .yc-section-title {
-    display: flex;
-    justify-content: {{ section.settings.section_title_position }};
-  }
-
-  .categories-spacing {
-    margin-top: {{ section.settings.margin_top }}px;
-    margin-bottom: {{ section.settings.margin_bottom }}px;
-  }
-
-  .category-name {
-    color: {{ section.settings.category_name_color.hex }};
-  }
-  
-  .slug-name {
-    color: {{ section.settings.category_slug_color.hex }}; 
-  }
-{% endstyle %
 
 {%- assign per_page = section.settings.items_per_page -%}
 <div class='yc-collection-listing'>
