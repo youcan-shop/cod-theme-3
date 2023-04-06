@@ -99,6 +99,11 @@
       transform: translate(-50%, -50%);
       display: flex;
 
+      [dir='ltr'] & {
+        left: 33px;
+        right: unset;
+      }
+
       @include breakpoint('md') {
         display: none;
       }
@@ -106,7 +111,7 @@
 
     .logo {
       img {
-        height: calc(var(--yc-nav-height) - 20px);  
+        height: calc(var(--yc-nav-height) - 20px);
         max-height: 40px;
       }
 
@@ -139,7 +144,7 @@
         text-decoration: none;
       }
     }
-    
+
     .itemactive {
       border-bottom: 3px solid var(--yc-primary-color);
 
