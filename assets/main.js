@@ -2,8 +2,6 @@
 /* ----- navbar ----- */
 /* ------------------ */
 const navFixed = document.querySelector('.nav-fixed');
-const notice = document.querySelector('.yc-notice');
-const noticeDesktop = document.querySelector('.yc-notice.desktop');
 const noticeMobile = document.querySelector('.yc-notice.mobile');
 const overlay = document.querySelector('.global-overlay');
 const drawer = document.querySelector('.navbar-drawer');
@@ -24,12 +22,11 @@ function makeNavbarStatic() {
 }
 
 function handleScroll() {
-  if (navFixed && noticeDesktop) {
+  if (navFixed) {
     const navbarHeight = navFixed.offsetHeight;
-    const noticeHeight = noticeDesktop.offsetHeight;
     const scrollTop = window.scrollY || window.pageYOffset;
 
-    scrollTop >= navbarHeight + noticeHeight ? makeNavbarFixed() : makeNavbarStatic();
+    scrollTop >= navbarHeight ? makeNavbarFixed() : makeNavbarStatic();
   }
 }
 
@@ -77,10 +74,9 @@ function openDrawer(el) {
   }
 }
 
-if (navFixed && noticeDesktop) {
+if (navFixed) {
   handleScroll();
   window.addEventListener('scroll', handleScroll);
-  window.addEventListener('resize', handleScroll);
 }
 
 if (overlay) hideOverlay();
@@ -92,7 +88,7 @@ const searchHolder = document.getElementById('searchInputHolder');
 
 const openSearch = () => {
   const isNavBarFixed = navFixed?.classList.contains('fixed');
-  const noticeHeight = isNavBarFixed ? 0 : notice?.offsetHeight;
+  const noticeHeight = isNavBarFixed ? 0 : noticeMobile?.offsetHeight;
 
   if (!overlay || !searchHolder) return;
 
@@ -213,3 +209,4 @@ function desktopStickyElements(elementsContainer) {
     }
   })
 }
+
