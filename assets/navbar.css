@@ -78,7 +78,7 @@
   border-radius: 50%;
   z-index: 10;
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .yc-header .yc-navbar .menu, .yc-header .yc-navbar .menu-toggler {
     height: 30px;
   }
