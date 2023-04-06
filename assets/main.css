@@ -50,11 +50,6 @@ body {
     padding: 0 140px;
   }
 }
-.container.fluid {
-  max-width: 100%;
-  min-width: 100%;
-  width: 100%;
-}
 
 input,
 textarea,

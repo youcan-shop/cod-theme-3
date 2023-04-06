@@ -45,12 +45,6 @@ body {
   @include breakpoint('xl') {
     padding: 0 140px;
   }
-
-  &.fluid {
-    max-width: 100%;
-    min-width: 100%;
-    width: 100%;
-  }
 }
 
 input,
