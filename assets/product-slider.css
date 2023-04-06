@@ -41,7 +41,7 @@
     left: 127px;
   }
   [dir=ltr] .product-slider .splide__arrows {
-    left: calc(100% - 24px);
+    left: calc(100% - 32px);
   }
 }
 .product-slider .product-block {
