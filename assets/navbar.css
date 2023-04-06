@@ -78,15 +78,10 @@
   border-radius: 50%;
   z-index: 10;
 }
-.yc-header .yc-navbar .menu-toggler {
-  position: absolute;
-  right: 0;
-  transform: translate(-50%, -50%);
-  display: flex;
-}
-[dir=ltr] .yc-header .yc-navbar .menu-toggler {
-  left: 33px;
-  right: unset;
+@media (max-width: 768px) {
+  .yc-header .yc-navbar .menu, .yc-header .yc-navbar .menu-toggler {
+    height: 30px;
+  }
 }
 @media (min-width: 768px) {
   .yc-header .yc-navbar .menu-toggler {

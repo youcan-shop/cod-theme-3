@@ -93,17 +93,13 @@
       }
     }
 
-    .menu-toggler {
-      position: absolute;
-      right: 0;
-      transform: translate(-50%, -50%);
-      display: flex;
-
-      [dir='ltr'] & {
-        left: 33px;
-        right: unset;
+    @include max-screen('md') {
+      .menu, .menu-toggler {
+        height: 30px;
       }
+    }
 
+    .menu-toggler {
       @include breakpoint('md') {
         display: none;
       }
