@@ -45,9 +45,9 @@ function showOverlay() {
 
 function closeDrawer() {
   document.body.style.overflowY = 'auto';
+  drawer.style.position = 'fixed';
   overlay.style.opacity = '0';
   drawer.style.transform = 'translateY(-100%)';
-  drawer.style.marginTop = '0';
 }
 
 function hideOverlay() {
@@ -71,8 +71,8 @@ function openDrawer(el) {
     targetedDrawer.style.transform = 'none';
     targetedDrawer.style.opacity = '1';
 
-    if (navbar && noticeMobile) targetedDrawer.style.marginTop = `${navbar.offsetHeight + noticeMobile.offsetHeight}px`;
-
+    if (navbar && noticeMobile) targetedDrawer.style.position = 'relative';
+    document.body.style.overflowY = 'hidden';
     toggleDrawerIcon();
   }
 }
