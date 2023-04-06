@@ -92,11 +92,6 @@
   height: calc(var(--yc-nav-height) - 20px);
   max-height: 40px;
 }
-@media (max-width: 768px) {
-  .yc-header .yc-navbar .logo:first-child {
-    margin-right: 40px;
-  }
-}
 .yc-header .yc-navbar .menu-list {
   display: none;
   list-style: none;
