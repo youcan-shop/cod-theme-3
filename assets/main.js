@@ -201,14 +201,14 @@ function desktopStickyElements(elementsContainer) {
   elementsWrapper.appendChild(emptySpacer);
   document.body.append(elementsWrapper);
 
-  if (window.matchMedia("(min-width: 768px)").matches) {
+  if (window.matchMedia("(min-width: 992px)").matches) {
     elementsWrapper.classList.add('container');
   }
 
   window.addEventListener('resize', () => {
-    if(window.innerWidth >= 768) {
+    if(window.innerWidth >= 992) {
       elementsWrapper.classList.add('container');
-    } else if(window.innerWidth < 768) {
+    } else if(window.innerWidth < 992) {
       elementsWrapper.classList.remove('container');
     }
   })
