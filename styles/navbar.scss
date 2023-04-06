@@ -93,7 +93,7 @@
       }
     }
 
-    @include max-screen('md') {
+    @media screen and (max-width: 767px) {
       .menu, .menu-toggler {
         height: 30px;
       }
@@ -147,9 +147,6 @@
       a {
         font-weight: 700;
         margin-bottom: -3px;
-      }
-
-      @include breakpoint('md') {
       }
     }
 
