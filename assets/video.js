@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     youtubeVideo.appendChild(iframe);
 
     youtubeVideo.addEventListener('click', function () {
-      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&origin=${encodeURIComponent(window.location.origin)}`;
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
       iframe.style.display = 'block';
       youtubeThumbnail.style.display = 'none';
       youtubePlayButton.style.display = 'none'; // Hide the play button when video starts playing
