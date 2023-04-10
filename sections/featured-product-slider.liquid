@@ -45,7 +45,7 @@
       {%- render 'product-slider', blocks: section.blocks, id: id , view: 'desktop' -%}
       {%- render 'product-slider', blocks: section.blocks, id: id , view: 'mobile'  -%}
 </div>
-<script>
+<script defer>
   const isMobile1 = window.matchMedia("(max-width: 768px)");
   const products = {{ section.blocks.size }};
       let perPage = 4;
