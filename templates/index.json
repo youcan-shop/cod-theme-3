@@ -299,8 +299,8 @@
             "type": "main-video",
             "settings": {
                 "video_type": "youtube",
-                "video_link": "https:\/\/youtu.be\/lTRiuFIWV54",
-                "video_height": 500,
+                "video_link": "https:\/\/youtu.be\/T28YCE0EZ9A",
+                "video_height": 490,
                 "video_width": 100
             }
         },
@@ -348,7 +348,7 @@
                 "tag_text_color": "#ffffff",
                 "padding_top": 10,
                 "padding_bottom": 10,
-                "product": "9053f259-a4c0-460a-8ac0-a5a7fc51a6b8"
+                "product": "d079016b-3536-4e25-bcc2-8848a84fae69"
             },
             "blocks": {
                 "block_wm96irovh68stqp": {
@@ -400,6 +400,10 @@
                         "input_text_size": 16,
                         "input_border_radius": 0
                     }
+                },
+                "block_smjy2qd1d1k6vah": {
+                    "type": "product_variants",
+                    "settings": {}
                 }
             },
             "order": [
@@ -407,10 +411,30 @@
                 "block_wnc04iqcvnbmf6o",
                 "block_woy708t4or8fqr0k",
                 "block_wq0yuzxjf5bo1x",
+                "block_smjy2qd1d1k6vah",
                 "block_ww9v79ap58dltrt",
                 "block_wxsdnwc332fbwea",
                 "block_x06c4jp88c55bar"
             ]
+        },
+        "section_h77l23cflmljph5": {
+            "type": "feature-products-by-category",
+            "settings": {
+                "category": "0a7efe3a-42a0-4103-a929-f2b35125944a",
+                "section_title_position": "center",
+                "padding_top": 5,
+                "padding_bottom": 30,
+                "number_of_products": 8,
+                "show_compare_at_price": true,
+                "link_of_collection_by_category": true,
+                "background_color": "#FFFFFFFF",
+                "countdown_message": "<p>Hurry up! There aren't many items left in stock.<\/p>",
+                "countdown_year": 0,
+                "countdown_month": 0,
+                "countdown_day": 0,
+                "countdown_hour": 0,
+                "countdown_minute": 0
+            }
         }
     },
     "order": [
@@ -422,6 +446,7 @@
         "section_elct0ov0jkibcl3m",
         "section_mtk7dtud7u8wjuh",
         "section_wag061g5345cquu",
+        "section_h77l23cflmljph5",
         "section_vnib23zu82hrh6l"
     ]
 }

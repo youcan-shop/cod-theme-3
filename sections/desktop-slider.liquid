@@ -34,7 +34,7 @@
 {% render 'slider', blocks: section.blocks, id: id , view: 'desktop' %}
 {% render 'slider', blocks: section.blocks, id: id , view: 'mobile' %}
 
-<script async>
+<script defer>
   const isMobile = window.matchMedia("(max-width: 760px)");
   const slider = document.querySelector('#yc_slider_{{ id }}');
   const commonSliderSettings = {
@@ -71,19 +71,20 @@
     ...commonSliderSettings,
     ...mobileSliderSettings
   });
+  
   const mountSlider = () => {
     try {
       if (isMobile.matches) {
-        mobileSlider.mount();
+        window.requestAnimationFrame(() => mobileSlider.mount());
       } else {
-        desktopSlider.mount();
+        window.requestAnimationFrame(() => desktopSlider.mount());
       }
     } catch (e) {
       console.error(e);
     }
   };
   mountSlider();
-  isMobile.addEventListener('change', mountSlider);
+  isMobile.addEventListener('change', mountSlider, { passive: true });
 </script>
 
 
