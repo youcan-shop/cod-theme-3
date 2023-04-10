@@ -3,9 +3,10 @@
 <div class='video-wrapper container'>
   {% if section.settings.video_link %}
     {% if section.settings.video_type == 'youtube' %}
-    <div id='youtube-video' class='youtube-video' data-video-link="{{ section.settings.video_link }}">
-      <img class='youtube-thumbnail' src='' loading='lazy'>
+      <div id='youtube-video' class='youtube-video' data-video-link="{{ section.settings.video_link }}">
+        <img class='youtube-thumbnail' src='' loading='lazy'>
         <div class='youtube-play-button'></div>
+        <div class="spinner video-spinner"></div>
       </div>
     {% endif %}
     {% if section.settings.video_type == 'facebook' %}
@@ -25,7 +26,7 @@
 {% endif %}
 </div>
 
-<script>
+<script defer>
   const width = {{ section.settings.video_width }} * (window.innerWidth / 100)
   const height = {{ section.settings.video_height }}
   const videoLink = '{{ section.settings.video_link }}'
