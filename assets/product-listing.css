@@ -136,10 +136,15 @@
 }
 
 .sort-container {
+  width: 100%;
+  min-width: 335px;
+  max-width: 350px;
   display: flex;
   align-items: flex-end;
 }
 .sort-container #productDropdownFiltring {
+  width: 100%;
+  min-width: 335px;
   max-width: 350px;
 }
 .sort-container #productDropdownFiltring .dropdown-content {
