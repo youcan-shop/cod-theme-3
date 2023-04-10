@@ -100,7 +100,7 @@
     }
 
     .menu-toggler {
-      @include breakpoint('md') {
+      @include breakpoint('lg') {
         display: none;
       }
     }
@@ -110,6 +110,12 @@
         height: calc(var(--yc-nav-height) - 20px);
         max-height: 40px;
       }
+
+      @include max-screen('lg') {
+        &:first-child {
+          margin-right: 40px;
+        }
+      }
     }
 
     .menu-list {
@@ -117,7 +123,7 @@
       list-style: none;
       gap: 32px;
 
-      @include breakpoint('md') {
+      @include breakpoint('lg') {
         display: flex;
       }
     }

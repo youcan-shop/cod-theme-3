@@ -83,7 +83,7 @@
     height: 30px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .yc-header .yc-navbar .menu-toggler {
     display: none;
   }
@@ -92,12 +92,17 @@
   height: calc(var(--yc-nav-height) - 20px);
   max-height: 40px;
 }
+@media (max-width: 992px) {
+  .yc-header .yc-navbar .logo:first-child {
+    margin-right: 40px;
+  }
+}
 .yc-header .yc-navbar .menu-list {
   display: none;
   list-style: none;
   gap: 32px;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .yc-header .yc-navbar .menu-list {
     display: flex;
   }
