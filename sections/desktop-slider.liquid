@@ -34,7 +34,7 @@
 {% render 'slider', blocks: section.blocks, id: id , view: 'desktop' %}
 {% render 'slider', blocks: section.blocks, id: id , view: 'mobile' %}
 
-<script defer>
+<script async>
   const isMobile = window.matchMedia("(max-width: 760px)");
   const slider = document.querySelector('#yc_slider_{{ id }}');
   const commonSliderSettings = {

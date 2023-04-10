@@ -9,8 +9,7 @@
           class='splide__slide'
           {{ block.youcan_attributes }}
         >
-          <img
-            loading='lazy'
+          <img 
             src='{%- if block.settings.image.src -%} {{ block.settings.image.src }} {%- else -%} {{ 'hero.png' | asset_url }} {%- endif -%}'
           >
           {%- if block.settings.caption %}

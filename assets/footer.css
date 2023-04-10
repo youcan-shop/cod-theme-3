@@ -127,10 +127,6 @@
   width: 29px;
   height: 30px;
 }
-.yc-footer .social-media-links .link .image {
-  width: 100%;
-  height: 100%;
-}
 @media (min-width: 768px) {
   .yc-footer .copyright-wrapper {
     margin-top: 23px;

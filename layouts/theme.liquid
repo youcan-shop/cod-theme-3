@@ -8,7 +8,7 @@
 
     {{ content_for_header }}
 
-    {{ 'helper.js' | asset_url | script_tag_deferred }}
+    {{ 'helper.js' | asset_url | script_tag }}
   </head>
   <body>
     {%- render 'overlay' -%}
