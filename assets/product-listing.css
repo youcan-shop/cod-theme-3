@@ -145,9 +145,6 @@
   width: 100%;
   min-width: 280px;
 }
-.sort-container #productDropdownFiltring .dropdown-content {
-  top: 40px;
-}
 .sort-container #productDropdownFiltring .dropdown-content a {
   color: black;
   padding: 10px;
