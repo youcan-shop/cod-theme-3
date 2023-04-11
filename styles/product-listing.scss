@@ -151,15 +151,13 @@
 
 .sort-container {
   width: 100%;
-  min-width: 335px;
-  max-width: 350px;
+  max-width: max-content;
   display: flex;
   align-items: flex-end;
 
   #productDropdownFiltring {
     width: 100%;
-    min-width: 335px;
-    max-width: 350px;
+    min-width: 280px;
 
     .dropdown-content {
       top: 40px;
