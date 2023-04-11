@@ -8,8 +8,9 @@
   }
 
 
-  .multi-column-{{ id }} .yc-section-title{
-    justify-content: {{ section.settings.section_title_position }};
+  .multi-column-{{ id }} .product-column-title {
+    text-align: {{ section.settings.section_title_position }};
+    margin-bottom: 15px;
     font-weight: 700;
     font-size: 26px;
     color: {{ section.settings.title_text_color.hex }};
@@ -92,7 +93,7 @@
 {% endstyle %}
 
 <div class='multi-column-{{ id }} container'>
-    <h3 class='yc-section-title'>{{ section.settings.title }}</h3>
+    <h3 class='product-column-title'>{{ section.settings.title }}</h3>
     <div class='multi-column-blocks'>
       {% for block in section.blocks %}
         {% assign block_setting = block.settings %}
