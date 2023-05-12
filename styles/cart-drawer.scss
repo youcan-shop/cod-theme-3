@@ -92,6 +92,7 @@
 
       .currency-code {
         font-weight: 700;
+        color: var(--yc-primary-color);
       }
     }
 
@@ -163,7 +164,7 @@
             font-weight: 700;
           }
 
-          .compare-price {
+          .compare-price, .compare-price-currency {
             font-weight: 400;
             font-size: 14px;
             text-decoration-line: line-through;

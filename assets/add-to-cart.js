@@ -121,7 +121,7 @@ function cartTemplate(item) {
           </div>
           <div class="product-price">
             <span class="compare-price">${item.productVariant.compare_at_price ? item.productVariant.compare_at_price : ''}</span>
-            <span class="compare-price">${currencyCode}</span>
+            <span class="compare-price-currency">${currencyCode}</span>
             <div class="currency-wrapper">
               <span class="price">${item.productVariant.price}</span>
               <span class="currency-code">${currencyCode}</span>
