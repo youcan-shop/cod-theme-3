@@ -33,8 +33,8 @@ function handleScroll() {
 
 function toggleDrawerIcon() {
   if (menuCloseIcon && menuOpenIcon) {
-    menuCloseIcon.style.display = menuCloseIcon.style.display === 'none' ? '' : 'none';
-    menuOpenIcon.style.display = menuOpenIcon.style.display === 'none' ? '' : 'none';
+    menuCloseIcon.style.display = menuCloseIcon.style.display === 'none' ? 'block' : 'none';
+    menuOpenIcon.style.display = menuOpenIcon.style.display === 'none' ? 'block' : 'none';
 
     // check if drawer is open, if yes, close it
     if (menuOpenIcon.style.display === 'none') {
@@ -55,7 +55,7 @@ function closeDrawer() {
   drawer.style.transform = 'translateY(-100%)';
 
   if (menuCloseIcon && menuOpenIcon) {
-    menuCloseIcon.style.display = '';
+    menuCloseIcon.style.display = 'block';
     menuOpenIcon.style.display = 'none';
   }
 }
