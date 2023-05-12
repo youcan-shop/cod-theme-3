@@ -68,7 +68,6 @@
   left: 0;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.14);
 }
 .yc-collection-listing .collection-list .collection-thumbnail .collection-details .collection-name {
   font-weight: 600;
