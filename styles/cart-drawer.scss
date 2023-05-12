@@ -89,6 +89,10 @@
         font-size: 18px;
         color: var(--yc-primary-color);
       }
+
+      .currency-code {
+        font-weight: 700;
+      }
     }
 
     a {
@@ -151,13 +155,12 @@
         .product-price {
           margin-top: 14px;
           display: flex;
+          color: var(--yc-primary-color);
           gap: 6px;
           align-items: center;
 
-          .price {
-            color: var(--yc-primary-color);
+          .price, .currency-code {
             font-weight: 700;
-            font-size: 18px;
           }
 
           .compare-price {
@@ -166,6 +169,12 @@
             text-decoration-line: line-through;
             color: #757575;
           }
+        }
+
+        .currency-wrapper {
+          display: flex;
+          align-items: center;
+          gap: 4px;
         }
       }
     }
