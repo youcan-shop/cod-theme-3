@@ -40,7 +40,7 @@
               class='menu-toggler text-3xl'
               onclick="openDrawer('.navbar-drawer')"
             >
-              <ion-icon name='menu-outline'></ion-icon>
+              {%- render 'icon', name: 'menu' -%}
             </button>
             
             <ul class='menu-list'>
@@ -57,7 +57,7 @@
               class='search'
               onclick='openSearch()'
             >
-              <ion-icon name="search-outline"></ion-icon>
+              {%- render 'icon', name: 'search' -%}
             </button>
             <div id='searchInputHolder'> 
               <div class='container search-wrapper'> 
@@ -81,7 +81,7 @@
               <span id='cart-items-badge'>
                 {{- cart.items | size -}}
               </span>
-              <ion-icon name="cart-outline"></ion-icon>
+              {%- render 'icon', name: 'cart' -%}
             </button>
           </div>
       {%- endcase %}
