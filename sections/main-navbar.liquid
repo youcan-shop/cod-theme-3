@@ -37,11 +37,16 @@
         {%- when 'menu' %}
           <div class='menu'>  
               <button
-              class='menu-toggler text-3xl'
-              onclick="openDrawer('.navbar-drawer')"
-            >
-              {%- render 'icon', name: 'menu' -%}
-            </button>
+                class='menu-toggler text-3xl'
+                onclick="openDrawer('.navbar-drawer')"
+              >
+                <span id="nav-menu-open">
+                  {%- render 'icon', name: 'menu' -%}
+                </span>
+                <span id="nav-menu-close" style="display: none">
+                  {%- render 'icon', name: 'menu-close' -%}
+                </span>
+              </button>
             
             <ul class='menu-list'>
               {% for item in main-link-list.links %}

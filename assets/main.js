@@ -5,9 +5,10 @@ const navFixed = document.querySelector('.nav-fixed');
 const noticeMobile = document.querySelector('.yc-notice.mobile');
 const overlay = document.querySelector('.global-overlay');
 const drawer = document.querySelector('.navbar-drawer');
-const menuIcon = document.querySelector('.menu-toggler ion-icon');
 const drawerBtn = document.querySelector('.close-drawer-btn');
 const closeSearchBtn = document.querySelector('.close-search');
+const menuCloseIcon = document.querySelector('#nav-menu-open');
+const menuOpenIcon = document.querySelector('#nav-menu-close');
 
 function makeNavbarFixed() {
   document.body.style.paddingTop = `${navFixed.offsetHeight}px`;
@@ -31,8 +32,15 @@ function handleScroll() {
 }
 
 function toggleDrawerIcon() {
-  const iconName = menuIcon.getAttribute('name');
-  iconName === 'menu-outline' ? menuIcon.setAttribute('name', 'close-outline') : (menuIcon.setAttribute('name', 'menu-outline'), closeDrawer());
+  if (menuCloseIcon && menuOpenIcon) {
+    menuCloseIcon.style.display = menuCloseIcon.style.display === 'none' ? '' : 'none';
+    menuOpenIcon.style.display = menuOpenIcon.style.display === 'none' ? '' : 'none';
+
+    // check if drawer is open, if yes, close it
+    if (menuOpenIcon.style.display === 'none') {
+      closeDrawer();
+    }
+  }
 }
 
 function showOverlay() {
@@ -54,7 +62,11 @@ function hideOverlay() {
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay) {
       closeDrawer();
-      if (menuIcon) menuIcon.setAttribute('name', 'menu-outline');
+      
+      if (menuCloseIcon && menuOpenIcon) {
+        menuCloseIcon.style.display = 'none';
+        menuOpenIcon.style.display = '';
+      }
     }
   });
 }
