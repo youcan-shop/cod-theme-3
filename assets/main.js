@@ -53,6 +53,11 @@ function closeDrawer() {
   drawer.style.position = 'fixed';
   overlay.style.opacity = '0';
   drawer.style.transform = 'translateY(-100%)';
+
+  if (menuCloseIcon && menuOpenIcon) {
+    menuCloseIcon.style.display = '';
+    menuOpenIcon.style.display = 'none';
+  }
 }
 
 function hideOverlay() {
@@ -62,11 +67,6 @@ function hideOverlay() {
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay) {
       closeDrawer();
-      
-      if (menuCloseIcon && menuOpenIcon) {
-        menuCloseIcon.style.display = 'none';
-        menuOpenIcon.style.display = '';
-      }
     }
   });
 }
