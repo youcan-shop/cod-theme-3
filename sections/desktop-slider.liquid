@@ -14,14 +14,14 @@
   .yc-slider__mobile .content {
     background-color: {{ section.settings.slider_mobile_overlay_background_color.hex }};
   }
-  
+
   #yc_slider_{{ id }} .splide__pagination {
     {% if section.settings.slider_pagination == true %}
       display: block !important;
       text-align: center;
     {% endif %}
   }
-  
+
 {% endstyle %}
 
 {{ 'splide.min.css' | asset_url | stylesheet_tag }}
@@ -69,7 +69,7 @@
     ...commonSliderSettings,
     ...mobileSliderSettings
   });
-  
+
   const mountSlider = () => {
     try {
       if (isMobile.matches) {
@@ -102,7 +102,7 @@
       "type": "color",
       "id": "slider_overlay_background_color",
       "label": "Overlay Background Color",
-      "default": "#0000007d",
+      "default": "#0016FF0C",
       "maintain-opacity": true
     },
     {
