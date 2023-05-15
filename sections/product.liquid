@@ -4,8 +4,8 @@
 
 {%- style -%}
   .product_customization-{{ id }} {
-    padding-top: {{ section.settings.padding_top}}px;
-    padding-bottom: {{ section.settings.padding_bottom}}px;
+    padding-top: {{ section.settings.space_top}}px;
+    padding-bottom: {{ section.settings.space_bottom}}px;
   }
 {%- endstyle -%}
 
@@ -134,13 +134,13 @@
           "default": true
         },
         {
-          "label": "Background Color",
+          "label": "Background color",
           "id": "background_color",
           "type": "color",
           "default": "#ff7420"
         },
         {
-          "label": "Text Color",
+          "label": "Text color",
           "id": "text_color",
           "type": "color",
           "default": "#ffffff"
@@ -167,14 +167,14 @@
           "type": "richtext"
         },
         {
-          "label": "Text Color",
+          "label": "Text color",
           "id": "text_color",
           "type": "color",
           "default": "#000000"
         },
         {
-          "label": "Margin top",
-          "id": "margin_top",
+          "label": "Space top",
+          "id": "space_top",
           "min": 5,
           "max": 60,
           "step": 1,
@@ -355,8 +355,8 @@
     },
     {
       "type": "number",
-      "id": "padding_top",
-      "label": "Padding top",
+      "id": "space_top",
+      "label": "Space top",
       "min": 5,
       "max": 160,
       "step": 1,
@@ -365,8 +365,8 @@
     },
     {
       "type": "number",
-      "id": "padding_bottom",
-      "label": "Padding bottom",
+      "id": "space_bottom",
+      "label": "Space bottom",
       "min": 5,
       "max": 160,
       "step": 1,
