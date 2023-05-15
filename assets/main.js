@@ -102,8 +102,6 @@ const openSearch = () => {
   const noticeBar = document.querySelector('.yc-notice');
   const noticeHeight = noticeBar ? noticeBar.offsetHeight : 0;
 
-  console.log(noticeHeight);
-
   if (!overlay || !searchHolder) return;
 
   overlay.style.top = `${noticeHeight}px`;
