@@ -14,8 +14,8 @@
                 "slider_autoplay": true,
                 "slider_pagination": false,
                 "slider_mobile_autoplay": true,
-                "slider_mobile_overlay_background_color": "#0016FF0C",
-                "slider_overlay_background_color": "#0016FF0C",
+                "slider_mobile_overlay_background_color": "#ffffff00",
+                "slider_overlay_background_color": "#ffffff00",
                 "slider_mobile_height_percentage": 50
             },
             "blocks": {

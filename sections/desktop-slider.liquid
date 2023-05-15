@@ -16,12 +16,11 @@
   }
 
   #yc_slider_{{ id }} .splide__pagination {
-    {% if section.settings.slider_pagination == true %}
+    {% if section.settings.slider_pagination == true or section.settings.slider_mobile_pagination == true %}
       display: block !important;
       text-align: center;
     {% endif %}
   }
-
 {% endstyle %}
 
 {{ 'splide.min.css' | asset_url | stylesheet_tag }}
@@ -102,7 +101,7 @@
       "type": "color",
       "id": "slider_overlay_background_color",
       "label": "Overlay Background Color",
-      "default": "#0016FF0C",
+      "default": "#0000007d",
       "maintain-opacity": true
     },
     {
