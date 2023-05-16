@@ -88,20 +88,19 @@ function mountSlider(isMobile, mobileSlider, desktopSlider) {
 
   const runSlider = () => {
     try {
-      if (isMobile.matches) {
-        if (!isMobileSliderMounted) {
-          window.requestAnimationFrame(() => {
-            mobileSlider.mount();
-            isMobileSliderMounted = true;
-          });
-        }
-      } else {
-        if (!isDesktopSliderMounted) {
-          window.requestAnimationFrame(() => {
-            desktopSlider.mount();
-            isDesktopSliderMounted = true;
-          });
-        }
+      if (isMobile.matches && !isMobileSliderMounted) {
+        window.requestAnimationFrame(() => {
+          mobileSlider.mount();
+          isMobileSliderMounted = true;
+        });
+
+        return;
+      }
+      if (!isDesktopSliderMounted) {
+        window.requestAnimationFrame(() => {
+          desktopSlider.mount();
+          isDesktopSliderMounted = true;
+        });
       }
     } catch (e) {
       console.error(e);
