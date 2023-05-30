@@ -52,7 +52,10 @@
                 "title": "",
                 "margin_bottom": 50,
                 "margin_top": 50,
-                "background_color": "#FFFFFFFF"
+                "background_color": "#FFFFFFFF",
+                "text_color": "#000000FF",
+                "space_top": 32,
+                "space_bottom": 32
             },
             "blocks": {
                 "block_c9qx028mi12btfk4": {
