@@ -39,7 +39,9 @@
               {% endfor %}
             </div>
             <div class="prices">
-              <span class="compare-at-price">{{ variant.compare_at_price | money }}</span>
+              {% if variant.compare_at_price != nil %}
+                <span class="compare-at-price">{{ variant.compare_at_price | money }}</span>
+              {% endif %}
               <span class="price">{{ variant.price | money }}</span>
             </div>
           </div>
