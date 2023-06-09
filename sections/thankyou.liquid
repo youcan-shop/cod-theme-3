@@ -25,10 +25,18 @@
           </div>
         </div>
     </div>
-    <div class="order-info">
+    <div class="order-infos">
       {% for variant in order.order_variants %}
-          <span class="variant-name">{{ variant.name }}</span>
-          <span class="variant-price">{{ variant.price | money }}</span>
+        <div class="order-info">
+          <img class="variant-image" src="https://www.shutterstock.com/image-vector/just-you-motivational-hand-lettering-260nw-1083768020.jpg">
+          <div class="variant-infos">
+            <span class="name">{{ variant.name }}</span>
+            <div class="prices">
+              <span class="compare-at-price">{{ variant.compare_at_price | money }}</span>
+              <span class="price">{{ variant.price | money }}</span>
+            </div>
+          </div>
+        </div>
       {% endfor %}
     </div>
     <div class="order-details">
