@@ -11,13 +11,6 @@
 }
 {% endstyle %}
 
-<hr>
-<hr>
-<hr>
-{%dump order%}
-<hr>
-<hr>
-<hr>
 <div class="thankyou-page-bg">
   <div class="thankyou-page-container">
     <div class='thankyou-wrapper'>
@@ -34,9 +27,17 @@
     <div class="order-infos">
       {% for variant in order.order_variants %}
         <div class="order-info">
-          <img class="variant-image" src="https://www.shutterstock.com/image-vector/just-you-motivational-hand-lettering-260nw-1083768020.jpg">
+          <img class="variant-image" src="{{ variant.image }}">
           <div class="variant-infos">
             <span class="name">{{ variant.name }}</span>
+            <div class="variations">
+              {% for variation in variant.variations %}
+                <div class="variation">
+                  <span class="variation-name">{{ variation.0 }}:</span>
+                  <span class="variation-value">{{ variation.1 }}</span>
+                </div>
+              {% endfor %}
+            </div>
             <div class="prices">
               <span class="compare-at-price">{{ variant.compare_at_price | money }}</span>
               <span class="price">{{ variant.price | money }}</span>

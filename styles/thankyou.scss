@@ -92,9 +92,24 @@
           .name {
             font-weight: 600;
             font-size: 14px;
+            line-height: 120%;
+          }
+
+          .variations {
+            display: flex;
+            gap: 14px;
+
+            .variation {
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 150%;
+            }
           }
 
           .prices {
+            display: flex;
+            gap: 6px;
+
             .compare-at-price {
               font-weight: 400;
               font-size: 14px;
@@ -106,6 +121,7 @@
               font-weight: 700;
               font-size: 18px;
               color: var(--yc-primary-color);
+              line-height: 120%;
             }
           }
 
