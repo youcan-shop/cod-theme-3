@@ -121,12 +121,11 @@
                         "tag_text": "جديد",
                         "countdown_message": "<p><br><\/p>",
                         "tag_price_text": "45%-",
-                        "tag_price_color": "#E52B2AFF",
+                        "tag_price_color": "#E52B2A",
                         "countdown_enabled": true,
                         "countdown_year": 2024,
                         "price_reduction_text": "45%-",
-                        "price_reduction_text_color": "#FFFFFFFF",
-                        "product": "596f0239-5ef2-4551-927b-faae4a3d2a8d"
+                        "product": "8dc07bcd-c5ba-4fa5-8389-ce1553f4cad3"
                     }
                 },
                 "block_tazes9cn7e9q3e": {
