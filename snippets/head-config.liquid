@@ -142,6 +142,8 @@
 <title>
   {% if page.name %}
     {{ store.name }} | {{ page.name }}
+  {% elsif product %}
+    {{ store.name }} | {{ product.name }}
   {% else %}
     {{ store.name }} | {{ template.name }}
   {% endif %}
