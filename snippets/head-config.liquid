@@ -144,6 +144,8 @@
     {{ store.name }} | {{ page.name }}
   {% elsif product %}
     {{ store.name }} | {{ product.name }}
+  {% elsif category %}
+    {{ store.name }} | {{ category.name }}
   {% else %}
     {{ store.name }} | {{ template.name }}
   {% endif %}
