@@ -139,14 +139,26 @@
 
 {{ 'main.css' | asset_url | stylesheet_tag }}
 
+{% assign store_title = store.title | default: store.name %}
+
 <title>
-  {% if page.name %}
-    {{ store.name }} | {{ page.name }}
+  {% if page %}
+    {{ store_title }} | {{ page.name }}
   {% elsif product %}
-    {{ store.name }} | {{ product.name }}
+    {{ store_title }} | {{ product.name }}
   {% elsif category %}
-    {{ store.name }} | {{ category.name }}
-  {% else %}
-    {{ store.name }} | {{ template.name }}
+    {{ store_title }} | {{ category.name }}
+  {% elsif template %}
+    {% if template.name == 'index' %}
+      {{ store_title }}
+    {% elsif template.name == 'list-collections' %}
+      {{ store_title }} | {{ 'head_metadata.collections' | t }}
+    {% elsif template.name == 'cart' %}
+      {{ store_title }} | {{ 'head_metadata.cart' | t }}
+    {% elsif template.name == 'thankyou' %}
+      {{ store_title }} | {{ 'head_metadata.thankyou' | t }}
+    {% else %}
+      {{ store_title }} | {{ template.name }}
+    {% endif %}
   {% endif %}
 </title>
