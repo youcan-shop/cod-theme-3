@@ -8,7 +8,7 @@
         <img src='{{ 'left-arrow.png' | asset_url }}' alt="arrow" width="7" height="12" />
       </div>
       <div class="listings__item">
-        <a href="/collections" class="second-listing">{{ 'snippets.collection-listing.collections' | t }}</a>
+        {{ category.name }}
       </div>
     </div>
     {%- if template contains 'collection' -%}
