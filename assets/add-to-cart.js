@@ -236,5 +236,3 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Update Cart Drawer on page load
   await updateCartDrawer();
 });
-
-window.updateCartDrawer = updateCartDrawer;
