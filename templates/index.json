@@ -26,7 +26,7 @@
                         "button_text": "عرض المزيد",
                         "button_font_weight": "700",
                         "image": "ee-2N3ZbRScSrzCWzYniuOzuyqGChY.png",
-                        "caption_text_color": "#B900FFFF"
+                        "product": "881ba16e-51e4-45f2-85c4-19ffae541b63"
                     }
                 },
                 "block_qx88dcfkmfmqpeh": {
@@ -34,9 +34,8 @@
                     "settings": {
                         "image": "poster-club-edit_1200x608_crop_center-2JwtlvlpxunYvxe4TtyDkiBU7hO.jpeg",
                         "button_font_weight": "500",
-                        "caption": "<p>dsdsafdsfsd<\/p>",
-                        "button_text": "dsafdsaf",
-                        "caption_text_color": "#2600FFFF"
+                        "caption": "<p><br><\/p>",
+                        "button_text": ""
                     }
                 }
             },
