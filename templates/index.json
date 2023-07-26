@@ -14,11 +14,9 @@
                 "slider_autoplay": true,
                 "slider_pagination": false,
                 "slider_mobile_autoplay": true,
-                "slider_mobile_overlay_background_color": "#FFFFFF00",
-                "slider_overlay_background_color": "#5500FF30",
-                "slider_mobile_height_percentage": 50,
-                "slider_arrows_color": "#3A00FFFF",
-                "caption_text_color": "#FF0003FF"
+                "slider_mobile_overlay_background_color": "#ffffff00",
+                "slider_overlay_background_color": "#ffffff00",
+                "slider_mobile_height_percentage": 50
             },
             "blocks": {
                 "block_qw91o394p69bv8l": {
