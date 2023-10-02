@@ -99,8 +99,13 @@
 
     .logo {
       img {
-        height: calc(var(--yc-nav-height) - 20px);
-        max-height: 40px;
+        max-width: 110px;
+        height: auto;
+
+
+        @include breakpoint('md') {
+          max-width: 120px;
+        }
       }
     }
 
