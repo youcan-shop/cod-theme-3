@@ -138,6 +138,7 @@ let noticeHeight = notice?.offsetHeight;
 
 function openSearch() {
   const isNavBarFixed = fixedNavbar?.classList.contains('fixed');
+  const searchInput = document.querySelector('.search-input');
   noticeHeight = isNavBarFixed ? 0 : notice?.offsetHeightconsole;
 
   if (!overlay) return;
@@ -152,6 +153,7 @@ function openSearch() {
   searchHolder.style.opacity = '1';
   searchHolder.style.visibility = 'visible';
   searchHolder.style.top = `${noticeHeight || 0}px`;
+  searchInput.focus();
 }
 
 function closeSearch() {

@@ -146,6 +146,7 @@
   border: none;
   padding: 0;
   color: #111;
+  caret-color: var(--yc-primary-color);
 }
 #searchInputHolder #close-search-btn {
   display: flex;
