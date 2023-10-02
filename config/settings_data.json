@@ -9,7 +9,7 @@
                 "settings": {
                   "notice_bar_content_text_color": "#FFFFFFFF",
                   "notice_bar_background_color": "#3C415F",
-                  "notice_bar_content": "<p>Special offer: free delivery, pay on delivery, faster and order now<\/p>",
+                  "notice_bar_content": "<p>شحن مجاني ومنتج من إختيارك عند شرائك بقيمة 400ج.م أو أكثر<\/p>",
                   "notice_bar_height": 50,
                   "notice_bar_content_font_size": 16
                 }
