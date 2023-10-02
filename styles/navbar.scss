@@ -164,20 +164,24 @@
   z-index: 1001;
   background: white;
 
-  .search-input {
+  .search-form {
     width: 100%;
-    font-family: inherit;
-    border: none;
-    padding: 0;
-    color: #111;
+
+    .search-input {
+      width: 100%;
+      font-family: inherit;
+      border: none;
+      padding: 0;
+      color: #111;
+    }
   }
 
-  .search-btn {
+  #close-search-btn {
     display: flex;
     align-items: center;
 
     ion-icon {
-      font-size: 1.2rem;
+      font-size: 2rem;
       color: #111;
     }
   }

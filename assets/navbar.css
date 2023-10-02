@@ -137,19 +137,22 @@
   z-index: 1001;
   background: white;
 }
-#searchInputHolder .search-input {
+#searchInputHolder .search-form {
+  width: 100%;
+}
+#searchInputHolder .search-form .search-input {
   width: 100%;
   font-family: inherit;
   border: none;
   padding: 0;
   color: #111;
 }
-#searchInputHolder .search-btn {
+#searchInputHolder #close-search-btn {
   display: flex;
   align-items: center;
 }
-#searchInputHolder .search-btn ion-icon {
-  font-size: 1.2rem;
+#searchInputHolder #close-search-btn ion-icon {
+  font-size: 2rem;
   color: #111;
 }
 

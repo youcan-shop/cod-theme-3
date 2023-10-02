@@ -66,11 +66,11 @@
                 <ion-icon name="search-outline"></ion-icon>
               </button>
               <div id='searchInputHolder'>
-                <div class='container'>
+                <div class='container flex'>
                   <form
                     action='/search'
                     method='GET'
-                    class='flex'
+                    class='search-form'
                   >
                     <input
                       placeholder='{{ 'navbar.search.placeholder' | t }}'
@@ -79,13 +79,10 @@
                       value=''
                       class='search-input'
                     >
-                    <button
-                      type='submit'
-                      class='search-btn'
-                    >
-                      <ion-icon name="search-outline"></ion-icon>
-                    </button>
                   </form>
+                  <button id='close-search-btn'>
+                    <ion-icon name="close-outline"></ion-icon>
+                  </button>
                 </div>
               </div>
               <button class='cart relative' id='navbar-cart-icon' onclick='preventCartDrawerOpening("{{ template.name }}")'>

@@ -5,6 +5,7 @@ const currencyCode = window.Dotshop.currency;
 /* ------------------ */
 const fixedNavbar = document.querySelector('.nav-fixed');
 const notice = document.querySelector('.yc-notice');
+const closeSearchBtn = document.getElementById('close-search-btn');
 
 const makeNavbarFixed = () => {
   document.body.style.paddingTop = fixedNavbar.offsetHeight + 'px';
@@ -167,6 +168,7 @@ function closeSearch() {
 }
 
 overlay.addEventListener('click', closeSearch);
+closeSearchBtn.addEventListener('click', closeSearch);
 
 /* ---------------------------------------------- */
 /* ----- Group Sticky elements in one place ----- */
