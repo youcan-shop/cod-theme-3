@@ -81,55 +81,63 @@ function notify(msg, type = 'success', timeout = 3000) {
 }
 
 /* ----------------------------- */
-/* ----- navigation-drawer ----- */
+/* ----- mobile navigation ----- */
 /* ----------------------------- */
 const overlay = document.querySelector('.global-overlay');
-const drawer = document.querySelector('.navigation-drawer');
 
 const showOverlay = () => {
-  const overlay = document.querySelector('.global-overlay');
-
   document.body.style.overflowY = 'hidden';
   overlay.style.visibility = 'visible';
   overlay.style.opacity = '1';
 }
 
-const hideOverlay = () => {
-  const overlay = document.querySelector('.global-overlay');
-  const drawerBtn = document.querySelector('.close-drawer-btn');
+const closeMenu = (menuButton, mobileMenu, headerWrapper) => {
 
-  const closeDrawer = () => {
-    document.body.style.overflowY = 'auto';
-    overlay.style.visibility = 'hidden';
-    overlay.style.opacity = '0';
-    drawer.style.transform = 'translateX(150vw)';
-  };
+  document.body.style.overflowY = 'auto';
+  overlay.style.visibility = 'hidden';
+  overlay.style.opacity = '0';
 
-  if (drawerBtn) {
-    drawerBtn.addEventListener('click', closeDrawer);
+  if(headerWrapper.classList.contains('toggle-header')) {
+    headerWrapper.classList.remove('toggle-header');
+    mobileMenu.classList.remove('toggle-menu');
+    menuButton.classList.remove('close');
   }
+};
+
+const hideOverlay = () => {
+  const menuButton = document.getElementById('menuButton');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const headerWrapper = document.querySelector('.header-wrapper');
 
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay) {
-      closeDrawer();
+      closeMenu(menuButton, mobileMenu, headerWrapper);
     }
   });
 };
-
 
 if (overlay) {
   hideOverlay();
 }
 
-function openDrawer(el) {
-  const targetedDrawer = document.querySelector(`.navigation-drawer${el}`);
-  if (targetedDrawer) {
-    showOverlay();
-    targetedDrawer.style.transform = 'none';
-    targetedDrawer.style.opacity = '1';
+function toggleMobileMenu() {
+  const menuButton = document.getElementById('menuButton');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const headerWrapper = document.querySelector('.header-wrapper');
+
+  menuButton.classList.toggle('close');
+
+  if (mobileMenu) {
+    mobileMenu.classList.toggle('toggle-menu');
+
+    if (mobileMenu.classList.contains('toggle-menu')) {
+      showOverlay();
+      headerWrapper.classList.add('toggle-header');
+    } else {
+      closeMenu(menuButton, mobileMenu, headerWrapper);
+    }
   }
 }
-
 /* ------------------ */
 /* ----- search ----- */
 /* ------------------ */
