@@ -16,7 +16,7 @@
   left: 0;
   right: 0;
   width: 100%;
-  z-index: 101;
+  z-index: 1001;
   animation: make-navbar-fixed 0.2s ease;
 }
 @keyframes make-navbar-fixed {
@@ -56,12 +56,6 @@
 }
 .yc-header .yc-navbar .corner .search {
   font-size: 1.5rem;
-  display: none;
-}
-@media (min-width: 768px) {
-  .yc-header .yc-navbar .corner .search {
-    display: flex;
-  }
 }
 .yc-header .yc-navbar .corner .cart {
   font-size: 1.5rem;
@@ -139,20 +133,20 @@
   align-items: center;
   left: 0;
   width: 100vw;
-  height: var(--yc-nav-height);
+  height: calc(var(--yc-nav-height) + 1px);
   z-index: 1001;
   background: white;
 }
-#searchInputHolder .input,
-#searchInputHolder input {
-  max-width: 25rem;
+#searchInputHolder .search-input {
+  width: 100%;
+  font-family: inherit;
+  border: none;
+  padding: 0;
   color: #111;
 }
 #searchInputHolder .search-btn {
-  padding: 0 0.75rem;
   display: flex;
   align-items: center;
-  margin-left: -3rem;
 }
 #searchInputHolder .search-btn ion-icon {
   font-size: 1.2rem;
@@ -229,23 +223,6 @@
 .navigation-drawer .close-drawer-btn .close-svg {
   color: #C8C8C8;
   font-size: 1.6rem;
-}
-.navigation-drawer .mobile-search {
-  padding: 20px 16px;
-}
-.navigation-drawer .mobile-search input {
-  border: 1px solid #E4E4E4;
-  border-radius: 4px;
-  color: #A8A8A8;
-  padding: 20px;
-}
-.navigation-drawer .mobile-search input:focus {
-  border: 1px solid #000000;
-  color: #000000;
-}
-.navigation-drawer .mobile-search .search-icon {
-  position: absolute;
-  transform: translate(30px, -7px);
 }
 
 .global-overlay,
