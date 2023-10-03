@@ -212,7 +212,7 @@
 }
 #mobile-menu .items,
 #mobile-menu .items * {
-  color: var(--yc-drawer-links-color) !important;
+  color: #000 !important;
   font-family: var(--yc-drawer-font-family) !important;
   font-size: var(--yc-drawer-font-size) !important;
   font-weight: var(--yc-drawer-links-font-weight) !important;
