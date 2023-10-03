@@ -10,7 +10,7 @@
 .header-wrapper {
   position: relative;
 
-  &.toggle-header {
+  &.open {
     z-index: 1001;
   }
 }
@@ -238,9 +238,14 @@
     @extend .items-configs;
   }
 
-  &.toggle-menu {
+  &.is-open {
     transform: none;
     opacity: 1;
+
+    @include breakpoint('md') {
+      transform: unset;
+      opacity: 0;
+    }
   }
 
 

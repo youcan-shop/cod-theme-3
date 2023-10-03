@@ -6,6 +6,11 @@ const currencyCode = window.Dotshop.currency;
 const fixedNavbar = document.querySelector('.nav-fixed');
 const notice = document.querySelector('.yc-notice');
 const closeSearchBtn = document.getElementById('close-search-btn');
+const navMenuVariables = {
+  menuButton: document.getElementById('menuButton'),
+  mobileMenu: document.getElementById('mobile-menu'),
+  headerWrapper: document.querySelector('.header-wrapper'),
+};
 
 const makeNavbarFixed = () => {
   document.body.style.paddingTop = fixedNavbar.offsetHeight + 'px';
@@ -80,9 +85,9 @@ function notify(msg, type = 'success', timeout = 3000) {
   setTimeout(() => alert.setAttribute('class', alertClassList), timeout);
 }
 
-/* ----------------------------- */
-/* ----- mobile navigation ----- */
-/* ----------------------------- */
+/* ------------------- */
+/* ----- Overlay ----- */
+/* ------------------- */
 const overlay = document.querySelector('.global-overlay');
 
 const showOverlay = () => {
@@ -91,53 +96,51 @@ const showOverlay = () => {
   overlay.style.opacity = '1';
 }
 
-const closeMenu = (menuButton, mobileMenu, headerWrapper) => {
-
+const hideOverlay = () => {
   document.body.style.overflowY = 'auto';
   overlay.style.visibility = 'hidden';
   overlay.style.opacity = '0';
+};
 
-  if(headerWrapper.classList.contains('toggle-header')) {
-    headerWrapper.classList.remove('toggle-header');
-    mobileMenu.classList.remove('toggle-menu');
-    menuButton.classList.remove('close');
+overlay.addEventListener('click', (e) => {
+  const cartDrawer = document.querySelector('.cart-drawer');
+
+  if (e.target === overlay) {
+    hideOverlay();
+    closeMenu();
+
+    if(cartDrawer && cartDrawer.classList.contains('open')) {
+      cartDrawer.classList.remove('open');
+    }
+  }
+});
+/* ----------------------------- */
+/* ----- mobile navigation ----- */
+/* ----------------------------- */
+function closeMenu () {
+  if(navMenuVariables.headerWrapper.classList.contains('open')) {
+    navMenuVariables.headerWrapper.classList.remove('open');
+    navMenuVariables.mobileMenu.classList.remove('is-open');
+    navMenuVariables.menuButton.classList.remove('close');
   }
 };
 
-const hideOverlay = () => {
-  const menuButton = document.getElementById('menuButton');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const headerWrapper = document.querySelector('.header-wrapper');
+// Toggle Menu
+navMenuVariables.menuButton.addEventListener('click', () => {
+  navMenuVariables.menuButton.classList.toggle('close');
 
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) {
-      closeMenu(menuButton, mobileMenu, headerWrapper);
-    }
-  });
-};
+  if (navMenuVariables.mobileMenu) {
+    navMenuVariables.mobileMenu.classList.toggle('is-open');
 
-if (overlay) {
-  hideOverlay();
-}
-
-function toggleMobileMenu() {
-  const menuButton = document.getElementById('menuButton');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const headerWrapper = document.querySelector('.header-wrapper');
-
-  menuButton.classList.toggle('close');
-
-  if (mobileMenu) {
-    mobileMenu.classList.toggle('toggle-menu');
-
-    if (mobileMenu.classList.contains('toggle-menu')) {
+    if (navMenuVariables.mobileMenu.classList.contains('is-open')) {
       showOverlay();
-      headerWrapper.classList.add('toggle-header');
+      navMenuVariables.headerWrapper.classList.add('open');
     } else {
-      closeMenu(menuButton, mobileMenu, headerWrapper);
+      closeMenu();
+      hideOverlay();
     }
   }
-}
+})
 /* ------------------ */
 /* ----- search ----- */
 /* ------------------ */
@@ -148,6 +151,8 @@ function openSearch() {
   const isNavBarFixed = fixedNavbar?.classList.contains('fixed');
   const searchInput = document.querySelector('.search-input');
   noticeHeight = isNavBarFixed ? 0 : notice?.offsetHeightconsole;
+
+  setTimeout(closeMenu, 100);
 
   if (!overlay) return;
 

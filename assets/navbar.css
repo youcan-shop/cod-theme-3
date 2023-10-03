@@ -8,7 +8,7 @@
 .header-wrapper {
   position: relative;
 }
-.header-wrapper.toggle-header {
+.header-wrapper.open {
   z-index: 1001;
 }
 
@@ -195,9 +195,15 @@
   opacity: 0;
   z-index: 1001;
 }
-#mobile-menu.toggle-menu {
+#mobile-menu.is-open {
   transform: none;
   opacity: 1;
+}
+@media (min-width: 768px) {
+  #mobile-menu.is-open {
+    transform: unset;
+    opacity: 0;
+  }
 }
 #mobile-menu .items {
   padding: 20px 16px;
