@@ -190,22 +190,20 @@
 
 #mobile-menu {
   background-color: white;
-  transition-duration: 0.2s;
-  transition-property: opacity, transform;
-  transform: translateY(150vw);
-  position: absolute;
+  position: fixed;
   width: 100%;
-  opacity: 0;
+  height: 0;
+  overflow: hidden;
   z-index: 1001;
+  transition: height 110ms ease-in-out;
 }
 #mobile-menu.is-open {
-  transform: none;
-  opacity: 1;
+  height: 50%;
+  overflow: auto;
 }
 @media (min-width: 768px) {
   #mobile-menu.is-open {
-    transform: unset;
-    opacity: 0;
+    display: none;
   }
 }
 #mobile-menu .items {
@@ -241,7 +239,6 @@
   opacity: 0;
 }
 
-.global-overlay,
-#mobile-menu {
+.global-overlay {
   transition-timing-function: ease-in-out;
 }
