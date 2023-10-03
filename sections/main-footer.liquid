@@ -23,7 +23,8 @@
         <img loading='lazy' src='{{ 'logo.png' | asset_url }}' alt='logo'>
       </div>
     {%- endif -%}
-      <div class='social-media-links column'>
+    <div class='social-media-links column'>
+      {%- if section.settings.social_media_exist %}
         {%- for block in section.blocks -%}
           {%- if block.settings.social_media_icon_image.src -%}
             <a class='link' href="{{ block.settings.social_media_url }}" target="_blank">
@@ -35,7 +36,8 @@
             </a>
           {%- endif -%}
         {%- endfor %}
-      </div>
+      {%- endif -%}
+    </div>
     {%- for linklist in link-lists -%}
       {%- if linklist.links | count > 0  and linklist != main-link-list -%}
         <div class="accordion-item column">
@@ -57,7 +59,7 @@
     <div class="container">
       <div class="copyright-wrapper" {{ block.youcan_attributes }}>
         <div class="copyright-title">
-          {{ section.settings.mention }}
+          {{ section.settings.copyright_text }}
         </div>
       </div>
     </div>
@@ -99,15 +101,21 @@
       "default": "#000000"
     },
     {
-      "type": "color",
-      "id": "footer_border_color",
-      "label": "Border color",
-      "default": "#ebebeb"
+      "type": "checkbox",
+      "id": "social_media_exist",
+      "label": "Social media",
+      "default": true
     },
     {
       "type": "richtext",
-      "id": "mention",
-      "label": "Mention content"
+      "id": "copyright_text",
+      "label": "Copyright text"
+    },
+    {
+      "type": "color",
+      "id": "footer_border_color",
+      "label": "Top Border color",
+      "default": "#ebebeb"
     }
   ],
   "blocks": [

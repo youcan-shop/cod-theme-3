@@ -118,7 +118,7 @@
 }
 @media (min-width: 768px) {
   .yc-footer .social-media-links {
-    justify-content: unset;
+    justify-content: end;
     order: 9999;
   }
 }

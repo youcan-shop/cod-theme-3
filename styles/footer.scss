@@ -125,7 +125,7 @@
     gap: 30px;
 
     @include breakpoint('md') {
-      justify-content: unset;
+      justify-content: end;
       order: 9999;
     }
 
