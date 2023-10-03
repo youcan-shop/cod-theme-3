@@ -9,6 +9,7 @@ const closeSearchBtn = document.getElementById('close-search-btn');
 const navMenuVariables = {
   menuButton: document.getElementById('menuButton'),
   mobileMenu: document.getElementById('mobile-menu'),
+  header: document.querySelector('.yc-header'),
   headerWrapper: document.querySelector('.header-wrapper'),
 };
 
@@ -111,6 +112,7 @@ overlay.addEventListener('click', (e) => {
 
     if(cartDrawer && cartDrawer.classList.contains('open')) {
       cartDrawer.classList.remove('open');
+      navMenuVariables.header.classList.remove('hide');
     }
   }
 });

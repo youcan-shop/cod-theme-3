@@ -276,6 +276,7 @@ function toggleCartDrawer() {
   }
 
   cartDrawer.classList.toggle('open');
+  navMenuVariables.header.classList.toggle('hide');
 
   if(cartDrawer.classList.contains('open')) {
     showOverlay();
