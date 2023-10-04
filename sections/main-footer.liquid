@@ -11,7 +11,9 @@
   }
 
   .toggle-footer {
-    border-top: 1px solid {{- section.settings.top_border_color.hex -}};
+    {%- if section.settings.top_border_color -%}
+      border-top: 1px solid {{- section.settings.top_border_color.hex -}};
+    {%- endif -%}
     display: {{ section.settings.toggle_footer ? 'none' : 'block' }};
   }
 
