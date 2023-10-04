@@ -12,6 +12,7 @@ const navMenuVariables = {
   header: document.querySelector('.yc-header'),
   headerWrapper: document.querySelector('.header-wrapper'),
 };
+let noticeHeight = notice ? notice.offsetHeight : '0';
 
 const makeNavbarFixed = () => {
   document.body.style.paddingTop = fixedNavbar.offsetHeight + 'px';
@@ -24,17 +25,15 @@ const makeNavbarStatic = () => {
 };
 
 function toggleNavbar() {
-  if (window.scrollY >= fixedNavbar.offsetHeight + notice.offsetHeight) {
+  if (window.scrollY >= fixedNavbar.offsetHeight + Number(noticeHeight)) {
     makeNavbarFixed();
   } else {
     makeNavbarStatic();
   }
 }
 
-if (fixedNavbar && notice) {
-  toggleNavbar();
-  window.addEventListener('scroll', toggleNavbar);
-}
+toggleNavbar();
+window.addEventListener('scroll', toggleNavbar);
 
 /* -------------------------- */
 /* ----- spinner-loader ----- */
@@ -153,8 +152,6 @@ function openSearch() {
   const isNavBarFixed = fixedNavbar?.classList.contains('fixed');
 
   if(notice) {
-    let noticeHeight = notice.offsetHeight;
-
     searchHolder.style.top = `${noticeHeight}px`;
   }
 
