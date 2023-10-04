@@ -147,19 +147,25 @@ navMenuVariables.menuButton.addEventListener('click', () => {
 /* ----- search ----- */
 /* ------------------ */
 const searchHolder = document.getElementById('searchInputHolder');
-let noticeHeight = notice?.offsetHeight;
 
 function openSearch() {
-  const isNavBarFixed = fixedNavbar?.classList.contains('fixed');
   const searchInput = document.querySelector('.search-input');
-  noticeHeight = isNavBarFixed ? 0 : notice?.offsetHeightconsole;
+  const isNavBarFixed = fixedNavbar?.classList.contains('fixed');
+
+  if(notice) {
+    let noticeHeight = notice.offsetHeight;
+
+    searchHolder.style.top = `${noticeHeight}px`;
+  }
+
+  if(isNavBarFixed) {
+    searchHolder.style.top = '0';
+  }
 
   setTimeout(closeMenu, 100);
 
   if (!overlay) return;
 
-  overlay.style.height = `calc(100vh + ${noticeHeight || 0}px)`;
-  overlay.style.top = `${noticeHeight || 0}px`;
   overlay.style.opacity = '1';
   overlay.style.visibility = 'visible';
 
@@ -167,7 +173,6 @@ function openSearch() {
 
   searchHolder.style.opacity = '1';
   searchHolder.style.visibility = 'visible';
-  searchHolder.style.top = `${noticeHeight || 0}px`;
   searchInput.focus();
 }
 

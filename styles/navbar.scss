@@ -157,6 +157,7 @@
   position: fixed;
   justify-content: center;
   align-items: center;
+  top: 0;
   left: 0;
   width: 100vw;
   height: calc(var(--yc-nav-height) + 1px);
@@ -232,10 +233,11 @@
   background-color: white;
   position: fixed;
   width: 100%;
-  height: fit-content;
+  height: 0;
+  overflow: hidden;
   opacity: 0;
   z-index: 1001;
-  transition: opacity 100ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
 
   *:not(span) {
     @extend .items-configs;
@@ -243,6 +245,7 @@
 
   &.is-open {
     opacity: 1;
+    height: fit-content;
 
     @include breakpoint('md') {
      display: none;
