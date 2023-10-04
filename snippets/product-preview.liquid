@@ -1,7 +1,6 @@
 {{ 'featured-products.css' | asset_url | stylesheet_tag }}
 {{ 'countdown.css' | asset_url | stylesheet_tag }}
 
-
 <div class='product-thumbnail'>
   <div class="tag {{ block_settings.tag_position }}">
     {% if block_settings.tag_text %}
@@ -39,12 +38,14 @@
   {% endif %}
 </div>
 
-{% if settings.direct_add_to_cart and item.variants.size <= 1 %}
-  <button class="yc-btn-secondary" onclick="directAddToCart(event, '{{ item.variants[0].id }}')">
-    {{ 'general.direct_add_to_cart' | t }}
-  </button>
-{% else %}
-  <a href="{{ item.url }}" class="yc-btn">
-    {{ 'snippets.product_preview.cta_button' | t }}
-  </a>
-{% endif %}
+<div class="product-link-mobile md:hidden">
+  {% if settings.direct_add_to_cart and item.variants.size <= 1 %}
+    <button class="yc-btn" onclick="directAddToCart(event, '{{ item.variants[0].id }}')">
+      {{ 'general.direct_add_to_cart' | t }}
+    </button>
+  {% else %}
+    <a href="{{ item.url }}" class="yc-btn">
+      {{ 'snippets.product_preview.cta_button' | t }}
+    </a>
+  {% endif %}
+</div>
