@@ -148,6 +148,9 @@
     margin: 0 30px;
   }
 }
+.yc-featured-products .product-list .product-block .product-link-mobile button {
+  width: 100%;
+}
 .yc-featured-products .button-container {
   max-width: max-content;
   margin-left: auto;

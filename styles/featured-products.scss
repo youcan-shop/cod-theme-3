@@ -155,6 +155,10 @@
         @include breakpoint('md') {
           margin: 0 30px;
         }
+
+        button {
+          width: 100%;
+        }
       }
     }
   }

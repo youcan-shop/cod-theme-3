@@ -38,7 +38,7 @@
   {% endif %}
 </div>
 
-<div class="product-link-mobile md:hidden">
+<div class="product-link-mobile">
   {% if settings.direct_add_to_cart and item.variants.size <= 1 %}
     <button class="yc-btn" onclick="directAddToCart(event, '{{ item.variants[0].id }}')">
       {{ 'general.direct_add_to_cart' | t }}
