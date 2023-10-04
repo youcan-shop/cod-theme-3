@@ -38,8 +38,19 @@
     <span class='product-price'>{{ item.price | money }}</span>
   {% endif %}
 </div>
-<div class="product-link-mobile md:hidden">
+
+<div class="product-link-mobile">
   <a href="{{ item.url }}" class="yc-btn">
     {{ 'snippets.product_preview.cta_button' | t }}
   </a>
 </div>
+
+{% if settings.direct_add_to_cart and item.variants.size <= 1 %}
+  <button class="yc-btn-secondary" onclick="directAddToCart(event, '{{ item.variants[0].id }}')">
+    {{ 'general.direct_add_to_cart' | t }}
+  </button>
+{% else %}
+  <a href="{{ item.url }}" class="yc-btn">
+    {{ 'snippets.product_preview.cta_button' | t }}
+  </a>
+{% endif %}
