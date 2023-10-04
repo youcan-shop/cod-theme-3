@@ -165,23 +165,19 @@ function openSearch() {
   setTimeout(closeMenu, 100);
 
   if (!overlay) return;
-
-  overlay.style.opacity = '1';
-  overlay.style.visibility = 'visible';
+  showOverlay();
 
   if (!searchHolder) return;
 
   searchHolder.style.opacity = '1';
   searchHolder.style.visibility = 'visible';
+  document.body.style.overflow = "hidden";
   searchInput.focus();
 }
 
 function closeSearch() {
   if (!overlay) return;
-
-  overlay.style.opacity = '0';
-  overlay.style.visibility = 'hidden';
-  overlay.style.height = '100vh';
+  hideOverlay();
 
   if (!searchHolder) return;
 
