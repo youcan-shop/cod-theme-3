@@ -316,7 +316,7 @@ function preventCartDrawerOpening(templateName) {
 
   const cartDrawerIcon = document.querySelector('#navbar-cart-icon');
 
-  cartDrawerIcon.removeEventListener("click", toggleCartDrawer);
+  cartDrawerIcon.removeEventListener("click", toggleCartDrawer());
   window.location.reload();
 }
 
