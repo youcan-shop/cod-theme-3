@@ -11,7 +11,9 @@
                 "slider_arrows_size": 15,
                 "slider_arrows": true,
                 "slider_height_percentage": 60,
-                "slider_overlay_background_color": "#00000000"
+                "slider_overlay_background_color": "#00000000",
+                "caption_text_color": "#000000FF",
+                "slider_arrows_color": "#000000FF"
               },
             "blocks": {
                 "block_qw91o394p69bv8l": {
