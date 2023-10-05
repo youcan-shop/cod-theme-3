@@ -49,10 +49,10 @@
             "main-footer": {
                 "type": "main-footer",
                 "settings": {
-                    "footer_background_color": "#000000",
+                    "footer_background_color": "#FFFFFF",
                     "mention_and_social_media": true,
                     "mention": "<p>made with ❤️ by YouCan<\/p>",
-                    "footer_text_color": "#F6F9FFFF",
+                    "footer_text_color": "#000000",
                     "toggle_footer": false,
                     "top_border_color": "#e5e5e5"
                 },
