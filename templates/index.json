@@ -45,7 +45,7 @@
             "type": "multi-column",
             "settings": {
                 "columns_desktop": "4",
-                "columns_mobile": "2",
+                "columns_mobile": "1",
                 "title": "ما يميزنا",
                 "margin_bottom": 50,
                 "margin_top": 5,
