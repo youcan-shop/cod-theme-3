@@ -50,18 +50,16 @@
 {% endstyle %}
 
 <section class='section-featured-products-{{ id }} yc-featured-products container'>
-  <div class='bg-color-{{ id }}'>
-    <div class="counter-wrapper">
-      <h1 class='yc-section-title'>
-        {{ section.settings.title }}
-      </h1>
-      {% if section.settings.countdown_enabled %}
-        {%- render 'countdown', section_settings: section.settings -%}
-      {% endif %}
-    </div>
-      {%- render 'product-slider', blocks: section.blocks, id: id , view: 'desktop', section_settings: section.settings -%}
-      {%- render 'product-slider', blocks: section.blocks, id: id , view: 'mobile', section_settings: section.settings  -%}
+  <div class="counter-wrapper bg-color-{{ id }}">
+    <h1 class='yc-section-title'>
+      {{ section.settings.title }}
+    </h1>
+    {% if section.settings.countdown_enabled %}
+      {%- render 'countdown', section_settings: section.settings -%}
+    {% endif %}
   </div>
+    {%- render 'product-slider', blocks: section.blocks, id: id , view: 'desktop', section_settings: section.settings -%}
+    {%- render 'product-slider', blocks: section.blocks, id: id , view: 'mobile', section_settings: section.settings  -%}
 </section>
 
 <script>
@@ -151,7 +149,8 @@
     {
       "type": "color",
       "id": "background_color",
-      "label": "Background color"
+      "label": "Background color",
+      "default": "#F5F5F5"
     },
     {
       "type": "header",

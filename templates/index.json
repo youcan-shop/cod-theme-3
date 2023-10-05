@@ -152,7 +152,7 @@
             "settings": {
                 "margin_top": 20,
                 "margin_bottom": 20,
-                "countdown_message": "<p>ينتهي :<\/p>",
+                "countdown_message": "",
                 "countdown_message_color": "#FFFFFFFF",
                 "countdown_year": 2024,
                 "countdown_month": 1,
