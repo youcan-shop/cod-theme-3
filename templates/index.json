@@ -104,7 +104,6 @@
               "show_product_title": true,
               "title": "وصلنا حديثاً",
               "section_title_position": "right",
-              "countdown_enabled": false,
               "text_color": "#000000FF",
               "tag_color": "#F33520FF",
               "tag_text_color": "#FFFFFFFF",
