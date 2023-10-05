@@ -28,8 +28,13 @@
     direction: ltr;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 4px;
     margin: 0;
+
+    .countdown-icon {
+      font-size: 20px;
+    }
 
     & .day,
     & .hour,

@@ -9,7 +9,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 24px;
+  padding: 30px;
+  margin-bottom: 36px;
 }
 .yc-featured-products .counter-wrapper .yc-section-title {
   margin: 0;
