@@ -173,7 +173,7 @@
                 "slider_mobile_pagination": true,
                 "slider_mobile_arrows": true,
                 "countdown_enabled": true,
-                "background_color": "#F4361FFF",
+                "background_color": "##F5F5F5",
                 "title": "عرض",
                 "title_color": "#FFFFFFFF",
                 "tag_color": "#000000",
