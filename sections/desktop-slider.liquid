@@ -2,21 +2,29 @@
 
 {% style %}
   .section-slider-{{ id }} #yc_slider_{{ id }} .splide__arrow {
-    background: {{ section.settings.slider_desktop_arrows_background_color.hex }} !important;
-    width: 54px;
-    height: 54px;
+    border: 1px solid {{ section.settings.slider_arrows_color.hex }};
+    width: 42px;
+    height: 42px;
     margin: 0 100px;
   }
 
+  .section-slider-{{ id }} #yc_slider_{{ id }} .splide__arrow:active {
+    scale: 1.1;
+  }
+
   .section-slider-{{ id }} #yc_slider_{{ id }} .splide__arrow--next {
-    border-radius: 8px;
+    border-radius: 50%;
+  }
+  .section-slider-{{ id }} #yc_slider_{{ id }} .splide__pagination__page.is-active {
+    background: var(--yc-primary-color) !important;
   }
 
   .section-slider-{{ id }} #yc_slider_{{ id }} .splide__arrow--prev {
-    border-radius: 8px;
+    border-radius: 50%;
   }
 
   .section-slider-{{ id }} #yc_slider_{{ id }} .splide__arrow svg {
+    fill: {{ section.settings.slider_arrows_color.hex }};
     height: {{ section.settings.slider_arrows_size }}px;
     width: {{ section.settings.slider_arrows_size }}px;
   }
@@ -25,14 +33,25 @@
     background-color: {{ section.settings.slider_overlay_background_color.hex }};
   }
 
-  .section-slider-{{ id }} .yc-slider__desktop .caption > * {
-    color: {{ section.settings.caption_text_color.hex }};
+  .section-slider-{{ id }} .yc-slider__desktop .caption-wrapper,
+  .section-slider-{{ id }} .yc-slider__mobile .caption-wrapper {
+    max-width: 335px;
   }
 
+  .section-slider-{{ id }} .yc-slider__desktop .caption > *,
   .section-slider-{{ id }} .yc-slider__mobile .caption > * {
     color: {{ section.settings.caption_text_color.hex }};
+    line-height: 140%;
   }
 
+  .section-slider-{{ id }} .yc-slider__desktop .yc-btn,
+  .section-slider-{{ id }} .yc-slider__mobile .yc-btn {
+    font-size: 13px;
+    background-color: var(--yc-primary-color) !important;
+    color: #ffffff;
+    margin-top: 24px;
+    padding: 12px 18px;
+  }
 {% endstyle %}
 
 {{ 'splide.min.css' | asset_url | stylesheet_tag }}
@@ -103,13 +122,13 @@
       "type": "color",
       "id": "caption_text_color",
       "label": "Caption text color",
-      "default": "#000"
+      "default": "#000000FF"
     },
     {
       "type": "color",
       "id": "slider_overlay_background_color",
       "label": "Overlay background color",
-      "default": "##00000000",
+      "default": "#00000000",
       "maintain-opacity": true
     },
     {
@@ -140,9 +159,9 @@
     },
     {
       "type": "color",
-      "id": "slider_desktop_arrows_background_color",
-      "label": "Arrows background color",
-      "default": "#FFFFFF"
+      "id": "slider_arrows_color",
+      "label": "Arrows color",
+      "default": "#000"
     },
     {
       "type": "select",

@@ -11,24 +11,26 @@
                 "slider_arrows_size": 15,
                 "slider_arrows": true,
                 "slider_height_percentage": 60,
-                "slider_overlay_background_color": "#00000000"
+                "slider_overlay_background_color": "#00000000",
+                "caption_text_color": "#000000FF",
+                "slider_arrows_color": "#000000FF"
               },
             "blocks": {
                 "block_qw91o394p69bv8l": {
                     "type": "image_picker",
                     "settings": {
-                        "image": "daniel-storek-JM-qKEd1GMI-unsplash-2OfIakQKp2aFHsKMEwrbVoICfTm.jpg",
-                        "caption": "<h2>هذا هو شريط تمرير سطح المكتب<\/h2><p>في النشر والتصميم الجرافيكي ، هو عنصر نائب شائع الاستخدام.<\/p>",
-                        "button_text": "Visit Now 🔥",
-                        "button_font_weight": "500",
+                        "image": "demo04_06_1024x-2WLkvwU18DXK06lAkymlKxC6CGq.png",
+                        "caption": "<p class=\"ql-align-center\">أحدث ما وصلنا <\/p><h1 class=\"ql-align-center\">أجدد المنتجات صارت بين ايديكم <\/h1>",
+                        "button_text": "عرض المزيد",
+                        "button_font_weight": "700",
                         "product": "8dc07bcd-c5ba-4fa5-8389-ce1553f4cad3"
                     }
                 },
                 "block_qx88dcfkmfmqpeh": {
                     "type": "image_picker",
                     "settings": {
-                        "image": "deanna-alys-6LBBOwkPzyQ-unsplash-2OfIaRecGHx4JGVCteF2IV8HnDm.jpg",
-                        "button_font_weight": "500",
+                        "image": "demo04_05_1024x-2WLl09EfxbWps3QQRYMlnp58I5K.png",
+                        "button_font_weight": "700",
                         "caption": "<p><br><\/p>",
                         "button_text": ""
                     }
@@ -43,7 +45,7 @@
             "type": "multi-column",
             "settings": {
                 "columns_desktop": "4",
-                "columns_mobile": "2",
+                "columns_mobile": "1",
                 "title": "ما يميزنا",
                 "margin_bottom": 50,
                 "margin_top": 5,
