@@ -46,29 +46,26 @@
     & .min .num,
     & .sec .num {
       display: block;
-      padding: 0.1rem 0.5rem;
       border-radius: 6px;
       font-size: 29px;
-      font-weight: 600;
-      color: #FFFFFF;
+      font-weight: 500;
+      color: #000000;
       border: 0;
-      background-color: #EE7A6D;
     }
 
     & .sec .num {
-      background-color: #000000;
       border: 0;
       width: 42px;
       display: flex;
       justify-content: center;
-
+      color: #E52B2A;
       @media screen and (max-width: 600px) {
         width: 35px;
       }
     }
 
     .dots {
-      color: white;
+      color: #000000;
       font-size: 40px;
       margin-top: -11px;
     }
