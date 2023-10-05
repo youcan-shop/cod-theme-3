@@ -2,15 +2,15 @@
 {{ 'countdown.css' | asset_url | stylesheet_tag }}
 
 <div class='product-thumbnail'>
-  <div class="tag {{ block_settings.tag_position }}">
+  <div class="tag {{ section_settings.tag_position }}">
     {% if block_settings.tag_text %}
-      <div class="tag-text" style="background: {{ block_settings.tag_color.hex }}; color: {{ block_settings.tag_text_color.hex }}">
+      <div class="tag-text" style="background: {{ section_settings.tag_color.hex }}; color: {{ section_settings.tag_text_color.hex }}">
         {{ block_settings.tag_text }}
       </div>
     {% endif %}
-    {% if block_settings.price_reduction_text %}
-      <div class="tag-price" style="background: {{ block_settings.tag_price_color.hex }}; color: {{ block_settings.price_reduction_text_color.hex }}">
-        {{ block_settings.price_reduction_text }}
+    {% if section_settings.price_reduction_text %}
+      <div class="tag-price" style="background: {{ section_settings.tag_price_color.hex }}; color: {{ section_settings.price_reduction_text_color.hex }}">
+        {{ section_settings.price_reduction_text }}
       </div>
     {% endif %}
   </div>
