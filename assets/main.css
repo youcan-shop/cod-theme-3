@@ -33,6 +33,11 @@ body {
   margin: 0 auto;
   padding: 0 20px;
 }
+@media (min-width: 768px) {
+  .container {
+    padding: 0;
+  }
+}
 
 input,
 textarea,
@@ -121,7 +126,7 @@ button:focus {
   pointer-events: auto;
   border: 0;
   font-size: 13px;
-  font-weight: 400;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -592,12 +597,23 @@ input:not([type=radio]),
 .tag {
   position: absolute;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
+  flex-direction: column;
+  gap: 8px;
   z-index: 1;
-  padding: 4px 13px;
-  border-radius: 4px;
+}
+.tag .tag-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 12px;
+  border-radius: 50%;
+  min-width: 45px;
+  max-width: 50px;
+  aspect-ratio: 1/1;
+  padding: 0 3px;
 }
 .tag.top_right {
   top: 8px;

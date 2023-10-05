@@ -96,67 +96,63 @@
             ]
         },
         "section_609gq1tx2x0aaa": {
-            "type": "featured-products",
-            "settings": {
-                "padding_top": 20,
-                "padding_bottom": 20,
-                "show_compare_at_price": true,
-                "countdown_message": "<p>Hurry up! There aren't many items left in stock.<\/p>",
-                "countdown_year": 2024,
-                "countdown_month": 1,
-                "countdown_day": 14,
-                "countdown_hour": 0,
-                "countdown_minute": 0,
-                "row_desktop": 3,
-                "show_product_title": true,
-                "title": "Featured Products",
-                "section_title_position": "center",
-                "countdown_enabled": false,
-                "text_color": "#000000FF",
-                "tag_color": "#F33520FF",
-                "tag_text_color": "#ffffff",
-                "tag_position": "top_left"
-            },
-            "blocks": {
-                "block_62cu74z1u3r4yoh": {
-                    "type": "product",
-                    "settings": {
-                        "product": "2d39bfc2-2269-482d-97e8-35286c06fa8d"
-                    }
-                },
-                "block_6374ajkr6vfu8d": {
-                    "type": "product",
-                    "settings": {
-                        "product": "b44b2d2d-a29e-4fd2-9965-4825e2d8e64d"
-                    }
-                },
-                "block_642tqc53a06ro8": {
-                    "type": "product",
-                    "settings": {
-                        "product": "e74763a8-673d-4b32-b87a-83ad8f448446"
-                    }
-                },
-                "block_64waj9ir17xt2wn": {
-                    "type": "product",
-                    "settings": {
-                        "product": "693a2102-03c6-46d8-a5e1-e8455c3384d8"
-                    }
-                },
-                "block_65q3qlgzob9nf1": {
-                    "type": "product",
-                    "settings": {
-                        "product": "5f865c86-c8dc-48b6-8bcb-2525bc762430"
-                    }
-                }
-            },
-            "order": [
-                "block_62cu74z1u3r4yoh",
-                "block_6374ajkr6vfu8d",
-                "block_642tqc53a06ro8",
-                "block_64waj9ir17xt2wn",
-                "block_65q3qlgzob9nf1"
-            ]
-        },
+          "type": "featured-products",
+          "settings": {
+              "padding_top": 20,
+              "padding_bottom": 20,
+              "show_compare_at_price": true,
+              "countdown_message": "<p>Hurry up! There aren't many items left in stock.<\/p>",
+              "countdown_year": 2024,
+              "countdown_month": 1,
+              "countdown_day": 14,
+              "countdown_hour": 0,
+              "countdown_minute": 0,
+              "row_desktop": 3,
+              "show_product_title": true,
+              "title": "وصلنا حديثاً",
+              "section_title_position": "right",
+              "countdown_enabled": false,
+              "text_color": "#000000FF",
+              "tag_color": "#F33520FF",
+              "tag_text_color": "#FFFFFFFF",
+              "tag_position": "top_right"
+          },
+          "blocks": {
+              "block_62cu74z1u3r4yoh": {
+                  "type": "product",
+                  "settings": {
+                      "product": "2d39bfc2-2269-482d-97e8-35286c06fa8d",
+                      "tag_text": "جديد"
+                  }
+              },
+              "block_6374ajkr6vfu8d": {
+                  "type": "product",
+                  "settings": {
+                      "product": "b44b2d2d-a29e-4fd2-9965-4825e2d8e64d",
+                      "tag_text": "جديد"
+                  }
+              },
+              "block_642tqc53a06ro8": {
+                  "type": "product",
+                  "settings": {
+                      "product": "e74763a8-673d-4b32-b87a-83ad8f448446"
+                  }
+              },
+              "block_64waj9ir17xt2wn": {
+                  "type": "product",
+                  "settings": {
+                      "product": "693a2102-03c6-46d8-a5e1-e8455c3384d8",
+                      "tag_text": "45%-"
+                  }
+              }
+          },
+          "order": [
+              "block_62cu74z1u3r4yoh",
+              "block_6374ajkr6vfu8d",
+              "block_642tqc53a06ro8",
+              "block_64waj9ir17xt2wn"
+          ]
+      },
         "section_b3g5zwjngmukzqp": {
             "type": "featured-product-slider",
             "settings": {

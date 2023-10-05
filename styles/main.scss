@@ -33,6 +33,10 @@ body {
   max-width: 1124px !important;
   margin: 0 auto;
   padding: 0 20px;
+
+  @include breakpoint('md') {
+    padding: 0;
+  }
 }
 
 input,
@@ -636,12 +640,24 @@ input:not([type='radio']),
 .tag {
   position: absolute;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
+  flex-direction: column;
+  gap: 8px;
   z-index: 1;
-  padding: 4px 13px;
-  border-radius: 4px;
+
+  .tag-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 12px;
+    border-radius: 50%;
+    min-width: 45px;
+    max-width: 50px;
+    aspect-ratio: 1/1;
+    padding: 0 3px;
+  }
 
   &.top_right {
     top: 8px;

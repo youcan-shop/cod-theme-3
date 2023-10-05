@@ -2,8 +2,8 @@
 
 {% style %}
   .section-featured-products-{{ id }} {
-    padding-top: {{ section.settings.space_top }}px;
-    padding-bottom: {{ section.settings.space_bottom }}px;
+    margin-top: {{ section.settings.space_top }}px;
+    margin-bottom: {{ section.settings.space_bottom }}px;
   }
 
   .section-featured-products-{{ id }} .yc-section-title {
@@ -49,7 +49,7 @@
   </h1>
   <div class='product-list product-container-{{ id }}'>
     {%- for block in section.blocks -%}
-      <div {{ block.youcan_attributes }} class="product-item-{{ id }}">
+      <div {{ block.youcan_attributes }} class="product-block">
         {%- render 'product-preview', item: block.settings.product, block_settings: block.settings, section_settings: section.settings -%}
       </div>
     {%- endfor -%}
@@ -83,7 +83,8 @@
           "label": "Right",
           "value": "right"
         }
-      ]
+      ],
+      "default": "right"
     },
     {
       "type": "range",
