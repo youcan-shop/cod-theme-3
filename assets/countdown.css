@@ -43,7 +43,7 @@
 .countdown-wrapper .countdown .day .num, .countdown-wrapper .countdown .hour .num, .countdown-wrapper .countdown .min .num, .countdown-wrapper .countdown .sec .num {
   display: block;
   border-radius: 6px;
-  font-size: 29px;
+  font-size: 26px;
   font-weight: 500;
   color: #000000;
   border: 0;
