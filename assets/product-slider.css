@@ -37,7 +37,7 @@
   .product-slider .splide__arrows {
     transform: unset;
     bottom: unset;
-    top: -85px;
+    top: -78px;
     left: 127px;
   }
   [dir=ltr] .product-slider .splide__arrows {
