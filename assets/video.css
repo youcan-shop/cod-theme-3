@@ -3,6 +3,11 @@
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 768px) {
+  .video-wrapper {
+    padding: 0 !important;
+  }
+}
 .video-wrapper .youtube-video {
   position: relative;
   display: inline-block;
