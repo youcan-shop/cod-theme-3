@@ -8,6 +8,8 @@
   #yc_slider_{{ id }} .product-block .product-slider {
     background: white;
     height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   #yc_slider_{{ id }} .splide__arrow--next {
@@ -25,9 +27,9 @@
   }
 
   @media screen and (max-width: 768px) {
-    #yc_slider_{{ id }} .product-details {
+    /* #yc_slider_{{ id }} .product-details {
       display: none;
-    }
+    } */
   }
 
 {% endstyle %}
@@ -65,7 +67,7 @@
                     <a href="{{ block.settings.product.url }}" class="yc-btn">
                       {{ 'snippets.product_preview.cta_button' | t }}
                     </a>
-                  </div> 
+                  </div>
               </div>
               <div class='product-details'>
                 <span class='product-title'>{{ block.settings.product.name }}</span>
@@ -77,6 +79,11 @@
                 {% if section.settings.show_compare_at_price and block.settings.product.compare_at_price %}
                   <span class='compare-at-price'>{{ block.settings.product.compare_at_price | money }}</span>
                 {% endif %}
+              </div>
+              <div class="product-link">
+                <a href="{{ block.settings.product.url }}" class="yc-btn">
+                  {{ 'snippets.product_preview.cta_button' | t }}
+                </a>
               </div>
             </div>
           </div>

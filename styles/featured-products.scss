@@ -32,8 +32,7 @@
     }
 
     @media screen and (max-width: 845px) {
-      grid-template-columns: 1fr;
-      background-color: white;
+      grid-template-columns: repeat(2, 1fr);
       margin-bottom: 8px;
 
       .product-slider-title {

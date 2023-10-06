@@ -28,8 +28,7 @@
 }
 @media screen and (max-width: 845px) {
   .yc-featured-products .counter-wrapper {
-    grid-template-columns: 1fr;
-    background-color: white;
+    grid-template-columns: repeat(2, 1fr);
     margin-bottom: 8px;
   }
   .yc-featured-products .counter-wrapper .product-slider-title {
