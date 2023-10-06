@@ -18,6 +18,7 @@
   align-items: center;
   grid-template-columns: repeat(3, 1fr);
   background-color: #F5F5F5;
+  row-gap: 8px;
   padding: 24px 32px;
   margin-bottom: 33px;
   position: relative;
@@ -28,7 +29,8 @@
 }
 @media screen and (max-width: 845px) {
   .yc-featured-products .counter-wrapper {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    background-color: white;
     margin-bottom: 8px;
   }
   .yc-featured-products .counter-wrapper .product-slider-title {
@@ -174,5 +176,10 @@
 @media (min-width: 768px) {
   .yc-featured-products .button-container {
     margin-top: 60px;
+  }
+}
+@media screen and (max-width: 845px) {
+  .yc-featured-products .yc-section-title {
+    text-align: center;
   }
 }

@@ -7,7 +7,7 @@
   flex-direction: column;
   gap: 12px;
 
-  @include breakpoint('lg') {
+  @include breakpoint('md') {
     flex-direction: row;
     justify-content: center;
   }
@@ -86,7 +86,7 @@
     & .hour .num,
     & .min .num,
     & .sec .num {
-      font-size: 19px !important;
+      font-size: 26px;
       padding: 8px !important;
     }
   }
