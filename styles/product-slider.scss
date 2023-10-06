@@ -153,6 +153,8 @@
       width: 78%;
       margin: auto;
       display: block;
+      top: 120%;
+      transition: all 0.25s;
 
       a {
         font-weight: 700;
@@ -160,18 +162,17 @@
       }
 
       @include breakpoint('md') {
-        display: none;
         width: 80%;
         position: absolute;
         z-index: 1;
-        top: 90%;
+        top: 120%;
         left: 50%;
         transform: translate(-50%, -50%);
       }
     }
 
     &:hover .product-link {
-        display: block;
+        top: 90%;
     }
   }
 

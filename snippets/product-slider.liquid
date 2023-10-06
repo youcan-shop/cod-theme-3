@@ -61,6 +61,11 @@
                       {{ block.settings.tag_text }}
                     </div>
                   {% endif %}
+                  <div class="product-link">
+                    <a href="{{ block.settings.product.url }}" class="yc-btn">
+                      {{ 'snippets.product_preview.cta_button' | t }}
+                    </a>
+                  </div> 
               </div>
               <div class='product-details'>
                 <span class='product-title'>{{ block.settings.product.name }}</span>

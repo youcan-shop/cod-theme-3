@@ -143,6 +143,8 @@
   width: 78%;
   margin: auto;
   display: block;
+  top: 120%;
+  transition: all 0.25s;
 }
 .product-slider .product-thumbnail .product-link a {
   font-weight: 700;
@@ -150,17 +152,16 @@
 }
 @media (min-width: 768px) {
   .product-slider .product-thumbnail .product-link {
-    display: none;
     width: 80%;
     position: absolute;
     z-index: 1;
-    top: 90%;
+    top: 120%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 }
 .product-slider .product-thumbnail:hover .product-link {
-  display: block;
+  top: 90%;
 }
 .product-slider .product-link-mobile {
   margin: 15px auto 30px;
