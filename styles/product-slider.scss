@@ -50,6 +50,25 @@
     left: 50%;
     bottom: 0;
 
+    @media (max-width: 768px) {
+
+      & {
+        bottom: -50px;
+      }
+
+      .splide__arrow.splide__arrow--prev,
+      .splide__arrow.splide__arrow--next 
+       {
+        width: 42px;
+        height: 42px;
+        border: 1px solid #000000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+       }
+    }
+
     @media screen and (min-width: 845px) {
       transform: unset;
       bottom: unset;
