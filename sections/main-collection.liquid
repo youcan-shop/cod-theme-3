@@ -9,7 +9,10 @@
         <h1 class="category-name">{{ category.name }}</h1>
     </div>
     <div class="sort-container">
-      {%- render 'main-sort' -%}
+      <div class='sort-wrapper'>
+        <span class="sort-by">{{ 'snippets.main_sort.order_by' | t }}</span>
+        {%- render 'main-sort' -%}
+      </div>
     </div>
   </div>
 

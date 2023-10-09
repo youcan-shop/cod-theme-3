@@ -167,7 +167,7 @@
 
   #productDropdownFiltring {
     width: 100%;
-    min-width: 280px;
+    min-width: 210px;
 
     .dropdown-content {
       a {
@@ -183,6 +183,17 @@
           background-color: #f1f1f1;
         }
       }
+    }
+  }
+
+  .sort-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    .sort-by {
+      font-size: 13px;
+      font-weight: 400;
     }
   }
 }
