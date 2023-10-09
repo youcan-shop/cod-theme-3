@@ -1,13 +1,6 @@
 {{ 'thankyou.css' | asset_url | stylesheet_tag }}
 
 {% style %}
-
-{%- if template.name == 'thankyou' -%}
-  body {
-    background: #F7F7F7;
-  }
-{% endif %}
-
 .content-wrapper .title {
   color: {{ section.settings.title_color.hex }};
 }
