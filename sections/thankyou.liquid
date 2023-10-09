@@ -54,7 +54,12 @@
                   </li>
                 {% endfor %}
               </ul>
-              <span class="product-price">{{- item.price * item.quantity | money -}}</span>
+              <div class="price-wrapper">
+                {% if item.compare_at_price != nil %}
+                  <span class="compare-price">{{- item.compare_at_price | money -}}</span>
+                {% endif %}
+                <span class="product-price">{{- item.price * item.quantity | money -}}</span>
+              </div>
             </div>
           </li>
         {% endfor %}
