@@ -30,7 +30,7 @@
   "cart": {
     "title": "عربة التسوق",
     "cart": "سلتك",
-    "total_amount": "مجموع سلة التسوق",
+    "total_amount": "إجمالي المبلغ",
     "empty_cart": "عربة التسوق فارغة.",
     "items_count": "منتجات",
     "items": {
@@ -63,15 +63,12 @@
     }
   },
   "thankyou": {
-    "return_cta": "الصفحة الرئيسية ",
+    "return_cta": "الصفحة الرئيسية",
     "details": {
       "title": "ملخص الفاتورة",
-      "payment_status": "حالة الدفع",
       "shipping_cost": "الشحن والتسليم",
-      "sub_total": "المجموع الجزئي",
-      "total": "المجموع الكلي",
-      "product": "السلع",
-      "one_piece_price": "سعر كل قطعة",
+      "total": "المجموع",
+      "sub_total": "إجمالي قيمة المنتجات",
       "quantity": "الكمية",
       "coupon": "كوبون",
       "vat": "الضريبة على القيمة المضافة"

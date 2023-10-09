@@ -2,39 +2,28 @@
 
 {% style %}
   #yc_slider_{{ id }} .splide__arrow {
-    width: 54px;
-    height: 54px;
-    margin: 0 100px;
-    border: 1px solid #EDEDED;
-    box-shadow: 4px 10px 76px rgba(0, 0, 0, 0.14);
-    border-radius: 0px 8px 8px 0px;
+    margin: 0;
   }
 
   #yc_slider_{{ id }} .product-block .product-slider {
     background: white;
     height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   #yc_slider_{{ id }} .splide__arrow--next {
-    border-radius: 0 8px 8px 0;
-    transform: translate(215px, -30px);
+    transform: translate(19px, -23.5px)
   }
 
   #yc_slider_{{ id }} .splide__arrow--prev {
-    border-radius: 8px 0 0 8px;
-    transform: translate(-215px, -30px)
+    transform: translate(-111px, -23.5px)
   }
 
   #yc_slider_{{ id }} .splide__arrow svg {
     height: 16px;
     width: 16px;
     fill: #000;
-  }
-
-  @media screen and (max-width: 768px) {
-    #yc_slider_{{ id }} .product-details {
-      display: none;
-    }
   }
 
 {% endstyle %}
@@ -68,6 +57,11 @@
                       {{ block.settings.tag_text }}
                     </div>
                   {% endif %}
+                  <div class="product-link">
+                    <a href="{{ block.settings.product.url }}" class="yc-btn">
+                      {{ 'snippets.product_preview.cta_button' | t }}
+                    </a>
+                  </div>
               </div>
               <div class='product-details'>
                 <span class='product-title'>{{ block.settings.product.name }}</span>
@@ -79,6 +73,11 @@
                 {% if section.settings.show_compare_at_price and block.settings.product.compare_at_price %}
                   <span class='compare-at-price'>{{ block.settings.product.compare_at_price | money }}</span>
                 {% endif %}
+              </div>
+              <div class="product-link">
+                <a href="{{ block.settings.product.url }}" class="yc-btn">
+                  {{ 'snippets.product_preview.cta_button' | t }}
+                </a>
               </div>
             </div>
           </div>
