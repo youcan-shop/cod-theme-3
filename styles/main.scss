@@ -640,6 +640,12 @@ input:not([type='radio']),
   position: absolute;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  padding-inline: 8px;
+  min-height: 50px;
+  min-width: 50px;
   gap: 8px;
   z-index: 1;
 

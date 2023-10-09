@@ -1,6 +1,6 @@
 .countdown-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
   flex-direction: column;
   gap: 12px;
@@ -8,6 +8,7 @@
 @media (min-width: 768px) {
   .countdown-wrapper {
     flex-direction: row;
+    justify-content: center;
   }
 }
 .countdown-wrapper .message {
@@ -27,8 +28,12 @@
   direction: ltr;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 4px;
   margin: 0;
+}
+.countdown-wrapper .countdown .countdown-icon {
+  font-size: 20px;
 }
 .countdown-wrapper .countdown .day, .countdown-wrapper .countdown .hour, .countdown-wrapper .countdown .min, .countdown-wrapper .countdown .sec {
   text-align: center;
@@ -38,20 +43,18 @@
 }
 .countdown-wrapper .countdown .day .num, .countdown-wrapper .countdown .hour .num, .countdown-wrapper .countdown .min .num, .countdown-wrapper .countdown .sec .num {
   display: block;
-  padding: 0.1rem 0.5rem;
   border-radius: 6px;
-  font-size: 29px;
-  font-weight: 600;
-  color: #FFFFFF;
+  font-size: 26px;
+  font-weight: 500;
+  color: #000000;
   border: 0;
-  background-color: #EE7A6D;
 }
 .countdown-wrapper .countdown .sec .num {
-  background-color: #000000;
   border: 0;
   width: 42px;
   display: flex;
   justify-content: center;
+  color: #E52B2A;
 }
 @media screen and (max-width: 600px) {
   .countdown-wrapper .countdown .sec .num {
@@ -59,7 +62,7 @@
   }
 }
 .countdown-wrapper .countdown .dots {
-  color: white;
+  color: #000000;
   font-size: 40px;
   margin-top: -11px;
 }
@@ -70,7 +73,7 @@
 }
 @media screen and (max-width: 600px) {
   .countdown-wrapper .day .num, .countdown-wrapper .hour .num, .countdown-wrapper .min .num, .countdown-wrapper .sec .num {
-    font-size: 19px !important;
+    font-size: 26px;
     padding: 8px !important;
   }
 }

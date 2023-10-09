@@ -9,24 +9,12 @@
   .section-featured-products-{{ id }} {
     margin-top: {{ section.settings.space_top }}px;
     margin-bottom: {{ section.settings.space_bottom }}px;
-    padding: 0;
-  }
-
-  @media screen and (min-width: 768px) {
-    .section-featured-products-{{ id }} {
-      padding: 0 70px;
-    }
-  }
-
-  @media screen and (min-width: 1024px) {
-    .section-featured-products-{{ id }} {
-      padding: 0 100px;
-    }
+    padding: 0 16px;
   }
 
   @media screen and (min-width: 1440px) {
     .section-featured-products-{{ id }} {
-      padding: 0 150px;
+      padding: 0;
     }
   }
 
@@ -47,25 +35,19 @@
   .section-featured-products-{{ id }} .counter-wrapper .yc-section-title {
     color: {{ section.settings.title_color.hex }};
   }
-
-  .section-featured-products-{{ id }} .counter-wrapper .message {
-    color: {{ section.settings.countdown_message_color.hex }};
-  }
 {% endstyle %}
 
 <section class='section-featured-products-{{ id }} yc-featured-products container'>
-  <div class='bg-color-{{ id }}'>
-    <div class="counter-wrapper">
-      <h1 class='yc-section-title'>
-        {{ section.settings.title }}
-      </h1>
-      {% if section.settings.countdown_enabled %}
-        {%- render 'countdown', section_settings: section.settings -%}
-      {% endif %}
-    </div>
-      {%- render 'product-slider', blocks: section.blocks, id: id , view: 'desktop', section_settings: section.settings -%}
-      {%- render 'product-slider', blocks: section.blocks, id: id , view: 'mobile', section_settings: section.settings  -%}
+  <div class="counter-wrapper bg-color-{{ id }}">
+    <h1 class='yc-section-title'>
+      {{ section.settings.title }}
+    </h1>
+    {% if section.settings.countdown_enabled %}
+      {%- render 'countdown', section_settings: section.settings -%}
+    {% endif %}
   </div>
+  {%- render 'product-slider', blocks: section.blocks, id: id , view: 'desktop', section_settings: section.settings -%}
+  {%- render 'product-slider', blocks: section.blocks, id: id , view: 'mobile', section_settings: section.settings  -%}
 </section>
 
 <script>
@@ -79,10 +61,9 @@
 
     const desktopSlider1 = new Splide(`#yc_slider_{{ id }}.yc-slider__desktop`, {
       type: '{{ section.settings.slider_transition_type }}',
-      arrows: products == perPage ? false : ('{{ section.settings.slider_arrows }}' ? true : false),
+      arrows: '{{ section.settings.slider_arrows }}' ? true : false,
       autoplay: '{{ section.settings.slider_autoplay }}' ? true : false,
       cover: true,
-      pagination: products == perPage ? false : ('{{ section.settings.slider_pagination }}' ? true : false),
       pauseOnHover: '{{ section.settings.slider_pause_on_hover }}' ? true : false,
       pauseOnFocus: '{{ section.settings.slider_pause_on_focus }}' ? true : false,
       interval: '{{ section.settings.duration_between_each_slide | times: 1000 }}',
@@ -92,7 +73,6 @@
       perMove: 1,
       snap: true,
       gap: '20px',
-      focus: 'center',
     });
 
     const mobileImagesPerPage = 2;
@@ -102,7 +82,6 @@
       arrows: mobileImagesPerPage == products ? false : ('{{ section.settings.slider_mobile_arrows }}' ? true : false),
       autoplay: '{{ section.settings.slider_mobile_autoplay }}' ? true : false,
       cover: true,
-      pagination: mobileImagesPerPage == products ? false : ('{{ section.settings.slider_mobile_pagination }}' ? true : false),
       interval: '{{ section.settings.slider_mobile_timeout | times: 1000 }}',
       rewind: true,
       drag: 'free',
@@ -125,12 +104,14 @@
     {
       "type": "text",
       "id": "title",
-      "label": "Title"
+      "label": "Title",
+      "default": "عرض"
     },
     {
       "type": "color",
       "id": "title_color",
-      "label": "Title color"
+      "label": "Title color",
+      "default": "#000000FF"
     },
     {
       "type": "range",
@@ -155,7 +136,8 @@
     {
       "type": "color",
       "id": "background_color",
-      "label": "Background color"
+      "label": "Background color",
+      "default": "#F5F5F5"
     },
     {
       "type": "header",
@@ -171,7 +153,7 @@
       "type": "color",
       "id": "banner_background_color",
       "label": "Banner background color",
-      "default": "#000000"
+      "default": "#E52B2A"
     },
     {
       "type": "select",
@@ -208,18 +190,8 @@
     {
       "type": "checkbox",
       "id": "countdown_enabled",
-      "label": "Enable countdown"
-    },
-    {
-      "label": "Message",
-      "id": "countdown_message",
-      "type": "richtext",
-      "default": "Hurry up! There aren't many items left in stock."
-    },
-    {
-      "label": "Message color",
-      "id": "countdown_message_color",
-      "type": "color"
+      "label": "Enable countdown",
+      "default": true
     },
     {
       "label": "Year",
@@ -311,12 +283,6 @@
     },
     {
       "type": "checkbox",
-      "id": "slider_pagination",
-      "label": "Pagination",
-      "default": true
-    },
-    {
-      "type": "checkbox",
       "id": "slider_arrows",
       "label": "Arrows",
       "default": true
@@ -359,12 +325,6 @@
       "type": "checkbox",
       "id": "slider_mobile_autoplay",
       "label": "Autoplay",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "slider_mobile_pagination",
-      "label": "Pagination",
       "default": true
     },
     {
