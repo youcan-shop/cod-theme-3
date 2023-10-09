@@ -40,7 +40,9 @@
 .yc-product-listing-container .product-list .product-block .product-thumbnail .product-link {
   width: 78%;
   margin: auto;
-  display: none;
+  display: block;
+  top: 120%;
+  transition: all 0.25s;
 }
 .yc-product-listing-container .product-list .product-block .product-thumbnail .product-link a {
   font-weight: 700;
@@ -51,15 +53,13 @@
     width: 80%;
     position: absolute;
     z-index: 1;
-    top: 90%;
+    top: 120%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 }
-@media (min-width: 768px) {
-  .yc-product-listing-container .product-list .product-block .product-thumbnail:hover .product-link {
-    display: block;
-  }
+.yc-product-listing-container .product-list .product-block .product-thumbnail:hover .product-link {
+  top: 90%;
 }
 .yc-product-listing-container .product-list .product-block .product-link-mobile {
   margin: 15px auto 30px;

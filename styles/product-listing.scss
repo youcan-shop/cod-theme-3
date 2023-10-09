@@ -28,7 +28,7 @@
           object-fit: cover;
 
           &:hover {
-            transform: translate(-50%, -50%) scale(1.1);
+            transform: translate(-50%,-50%) scale(1.1);
           }
         }
 
@@ -43,7 +43,9 @@
         .product-link {
           width: 78%;
           margin: auto;
-          display: none;
+          display: block;
+          top: 120%;
+          transition: all 0.25s;
 
           a {
             font-weight: 700;
@@ -54,16 +56,14 @@
             width: 80%;
             position: absolute;
             z-index: 1;
-            top: 90%;
+            top: 120%;
             left: 50%;
             transform: translate(-50%, -50%);
           }
         }
 
         &:hover .product-link {
-          @include breakpoint('md') {
-            display: block;
-          }
+            top: 90%;
         }
       }
 
