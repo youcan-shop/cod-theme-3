@@ -78,48 +78,6 @@ async function removeCartItem(cartItemId, productVariantId) {
   }
 }
 
-async function updateCartItem(cartItemId, productVariantId, quantity) {
-  const footerSpinner = document.querySelector('.footer-spinner');
-  const cartQuantityBtns = document.querySelectorAll('.cart-quantity-btn');
-
-  showSpinner(footerSpinner);
-
-  // Disable the increase and decrease buttons
-  cartQuantityBtns.forEach((btn) => btn.setAttribute('disabled', true));
-  try {
-    await youcanjs.cart.updateItem({
-      cartItemId,
-      productVariantId,
-      quantity,
-    });
-    await updateCartDrawer();
-  } catch (error) {
-    notify(error.message, 'error');
-  } finally {
-    hideSpinner(footerSpinner);
-    cartQuantityBtns.forEach((btn) => btn.removeAttribute('disabled'));
-  }
-}
-
-function increaseCartQuantity(cartItemId, productVariantId) {
-  updateCartQuantity(cartItemId, productVariantId, 1);
-}
-
-function decreaseCartQuantity(cartItemId, productVariantId) {
-  updateCartQuantity(cartItemId, productVariantId, -1);
-}
-
-function updateCartQuantity(cartItemId, productVariantId, delta) {
-  const input = document.querySelector(`#quantity-${cartItemId}`);
-  if (input) {
-    const newQuantity = parseInt(input.value) + delta;
-    if (newQuantity >= 1) {
-      input.value = newQuantity;
-      updateCartItem(cartItemId, productVariantId, newQuantity);
-    }
-  }
-}
-
 function cartTemplate(item) {
   // Loop through variations
   const variationsArray = [];
