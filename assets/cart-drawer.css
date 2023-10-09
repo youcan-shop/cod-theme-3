@@ -97,6 +97,7 @@
 .cart-drawer ul .cart-item img {
   width: 82px;
   height: 106px;
+  object-fit: cover;
 }
 .cart-drawer ul .cart-item .item-body {
   display: flex;
