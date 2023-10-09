@@ -401,8 +401,10 @@ input:not([type=radio]),
   padding: 10px 15px;
   gap: 6px;
   text-align: start;
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 12px;
+}
+.dropdown-input .dropbtn span {
+  font-weight: 700;
 }
 .dropdown-input .dropbtn :first-child {
   margin-inline-end: 20px;
@@ -631,7 +633,7 @@ input:not([type=radio]),
   display: flex;
   align-items: center;
   gap: 12px;
-  margin: 40px auto;
+  margin: 36px auto;
 }
 .breadcrumbs-container .breadcrumbs-listings .first-listing {
   color: #A8A8A8;
