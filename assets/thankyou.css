@@ -38,16 +38,18 @@
   object-fit: contain;
 }
 .thankyou-page-container .thankyou-wrapper .content-wrapper .heading {
-  line-height: 32px;
+  text-align: center;
 }
 .thankyou-page-container .thankyou-wrapper .content-wrapper .heading .title {
   display: block;
-  font-size: 20px;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 140%;
 }
-@media (min-width: 768px) {
-  .thankyou-page-container .thankyou-wrapper .content-wrapper .heading .title {
-    font-size: 24px;
-  }
+.thankyou-page-container .thankyou-wrapper .content-wrapper .heading .subtitle {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 140%;
 }
 .thankyou-page-container .thankyou-wrapper .content-wrapper .description {
   font-size: 12px;
