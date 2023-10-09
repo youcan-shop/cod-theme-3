@@ -1,50 +1,178 @@
-.yc-cart {
-  margin: 4rem 0 2rem;
+@import 'helpers/mixins';
 
+body {
+  background: #F7F7F7;
+}
+
+.yc-cart {
   .empty-cart {
     ion-icon {
       --ionicon-stroke-width: 18px;
     }
   }
 
+  .cart-table.container {
+    padding: 0;
+
+    @include breakpoint('md') {
+      padding: 0 20px;
+    }
+
+  }
+
   .cart-table {
     .header-block {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-direction: column;
+      gap: 36px;
+      padding: 0 20px;
+
+      @include breakpoint('md') {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+      }
 
       .header-bar {
         display: flex;
         align-items: center;
-        gap: 9px;
-        width: 60%;
-
-        @media screen and (max-width: 768px) {
-          width: 100%;
-        }
+        gap: 12px;
 
         h2 {
+          color: #000;
+          font-size: 26px;
           font-weight: 700;
-          font-size: 21px;
+          line-height: 105.5%;
         }
 
-        p {
-          color: #9B9B9B;
-          font-weight: 400;
+        .cart-badge {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background-color: var(--yc-primary-color);
+          color: white;
+          flex-shrink: 0;
           font-size: 14px;
-          line-height: 22px;
+          font-weight: 600;
+          line-height: 140.5%
         }
       }
 
       .checkout_cta {
-        max-width: 100%;
-        width: 437px;
+        width: 100%;
+        max-width: 428px;
 
-        @media screen and (max-width: 768px) {
+        .yc-btn {
+          font-size: 14px;
+        }
+
+      }
+    }
+
+    .table-container {
+      display: flex;
+      flex-direction: column;
+      margin: 24px 0;
+      background-color: white;
+
+      @include breakpoint('md') {
+        margin: 36px 0;
+      }
+
+      .cart__item {
+        margin-bottom: 25px;
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        .cell {
+          flex-basis: calc(100% / 5);
+          text-align: start;
+          padding: 10px;
+
+          .product-title {
+            font-weight: 400;
+            font-size: 16.5px;
+            margin-bottom: 10px;
+            width: 86%;
+          }
+
+          .total-price-wrapper span {
+            color: var(--yc-primary-color);
+            font-weight: 700;
+            font-size: 17px;
+          }
+
+          .product-image {
+            img {
+              width: 140px;
+              height: 110px;
+              object-fit: contain;
+            }
+          }
+        }
+
+        .adjust-space {
+          flex-basis: calc(100% / 20);
+          padding: 0;
+        }
+
+        .close-btn {
+          font-size: 25px;
+          color: #4B5565;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .header {
           display: none;
+        }
+
+        .row {
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: start;
+
+          .cell {
+            .product-image img {
+              width: 140px;
+              height: 90px;
+            }
+          }
+        }
+
+        .close-btn {
+          // button {
+          //   position: absolute;
+          //   left: 0;
+          //   top: 0;
+          //   margin: 10px;
+          // }
+        }
+
+        .product-title {
+          width: 87%;
+        }
+        .row .cell:first-child,
+        .row .cell:nth-child(n+3) {
+          flex-basis: 35%;
+        }
+
+        .row .cell:nth-child(2),
+        .row .cell:nth-child(n+4) {
+          flex-basis: 65%;
         }
       }
     }
+
     .summary-box {
       max-width: 100%;
       border: 1px solid #EFEFEF;
@@ -164,126 +292,6 @@
         min-height: 27px !important;
         max-height: 27px !important;
       }
-    }
-  }
-}
-
-.table-container {
-  display: flex;
-  flex-direction: column;
-  margin: 42px auto;
-  overflow-x: auto;
-
-  .cart__item {
-    background: #F5F5F5;
-    border: 1px solid #EDEDED;
-    border-radius: 0px 0px 4px 4px;
-    position: relative;
-    margin-bottom: 25px;
-  }
-
-  .header {
-    border: 1px solid #EDEDED;
-    border-radius: 4px 4px 0px 0px;
-    border-bottom: 0;
-    display: flex;
-    height: 42px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    .cell {
-      flex-basis: calc(100% / 5);
-      text-align: start;
-      padding: 10px;
-      font-weight: 400;
-      font-size: 14px;
-    }
-  }
-
-  .row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-
-    .cell {
-      flex-basis: calc(100% / 5);
-      text-align: start;
-      padding: 10px;
-
-      .product-title {
-        font-weight: 400;
-        font-size: 16.5px;
-        margin-bottom: 10px;
-        width: 86%;
-      }
-
-      .total-price-wrapper span {
-        color: var(--yc-primary-color);
-        font-weight: 700;
-        font-size: 17px;
-      }
-
-      .product-image {
-        img {
-          width: 140px;
-          height: 110px;
-          object-fit: contain;
-        }
-      }
-    }
-
-    .adjust-space {
-      flex-basis: calc(100% / 20);
-      padding: 0;
-    }
-
-    .close-btn {
-      font-size: 25px;
-      color: #4B5565;
-    }
-  }
-
-  @media screen and (max-width: 767px) {
-    .header {
-      display: none;
-    }
-
-    .row {
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: start;
-
-      .cell {
-        .product-image img {
-          width: 140px;
-          height: 90px;
-        }
-      }
-    }
-
-    .close-btn {
-      button {
-        position: absolute;
-        left: 0;
-        top: 0;
-        margin: 10px;
-      }
-    }
-
-    .product-title {
-      width: 87%;
-    }
-    .row .cell:first-child,
-    .row .cell:nth-child(n+3) {
-      flex-basis: 35%;
-    }
-
-    .row .cell:nth-child(2),
-    .row .cell:nth-child(n+4) {
-      flex-basis: 65%;
     }
   }
 }
