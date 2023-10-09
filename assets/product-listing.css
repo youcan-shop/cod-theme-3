@@ -170,6 +170,11 @@
   align-items: center;
   gap: 13px;
 }
+@media (max-width: 768px) {
+  .sort-container .sort-wrapper {
+    display: grid;
+  }
+}
 .sort-container .sort-wrapper .sort-by {
   font-size: 13px;
   font-weight: 400;

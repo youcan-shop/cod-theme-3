@@ -191,6 +191,10 @@
     align-items: center;
     gap: 13px;
 
+    @include max-screen('md') {
+      display: grid;
+    }
+
     .sort-by {
       font-size: 13px;
       font-weight: 400;

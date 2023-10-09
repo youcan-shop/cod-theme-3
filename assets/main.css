@@ -636,22 +636,22 @@ input:not([type=radio]),
   margin: 36px auto;
 }
 .breadcrumbs-container .breadcrumbs-listings .first-listing {
-  color: #A8A8A8;
-  font-weight: 400;
+  color: #9C9C9C;
+  font-weight: 500;
   font-size: 14px;
   text-decoration: none;
 }
 .breadcrumbs-container .breadcrumbs-listings .second-listing {
-  font-weight: 700;
+  font-weight: 500;
   color: #000000;
   font-size: 14px;
   text-decoration: none;
 }
 .breadcrumbs-container .breadcrumbs-listings .third-listing {
-  font-weight: 800;
+  font-weight: 700;
 }
-[dir=ltr] .breadcrumbs-container .breadcrumbs-listings .listings__item img {
-  rotate: 180deg;
+.breadcrumbs-container .breadcrumbs-listings .arrow-item {
+  color: #9C9C9C;
 }
 .breadcrumbs-container .breadcrumbs-name {
   font-weight: 700;
