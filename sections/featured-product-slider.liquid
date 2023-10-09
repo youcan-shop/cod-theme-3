@@ -64,7 +64,6 @@
       arrows: '{{ section.settings.slider_arrows }}' ? true : false,
       autoplay: '{{ section.settings.slider_autoplay }}' ? true : false,
       cover: true,
-      pagination: products == perPage ? false : ('{{ section.settings.slider_pagination }}' ? true : false),
       pauseOnHover: '{{ section.settings.slider_pause_on_hover }}' ? true : false,
       pauseOnFocus: '{{ section.settings.slider_pause_on_focus }}' ? true : false,
       interval: '{{ section.settings.duration_between_each_slide | times: 1000 }}',
@@ -84,7 +83,6 @@
       arrows: mobileImagesPerPage == products ? false : ('{{ section.settings.slider_mobile_arrows }}' ? true : false),
       autoplay: '{{ section.settings.slider_mobile_autoplay }}' ? true : false,
       cover: true,
-      pagination: mobileImagesPerPage == products ? false : ('{{ section.settings.slider_mobile_pagination }}' ? true : false),
       interval: '{{ section.settings.slider_mobile_timeout | times: 1000 }}',
       rewind: true,
       drag: 'free',
@@ -284,12 +282,6 @@
     },
     {
       "type": "checkbox",
-      "id": "slider_pagination",
-      "label": "Pagination",
-      "default": true
-    },
-    {
-      "type": "checkbox",
       "id": "slider_arrows",
       "label": "Arrows",
       "default": true
@@ -332,12 +324,6 @@
       "type": "checkbox",
       "id": "slider_mobile_autoplay",
       "label": "Autoplay",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "slider_mobile_pagination",
-      "label": "Pagination",
       "default": true
     },
     {
