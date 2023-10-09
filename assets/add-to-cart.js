@@ -128,7 +128,7 @@ function cartTemplate(item) {
       variationsArray.push(`${key}: ${item.productVariant.variations[key]}`);
     }
   }
-  const variationsString = variationsArray.join('<br/>');
+  const variationsString = variationsArray.join('&nbsp;&nbsp;');
   const variationsCheck = variationsString === 'default: default' ? '' : variationsString;
 
   // Check if there's an image URL available
@@ -136,12 +136,11 @@ function cartTemplate(item) {
   return `
     <li class="cart-item">
       <div class="item-body">
-      <div class="right-items">
         ${imageUrl && `<img src="${imageUrl}" />`}
         <div class="item-details">
           <p class="product-name">${item.productVariant.product.name}</p>
           <div class="variants">
-          ${CART_DRAWER_TRANSLATION.quantityVariant}: ${item.quantity} <br/>'${variationsCheck}
+          ${CART_DRAWER_TRANSLATION.quantityVariant}:${item.quantity} &nbsp;${variationsCheck}
           </div>
           <div class="product-price">
             <span class="compare-price">${item.productVariant.compare_at_price ? `${item.productVariant.compare_at_price} ${currencyCode}` : ''}</span>
@@ -150,18 +149,10 @@ function cartTemplate(item) {
               <span class="currency-code">${currencyCode}</span>
             </div>
           </div>
-          </div>
-        </div>
-        <div class="left-items">
           <button class="remove-item-btn">
-          <ion-icon data-cart-item-id="${item.id}" data-product-variant-id="${item.productVariant.id}" name="close-outline"></ion-icon>
+            <ion-icon data-cart-item-id="${item.id}" data-product-variant-id="${item.productVariant.id}" name="trash-outline"></ion-icon>
           </button>
           <div class="spinner" data-spinner-id="${item.id}" style="display: none;"></div>
-          <div class="quantity-control">
-            <button class="increase-btn cart-quantity-btn" onclick="increaseCartQuantity('${item.id}', '${item.productVariant.id}')">+</button>
-            <input type="number" id="quantity-${item.id}" value="${item.quantity}" min="1" onchange="updateCartItem('${item.id}', '${item.productVariant.id}', this.value)">
-            <button class="decrease-btn cart-quantity-btn" onclick="decreaseCartQuantity('${item.id}', '${item.productVariant.id}')">-</button>
-          </div>
         </div>
       </div>
     </li>
@@ -186,7 +177,7 @@ async function updateCartDrawer() {
 
     const headerContainer = `
       <div class="header">
-        <h2 class="cart">${CART_DRAWER_TRANSLATION.cartName}<span> ${cartData.count} ${CART_DRAWER_TRANSLATION.itemsName}</span></h2>
+        <h2 class="cart">${CART_DRAWER_TRANSLATION.cartName}<span> ${cartData.count}</span></h2>
       </div>
     `;
 
@@ -213,19 +204,17 @@ async function updateCartDrawer() {
     }
 
     const footerContainerHTML = `
-      <div class="footer">
-        <div class="price-wrapper">
-          <span class="total-price">${CART_DRAWER_TRANSLATION.totalAmount}</span>
-          <div class="currency-wrapper">
-            <span class="currency-value">${cartData.sub_total.toFixed(2)}</span>
-            <span class="currency-code">${currencyCode}</span>
+        <div class="footer">
+          <div class="price-wrapper">
+            <span class="total-price">${CART_DRAWER_TRANSLATION.totalAmount}</span>
+            <div class="currency-wrapper">
+              <span class="currency-value">${cartData.sub_total.toFixed(2)}</span>
+              <span class="currency-code">${currencyCode}</span>
+            </div>
           </div>
-          <span class="spinner footer-spinner" style="display: none;"></span>
+          <a href='${location.origin}/cart' class="yc-btn">${CART_DRAWER_TRANSLATION.checkoutPayment}</a>
         </div>
-        <a href='${location.origin}/cart' class="yc-btn">${CART_DRAWER_TRANSLATION.checkoutPayment}</a>
-        <a href='${location.origin}' class="cart-action">${CART_DRAWER_TRANSLATION.continueShopping}</a>
-      </div>
-  `;
+    `;
 
     // Create a DOM element for the footer container
     const footerContainer = document.createElement('div');
