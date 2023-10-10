@@ -385,7 +385,7 @@ input:not([type='radio']),
     width: 34px;
     height: 34px;
     border-radius: 50%;
-    border: 1px solid #E7E7E7;
+    border: 2px solid #E7E7E7;
     cursor: pointer;
 
     &:focus {
@@ -405,6 +405,7 @@ input:not([type='radio']),
 
     &.active {
       padding: 4px;
+      border: 2px solid #000000;
     }
   }
 }
