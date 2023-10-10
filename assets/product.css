@@ -283,14 +283,18 @@
   }
 }
 .yc-single-product .product-details .countdown-container {
-  border-radius: 4px;
-  padding: 18px 20px;
+  padding: 12px 10px;
 }
-.yc-single-product .product-details .countdown-container .countdown-wrapper .countdown .num {
-  background: rgba(225, 225, 225, 0.3);
+@media (max-width: 768px) {
+  .yc-single-product .product-details .countdown-container .day .num, .yc-single-product .product-details .countdown-container .hour .num, .yc-single-product .product-details .countdown-container .min .num, .yc-single-product .product-details .countdown-container .sec .num {
+    font-size: 18px;
+  }
 }
-.yc-single-product .product-details .countdown-container .countdown-wrapper .countdown .sec .num {
-  background-color: var(--yc-primary-color);
+@media (max-width: 768px) {
+  .yc-single-product .product-details .countdown-container .dots {
+    font-size: 30px;
+    margin-top: -7px;
+  }
 }
 .yc-single-product .product-price-container {
   display: flex;
