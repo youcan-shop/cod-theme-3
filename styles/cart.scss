@@ -21,6 +21,14 @@ body {
   }
 
   .cart-table {
+    margin-top: 26px;
+    margin-bottom: 26px;
+
+    @include breakpoint('md') {
+      margin-top: 36px;
+      margin-bottom: 72px;
+    }
+
     .header-block {
       display: flex;
       flex-direction: column;
@@ -94,9 +102,7 @@ body {
         justify-content: space-between;
 
         .cell {
-          flex-basis: calc(100% / 5);
           text-align: start;
-          padding: 10px;
 
           .product-title {
             font-weight: 400;
@@ -120,66 +126,25 @@ body {
           }
         }
 
-        .adjust-space {
-          flex-basis: calc(100% / 20);
-          padding: 0;
-        }
-
         .close-btn {
           font-size: 25px;
           color: #4B5565;
         }
       }
-
-      @media screen and (max-width: 767px) {
-        .header {
-          display: none;
-        }
-
-        .row {
-          flex-wrap: wrap;
-          justify-content: center;
-          align-items: start;
-
-          .cell {
-            .product-image img {
-              width: 140px;
-              height: 90px;
-            }
-          }
-        }
-
-        .close-btn {
-          // button {
-          //   position: absolute;
-          //   left: 0;
-          //   top: 0;
-          //   margin: 10px;
-          // }
-        }
-
-        .product-title {
-          width: 87%;
-        }
-        .row .cell:first-child,
-        .row .cell:nth-child(n+3) {
-          flex-basis: 35%;
-        }
-
-        .row .cell:nth-child(2),
-        .row .cell:nth-child(n+4) {
-          flex-basis: 65%;
-        }
-      }
     }
 
     .summary-box {
-      max-width: 100%;
-      border: 1px solid #EFEFEF;
-      border-radius: 4px;
-      width: 437px;
-      float: left;
-      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+
+      @include breakpoint('md') {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      #summary {
+        background: white;
+      }
 
       .promo {
         font-weight: 400;

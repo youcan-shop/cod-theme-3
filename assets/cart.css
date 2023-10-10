@@ -13,6 +13,16 @@ body {
     padding: 0 20px;
   }
 }
+.yc-cart .cart-table {
+  margin-top: 26px;
+  margin-bottom: 26px;
+}
+@media (min-width: 768px) {
+  .yc-cart .cart-table {
+    margin-top: 36px;
+    margin-bottom: 72px;
+  }
+}
 .yc-cart .cart-table .header-block {
   display: flex;
   flex-direction: column;
@@ -80,9 +90,7 @@ body {
   justify-content: space-between;
 }
 .yc-cart .cart-table .table-container .row .cell {
-  flex-basis: 20%;
   text-align: start;
-  padding: 10px;
 }
 .yc-cart .cart-table .table-container .row .cell .product-title {
   font-weight: 400;
@@ -100,46 +108,22 @@ body {
   height: 110px;
   object-fit: contain;
 }
-.yc-cart .cart-table .table-container .row .adjust-space {
-  flex-basis: 5%;
-  padding: 0;
-}
 .yc-cart .cart-table .table-container .row .close-btn {
   font-size: 25px;
   color: #4B5565;
 }
-@media screen and (max-width: 767px) {
-  .yc-cart .cart-table .table-container .header {
-    display: none;
-  }
-  .yc-cart .cart-table .table-container .row {
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: start;
-  }
-  .yc-cart .cart-table .table-container .row .cell .product-image img {
-    width: 140px;
-    height: 90px;
-  }
-  .yc-cart .cart-table .table-container .product-title {
-    width: 87%;
-  }
-  .yc-cart .cart-table .table-container .row .cell:first-child,
-  .yc-cart .cart-table .table-container .row .cell:nth-child(n+3) {
-    flex-basis: 35%;
-  }
-  .yc-cart .cart-table .table-container .row .cell:nth-child(2),
-  .yc-cart .cart-table .table-container .row .cell:nth-child(n+4) {
-    flex-basis: 65%;
+.yc-cart .cart-table .summary-box {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .yc-cart .cart-table .summary-box {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
-.yc-cart .cart-table .summary-box {
-  max-width: 100%;
-  border: 1px solid #EFEFEF;
-  border-radius: 4px;
-  width: 437px;
-  float: left;
-  margin-bottom: 40px;
+.yc-cart .cart-table .summary-box #summary {
+  background: white;
 }
 .yc-cart .cart-table .summary-box .promo {
   font-weight: 400;
