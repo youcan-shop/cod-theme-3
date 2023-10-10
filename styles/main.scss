@@ -240,12 +240,12 @@ input:not([type='radio']),
   font-size: 14px;
   line-height: 120%;
   font-weight: 400;
-  border: 1px solid #BDBDBD;
-  border-radius: 8px;
+  border: 1px solid #B7B7B7;
   cursor: pointer;
-
+  
   &.active {
     font-weight: 700;
+    border: 1px solid #000000;
   }
 }
 
