@@ -72,12 +72,15 @@ body {
 
       .checkout_cta {
         width: 100%;
-        max-width: 428px;
 
-        .yc-btn {
-          font-size: 14px;
+        @include breakpoint('md') {
+          max-width: 428px;
         }
 
+        .yc-btn {
+          width: 100%;
+          font-size: 14px;
+        }
       }
     }
 
