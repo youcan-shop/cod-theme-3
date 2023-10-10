@@ -28,7 +28,7 @@
               <div class="product-title">
                 <span class="product-name">{{ item.name }}</span>
                 <button onclick="removeItem('{{ item.id }}', '{{ item.product_variant_id }}')" class='yc-btn-close'>
-                  <ion-icon name="close-outline"></ion-icon>
+                  <ion-icon name="trash-outline"></ion-icon>
                 </button>
               </div>
               <div class="product-variant">
@@ -75,7 +75,7 @@
             </div>
             <div class="cell close-btn">
               <button onclick="removeItem('{{ item.id }}', '{{ item.product_variant_id }}')" class='yc-btn-close'>
-                <ion-icon name="close-outline"></ion-icon>
+                <ion-icon name="trash-outline"></ion-icon>
               </button>
             </div>
           </div>
@@ -121,6 +121,19 @@
                   </div>
                   <div>
                     <span class="item-price">{{ item.price | times: item.quantity }}</span>
+                    <span class="product-currency"></span>
+                  </div>
+                </div>
+              {%- endfor %}
+            </div>
+          {%- endif %}
+          {%- if cart and cart.available_shipping_options %}
+            <div class="shipping-wrapper">
+              {%- for option in cart.available_shipping_options -%}
+                <div class='flex justify-between text-sm box' id='cart-item-{{ item.id }}'>
+                  <div class='capitalize'>{{ option.name }}</div>
+                  <div>
+                    <span class="item-price">{{ option.price }}</span>
                     <span class="product-currency"></span>
                   </div>
                 </div>

@@ -103,11 +103,16 @@ body {
         gap: 23px;
 
         @include breakpoint('md') {
-          justify-content: space-between;
+          align-items: center;
+          gap: 24px;
         }
 
         .cell.mobile-view {
           width: 100%;
+
+          @include breakpoint('md') {
+            max-width: 355px;
+          }
 
           .product-title {
             display: flex;
@@ -132,6 +137,11 @@ body {
           @include breakpoint('md') {
             display: block;
           }
+        }
+
+        .cell.total-price-table,
+        .cell.quantity-input {
+          flex-basis: 50%;
         }
 
         .quantity-x-price-container {
