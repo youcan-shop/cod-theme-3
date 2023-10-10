@@ -322,7 +322,7 @@ input:not([type=radio]),
   width: 26px;
   background-color: white;
   border-radius: 50%;
-  border: 2px solid #000;
+  border: 2px solid #B7B7B7;
 }
 .yc-radio .yc-radio-buttons .checkmark:after {
   content: "";
@@ -338,6 +338,7 @@ input:not([type=radio]),
 }
 .yc-radio .yc-radio-buttons input[type=radio]:checked + .checkmark {
   background: white;
+  border: 2px solid #000000;
 }
 .yc-radio .yc-radio-buttons input[type=radio]:checked + .checkmark:after {
   background-color: #000;
