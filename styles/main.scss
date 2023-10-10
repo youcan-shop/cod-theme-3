@@ -333,7 +333,7 @@ input:not([type='radio']),
       width: 26px;
       background-color: white;
       border-radius: 50%;
-      border: 1px solid var(--yc-neutral-light-color);
+      border: 2px solid #000;
 
       &:after {
         content: "";
@@ -350,7 +350,11 @@ input:not([type='radio']),
     }
 
     input[type='radio']:checked + .checkmark {
-      background: var(--yc-primary-color);
+      background: white;
+
+      &:after {
+        background-color: #000;
+      }
     }
 
     &:hover .checkmark {
