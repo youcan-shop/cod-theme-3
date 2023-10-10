@@ -257,11 +257,10 @@ input:not([type='radio']),
 
   .yc-image-options-item {
     aspect-ratio: 1;
-    width: 62px;
-    height: 52px;
-    padding: 3px;
-    border: 1px solid var(--yc-neutral-light-color);
-    border-radius: 4px;
+    width: 75px;
+    height: 90px;
+    padding: 4px;
+    border: 1px solid transparent;
     cursor: pointer;
 
     img {
