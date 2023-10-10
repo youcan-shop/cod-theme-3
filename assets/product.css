@@ -205,6 +205,7 @@
   padding: 14px 18px;
 }
 .yc-single-product .product-details .product-options .product-option .yc-upload-preview .yc-upload-wrapper {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;

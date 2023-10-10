@@ -38,7 +38,9 @@ function uploadImage(element) {
         });
 
         uploadArea.style.display = 'none';
-        imagePreview.style.display = 'block';
+        imagePreview.style.display = 'flex';
+        imagePreview.style.flexDirection = 'column';
+        imagePreview.style.gap = '10px';
         imageWrapper.style.opacity = 0.4;
         imageName.innerText = this.files[0].name;
         progressContainer.style.display = "block";
