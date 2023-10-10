@@ -212,6 +212,7 @@
           padding: 14px 18px;
 
           .yc-upload-wrapper {
+            flex:1;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -261,7 +262,6 @@
         }
       }
 
-      .yc-colors-select,
       .yc-options-list,
       .yc-image-options-list {
         .active {
@@ -363,9 +363,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 151px;
+  width: 150px;
   border: 1px solid #BDBDBD;
-  border-radius: 4px;
   padding: 5px;
 
   /* Hide input arrows in Chrome, Safari, Edge, Opera */
@@ -386,7 +385,7 @@
     border: none;
     padding: 0 !important;
     font-weight: 700 !important;
-    font-size: 20px !important;
+    font-size: 14px !important;
     line-height: 120% !important;
     color: black;
   }
@@ -397,10 +396,13 @@
 
   .decrement-button,
   .increment-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 25%;
     height: 100%;
     border: none;
-    color: #BDBDBD;
+    color: #000000;
     font-weight: 700;
     font-size: 29px;
     line-height: 120%;

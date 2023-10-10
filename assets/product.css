@@ -205,6 +205,7 @@
   padding: 14px 18px;
 }
 .yc-single-product .product-details .product-options .product-option .yc-upload-preview .yc-upload-wrapper {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -245,7 +246,6 @@
   border-radius: 5px;
   transition: width 1s ease-in-out;
 }
-.yc-single-product .product-details .product-options .yc-colors-select .active,
 .yc-single-product .product-details .product-options .yc-options-list .active,
 .yc-single-product .product-details .product-options .yc-image-options-list .active {
   border: 1px solid #000000;
@@ -329,9 +329,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 151px;
+  width: 150px;
   border: 1px solid #BDBDBD;
-  border-radius: 4px;
   padding: 5px;
   /* Hide input arrows in Chrome, Safari, Edge, Opera */
   /* Hide input arrows in Firefox */
@@ -350,7 +349,7 @@
   border: none;
   padding: 0 !important;
   font-weight: 700 !important;
-  font-size: 20px !important;
+  font-size: 14px !important;
   line-height: 120% !important;
   color: black;
 }
@@ -359,10 +358,13 @@
 }
 .quantity-field .decrement-button,
 .quantity-field .increment-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 25%;
   height: 100%;
   border: none;
-  color: #BDBDBD;
+  color: #000000;
   font-weight: 700;
   font-size: 29px;
   line-height: 120%;
