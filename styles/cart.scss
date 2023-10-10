@@ -85,8 +85,7 @@ body {
     }
 
     .table-container {
-      display: flex;
-      flex-direction: column;
+      display: grid;
       margin: 24px 0;
       background-color: white;
 
@@ -95,43 +94,69 @@ body {
       }
 
       .cart__item {
-        margin-bottom: 25px;
+        padding: 24px 20px;
       }
 
       .row {
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+        align-items: flex-start;
+        gap: 23px;
 
-        .cell {
-          text-align: start;
+        @include breakpoint('md') {
+          justify-content: space-between;
+        }
+
+        .cell.mobile-view {
+          width: 100%;
 
           .product-title {
-            font-weight: 400;
-            font-size: 16.5px;
-            margin-bottom: 10px;
-            width: 86%;
-          }
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
 
-          .total-price-wrapper span {
-            color: var(--yc-primary-color);
-            font-weight: 700;
-            font-size: 17px;
-          }
+            .yc-btn-close {
+              display: block;
 
-          .product-image {
-            img {
-              width: 140px;
-              height: 110px;
-              object-fit: contain;
+              @include breakpoint('md') {
+                display: none;
+              }
             }
           }
         }
 
-        .close-btn {
-          font-size: 25px;
-          color: #4B5565;
+        .cell.quantity-input,
+        .cell.total-price-table,
+        .cell.close-btn {
+          display: none;
+
+          @include breakpoint('md') {
+            display: block;
+          }
+        }
+
+        .quantity-x-price-container {
+          @include breakpoint('md') {
+            display: none;
+          }
+
+          .total-price-table {
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+
+        .cell {
+          .product-image {
+            width: 80px;
+            height: 80px;
+
+            img {
+              width: 100%;
+              height: 100%;
+
+              object-fit: contain;
+            }
+          }
         }
       }
     }

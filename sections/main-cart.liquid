@@ -24,11 +24,16 @@
                 <img loading='lazy' src='{{ item.image }}' alt='product-name'>
               </div>
             </div>
-            <div class='cell'>
-              <div class="product-title">{{ item.name }}</div>
-                <div class="product-variant">
-                  {% for variant in item.variations %}
-                    {% if variant[0] != 'default' or variant[1] != 'default' %}
+            <div class='cell mobile-view'>
+              <div class="product-title">
+                <span class="product-name">{{ item.name }}</span>
+                <button onclick="removeItem('{{ item.id }}', '{{ item.product_variant_id }}')" class='yc-btn-close'>
+                  <ion-icon name="close-outline"></ion-icon>
+                </button>
+              </div>
+              <div class="product-variant">
+                {% for variant in item.variations %}
+                  {% if variant[0] != 'default' or variant[1] != 'default' %}
                     <span>{{ variant[0] }}: {{ variant[1] }}</span>
                     <span class="variant-space"></span>
                   {% endif %}
@@ -38,8 +43,22 @@
                   <span class='product-currency'></span>
                 </div>
               </div>
+              <div class='quantity-x-price-container'>
+                <div class='total-price-table'>
+                  <div class='quantity-input'>
+                    {%- render 'quantity-input', item: item -%}
+                  </div>
+                  <div class='cart-item-loader-spinner hidden' id='loading__{{ item.id }}'>
+                    <span class='spinner h-7 w-7'></span>
+                  </div>
+                  <div class="total-price-wrapper">
+                    <span class="total-price">{{ item.price | times: item.quantity }}</span>
+                    <span class="product-currency"></span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class='cell'>
+            <div class='cell quantity-input'>
               {%- render 'quantity-input', item: item -%}
             </div>
             <div class='cell total-price-table'>
