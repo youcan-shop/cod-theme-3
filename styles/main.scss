@@ -445,6 +445,10 @@ input:not([type='radio']),
         right: 10px;
       }
     }
+
+    &.black-border {
+      border-color: #000000;
+    }
     
   }
 
@@ -483,10 +487,6 @@ input:not([type='radio']),
 
   .show {
     display: block;
-  }
-
-  *:has(+ .dropdown-content.show) {
-    border: 1px solid #000;
   }
 }
 /* --------------------------- */

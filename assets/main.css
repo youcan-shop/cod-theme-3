@@ -421,6 +421,9 @@ input:not([type=radio]),
   left: unset;
   right: 10px;
 }
+.dropdown-input .dropbtn.black-border {
+  border-color: #000000;
+}
 .dropdown-input .dropdown-content {
   display: none;
   margin-top: 3px;
@@ -451,9 +454,6 @@ input:not([type=radio]),
 }
 .dropdown-input .show {
   display: block;
-}
-.dropdown-input *:has(+ .dropdown-content.show) {
-  border: 1px solid #000;
 }
 
 /* --------------------------- */
