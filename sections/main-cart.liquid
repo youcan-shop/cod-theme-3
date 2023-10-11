@@ -38,18 +38,18 @@
                     <span class="variant-space"></span>
                   {% endif %}
                 {% endfor %}
-                <div>
+                <div class="hidden">
                   <span class='product-price'> {{ item.price }}</span>
                   <span class='product-currency'></span>
                 </div>
               </div>
               <div class='quantity-x-price-container'>
                 {%- render 'quantity-input', item: item -%}
-                <div class='total-price-table'>
+                <div class='subtotal-price-table'>
                   <div class='cart-item-loader-spinner hidden' id='loading__{{ item.id }}'>
                     <span class='spinner h-7 w-7'></span>
                   </div>
-                  <div class="total-price-wrapper">
+                  <div class="subtotal-price">
                     <span class="total-price">{{ item.price | times: item.quantity }}</span>
                     <span class="product-currency"></span>
                   </div>
@@ -57,7 +57,7 @@
               </div>
             </div>
             <div class='cell quantity-input'></div>
-            <div class='cell total-price-table'></div>
+            <div class='cell subtotal-price-table'></div>
             <div class="cell close-btn">
               <button onclick="removeItem('{{ item.id }}', '{{ item.product_variant_id }}')" class='yc-btn-close'>
                 <ion-icon name="trash-outline"></ion-icon>

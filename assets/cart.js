@@ -182,21 +182,25 @@ function hasNoChild(element) {
  * Teleport elements based by media screen
  */
 function teleportElements() {
-  const oldElement = document.querySelector('.quantity-x-price-container');
-  const quantityElement = oldElement.querySelector('.quantity-wrapper');
-  const priceElement = oldElement.querySelector('.total-price-table');
-  const newQuantityParent = document.querySelector('.cell.quantity-input');
-  const newPriceParent = document.querySelector('.cell.total-price-table');
+  const cartItems = document.querySelectorAll('.cart__item');
   const largeScreen = window.matchMedia("(min-width: 768px)").matches;
   const smallScreen = window.matchMedia("(max-width: 768px)").matches;
 
-  if (largeScreen && hasNoChild(newQuantityParent) && hasNoChild(newPriceParent)) {
-    newQuantityParent.appendChild(quantityElement);
-    newPriceParent.appendChild(priceElement);
-  } else if(smallScreen && hasNoChild(oldElement)) {
-    oldElement.appendChild(newQuantityParent.querySelector('.quantity-wrapper'));
-    oldElement.appendChild(newPriceParent.querySelector('.total-price-table'));
-  }
+  cartItems.forEach((item) => {
+    const oldElement = item.querySelector('.quantity-x-price-container');
+    const quantityElement = oldElement.querySelector('.quantity-wrapper');
+    const priceElement = oldElement.querySelector('.subtotal-price-table');
+    const newQuantityParent = item.querySelector('.cell.quantity-input');
+    const newPriceParent = item.querySelector('.cell.subtotal-price-table');
+
+    if (largeScreen && hasNoChild(newQuantityParent) && hasNoChild(newPriceParent)) {
+      newQuantityParent.appendChild(quantityElement);
+      newPriceParent.appendChild(priceElement);
+    } else if(smallScreen && hasNoChild(oldElement)) {
+      oldElement.appendChild(newQuantityParent.querySelector('.quantity-wrapper'));
+      oldElement.appendChild(newPriceParent.querySelector('.subtotal-price-table'));
+    }
+  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {

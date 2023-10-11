@@ -94,17 +94,28 @@ body {
       }
 
       .cart__item {
-        padding: 24px 20px;
+        padding: 24px 0;
+        margin: 0 20px;
+
+        @include breakpoint('md') {
+          padding: 24px 20px;
+          margin: unset;
+        }
       }
 
       .row {
         display: flex;
         align-items: flex-start;
         gap: 23px;
+        border-bottom: 1px solid #EBEBEB;
 
         @include breakpoint('md') {
           align-items: center;
           gap: 24px;
+        }
+
+        &:last-child {
+          border-bottom: none;
         }
 
         .cell.mobile-view {
@@ -130,7 +141,7 @@ body {
         }
 
         .cell.quantity-input,
-        .cell.total-price-table,
+        .cell.subtotal-price-table,
         .cell.close-btn {
           display: none;
 
@@ -139,7 +150,7 @@ body {
           }
         }
 
-        .cell.total-price-table,
+        .cell.subtotal-price-table,
         .cell.quantity-input {
           flex-basis: 50%;
         }
@@ -147,6 +158,7 @@ body {
         .quantity-x-price-container {
           display: flex;
           justify-content: space-between;
+          align-items: center;
 
           @include breakpoint('md') {
             display: none;
@@ -156,7 +168,7 @@ body {
         .cell {
           .product-image {
             width: 80px;
-            height: 80px;
+            height: auto;
 
             img {
               width: 100%;
@@ -164,6 +176,47 @@ body {
 
               object-fit: contain;
             }
+          }
+
+          .product-name {
+            color: #000;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 120%;
+          }
+
+          .product-variant {
+            margin-top: 12px;
+            margin-bottom: 16px;
+
+            @include breakpoint('md') {
+              margin-bottom: unset;
+            }
+
+            & * {
+              color: #000;
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 150%;
+            }
+          }
+
+          .subtotal-price * {
+            color: var(--yc-primary-color);
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 97%;
+          }
+        }
+
+        .yc-btn-close {
+          width: 20px;
+          height: 20px;
+
+          ion-icon {
+            font-size: 20px;
+            color: #CBCBCB;
           }
         }
       }
@@ -211,12 +264,14 @@ body {
         }
       }
     }
+
+
   }
 
   .quantity-wrapper {
     width: fit-content;
+    height: fit-content;
     border: 1px solid #BDBDBD;
-    border-radius: 4px;
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
@@ -224,23 +279,17 @@ body {
 
     button {
       width: 34px !important;
-      min-width: 34px !important;
-      max-width: 34px !important;
-      height: 34px !important;
-      min-height: 34px !important;
-      max-height: 34px !important;
+      height: 35px !important;
       background-color: transparent;
-      font-size: 18px;
-      color: #B7B7B7;
+      color: #000;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 150%;
     }
 
     input {
-      width: 34px !important;
-      min-width: 34px !important;
-      max-width: 34px !important;
-      height: 34px !important;
-      min-height: 34px !important;
-      max-height: 34px !important;
+      width: 38px !important;
+      height: 35px !important;
       margin: 0 !important;
       padding: 0 !important;
       background-color: white;
@@ -251,17 +300,6 @@ body {
       align-items: center;
       justify-content: center;
       text-align: center;
-    }
-
-    @media screen and (max-width: 520px) {
-      button, input {
-        width: 26px !important;
-        min-width: 25px !important;
-        max-width: 25px !important;
-        height: 27px !important;
-        min-height: 27px !important;
-        max-height: 27px !important;
-      }
     }
   }
 }

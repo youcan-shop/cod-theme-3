@@ -85,18 +85,29 @@ body {
   }
 }
 .yc-cart .cart-table .table-container .cart__item {
-  padding: 24px 20px;
+  padding: 24px 0;
+  margin: 0 20px;
+}
+@media (min-width: 768px) {
+  .yc-cart .cart-table .table-container .cart__item {
+    padding: 24px 20px;
+    margin: unset;
+  }
 }
 .yc-cart .cart-table .table-container .row {
   display: flex;
   align-items: flex-start;
   gap: 23px;
+  border-bottom: 1px solid #EBEBEB;
 }
 @media (min-width: 768px) {
   .yc-cart .cart-table .table-container .row {
     align-items: center;
     gap: 24px;
   }
+}
+.yc-cart .cart-table .table-container .row:last-child {
+  border-bottom: none;
 }
 .yc-cart .cart-table .table-container .row .cell.mobile-view {
   width: 100%;
@@ -120,24 +131,25 @@ body {
   }
 }
 .yc-cart .cart-table .table-container .row .cell.quantity-input,
-.yc-cart .cart-table .table-container .row .cell.total-price-table,
+.yc-cart .cart-table .table-container .row .cell.subtotal-price-table,
 .yc-cart .cart-table .table-container .row .cell.close-btn {
   display: none;
 }
 @media (min-width: 768px) {
   .yc-cart .cart-table .table-container .row .cell.quantity-input,
-  .yc-cart .cart-table .table-container .row .cell.total-price-table,
+  .yc-cart .cart-table .table-container .row .cell.subtotal-price-table,
   .yc-cart .cart-table .table-container .row .cell.close-btn {
     display: block;
   }
 }
-.yc-cart .cart-table .table-container .row .cell.total-price-table,
+.yc-cart .cart-table .table-container .row .cell.subtotal-price-table,
 .yc-cart .cart-table .table-container .row .cell.quantity-input {
   flex-basis: 50%;
 }
 .yc-cart .cart-table .table-container .row .quantity-x-price-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 @media (min-width: 768px) {
   .yc-cart .cart-table .table-container .row .quantity-x-price-container {
@@ -146,12 +158,48 @@ body {
 }
 .yc-cart .cart-table .table-container .row .cell .product-image {
   width: 80px;
-  height: 80px;
+  height: auto;
 }
 .yc-cart .cart-table .table-container .row .cell .product-image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+.yc-cart .cart-table .table-container .row .cell .product-name {
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 120%;
+}
+.yc-cart .cart-table .table-container .row .cell .product-variant {
+  margin-top: 12px;
+  margin-bottom: 16px;
+}
+@media (min-width: 768px) {
+  .yc-cart .cart-table .table-container .row .cell .product-variant {
+    margin-bottom: unset;
+  }
+}
+.yc-cart .cart-table .table-container .row .cell .product-variant * {
+  color: #000;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+.yc-cart .cart-table .table-container .row .cell .subtotal-price * {
+  color: var(--yc-primary-color);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 97%;
+}
+.yc-cart .cart-table .table-container .row .yc-btn-close {
+  width: 20px;
+  height: 20px;
+}
+.yc-cart .cart-table .table-container .row .yc-btn-close ion-icon {
+  font-size: 20px;
+  color: #CBCBCB;
 }
 .yc-cart .cart-table .summary-box {
   display: flex;
@@ -197,8 +245,8 @@ body {
 }
 .yc-cart .quantity-wrapper {
   width: fit-content;
+  height: fit-content;
   border: 1px solid #BDBDBD;
-  border-radius: 4px;
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
@@ -206,22 +254,16 @@ body {
 }
 .yc-cart .quantity-wrapper button {
   width: 34px !important;
-  min-width: 34px !important;
-  max-width: 34px !important;
-  height: 34px !important;
-  min-height: 34px !important;
-  max-height: 34px !important;
+  height: 35px !important;
   background-color: transparent;
-  font-size: 18px;
-  color: #B7B7B7;
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 150%;
 }
 .yc-cart .quantity-wrapper input {
-  width: 34px !important;
-  min-width: 34px !important;
-  max-width: 34px !important;
-  height: 34px !important;
-  min-height: 34px !important;
-  max-height: 34px !important;
+  width: 38px !important;
+  height: 35px !important;
   margin: 0 !important;
   padding: 0 !important;
   background-color: white;
@@ -232,14 +274,4 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-}
-@media screen and (max-width: 520px) {
-  .yc-cart .quantity-wrapper button, .yc-cart .quantity-wrapper input {
-    width: 26px !important;
-    min-width: 25px !important;
-    max-width: 25px !important;
-    height: 27px !important;
-    min-height: 27px !important;
-    max-height: 27px !important;
-  }
 }
