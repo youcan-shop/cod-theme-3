@@ -98,13 +98,13 @@
           {%- if cart and cart.items %}
             <div class="price-wrapper">
               {%- for item in cart.items %}
-                <div class='flex justify-between text-sm box' id='cart-item-{{ item.id }}'>
-                  <p class='capitalize'>{{ item.name }}</p>
+                <div class='summary-item' id='cart-item-{{ item.id }}'>
+                  <p class='capitalize name'>{{ item.name }}</p>
                   <div class="hidden">
                     {%- render 'quantity-input', item: item -%}
                     <div class='product-price'>{{ item.price }}</div>
                   </div>
-                  <div>
+                  <div class="summary-item-price">
                     <span class="item-price">{{ item.price | times: item.quantity }}</span>
                     <span class="product-currency"></span>
                   </div>
@@ -115,9 +115,9 @@
           {%- if cart and cart.available_shipping_options %}
             <div class="shipping-wrapper">
               {%- for option in cart.available_shipping_options -%}
-                <div class='flex justify-between text-sm box' id='cart-item-{{ item.id }}'>
-                  <div class='capitalize'>{{ option.name }}</div>
-                  <div>
+                <div class='summary-item' id='cart-item-{{ item.id }}'>
+                  <div class='capitalize name'>{{ option.name }}</div>
+                  <div class="summary-item-price">
                     <span class="item-price">{{ option.price }}</span>
                     <span class="product-currency"></span>
                   </div>
