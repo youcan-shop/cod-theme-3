@@ -460,8 +460,8 @@ input:not([type=radio]),
 /* ----- spinner loading ----- */
 /* --------------------------- */
 .spinner {
-  width: 23px;
-  height: 23px;
+  width: 20px;
+  height: 20px;
   display: inline-block;
   border: 2px solid rgba(128, 128, 128, 0.3);
   border-radius: 50%;
