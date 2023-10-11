@@ -14,15 +14,11 @@
   }
 
   .section-featured-collections-{{ id }} .category-name {
-    color: {{ section.settings.category_name_color.hex }};
-  }
-
-  .section-featured-collections-{{ id }} .slug-name {
-    color: {{ section.settings.category_subtitle_color.hex }};
+    color: {{ section.settings.category_title_color.hex }};
   }
 {% endstyle %}
 
-<section class="section-featured-collections-{{ id }} yc-featured-container categories-spacing">
+<section class="section-featured-collections-{{ id }} yc-featured-container container">
   <h1 class='yc-section-title'>
     {{ section.settings.title }}
   </h1>
@@ -37,7 +33,7 @@
               {% if block.settings.category.slug %}
                 <div class="category-link">
                   <a href='/collections/{{ block.settings.category.slug }}'>
-                    عرض المزيد
+                    {{ 'general.show_more_button' | t }}
                   </a>
                 </div>
               {% endif %}
@@ -80,18 +76,13 @@
           "label": "Right",
           "value": "right"
         }
-      ]
+      ],
+      "default": "right"
     },
       {
         "type": "color",
-        "id": "category_name_color",
-        "label": "Category name color",
-        "default": "#FFFFFFFF"
-      },
-      {
-        "type": "color",
-        "id": "category_subtitle_color",
-        "label": "Category subtitle color",
+        "id": "category_title_color",
+        "label": "Category title color",
         "default": "#FFFFFFFF"
       },
       {
