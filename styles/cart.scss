@@ -233,6 +233,8 @@ body {
     .summary-box {
       display: flex;
       flex-direction: column;
+      box-shadow: unset !important;
+      border: unset !important;
 
       @include breakpoint('md') {
         flex-direction: row;
