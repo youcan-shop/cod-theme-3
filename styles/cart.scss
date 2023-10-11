@@ -145,13 +145,11 @@ body {
         }
 
         .quantity-x-price-container {
+          display: flex;
+          justify-content: space-between;
+
           @include breakpoint('md') {
             display: none;
-          }
-
-          .total-price-table {
-            display: flex;
-            justify-content: space-between;
           }
         }
 

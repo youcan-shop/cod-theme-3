@@ -135,14 +135,14 @@ body {
 .yc-cart .cart-table .table-container .row .cell.quantity-input {
   flex-basis: 50%;
 }
+.yc-cart .cart-table .table-container .row .quantity-x-price-container {
+  display: flex;
+  justify-content: space-between;
+}
 @media (min-width: 768px) {
   .yc-cart .cart-table .table-container .row .quantity-x-price-container {
     display: none;
   }
-}
-.yc-cart .cart-table .table-container .row .quantity-x-price-container .total-price-table {
-  display: flex;
-  justify-content: space-between;
 }
 .yc-cart .cart-table .table-container .row .cell .product-image {
   width: 80px;

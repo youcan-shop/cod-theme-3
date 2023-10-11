@@ -168,3 +168,39 @@ async function removeItem(cartItemId, productVariantId) {
     stopLoad(`#loading__${cartItemId}`);
   }
 }
+
+/**
+ * Check if the element has no children
+ * @param {HTMLElement} el
+ * @returns {Boolean}
+ */
+function hasNoChild(element) {
+  return element.childElementCount === 0;
+}
+
+/**
+ * Teleport elements based by media screen
+ */
+function teleportElements() {
+  const oldElement = document.querySelector('.quantity-x-price-container');
+  const quantityElement = oldElement.querySelector('.quantity-wrapper');
+  const priceElement = oldElement.querySelector('.total-price-table');
+  const newQuantityParent = document.querySelector('.cell.quantity-input');
+  const newPriceParent = document.querySelector('.cell.total-price-table');
+  const largeScreen = window.matchMedia("(min-width: 768px)").matches;
+  const smallScreen = window.matchMedia("(max-width: 768px)").matches;
+
+  if (largeScreen && hasNoChild(newQuantityParent) && hasNoChild(newPriceParent)) {
+    newQuantityParent.appendChild(quantityElement);
+    newPriceParent.appendChild(priceElement);
+  } else if(smallScreen && hasNoChild(oldElement)) {
+    oldElement.appendChild(newQuantityParent.querySelector('.quantity-wrapper'));
+    oldElement.appendChild(newPriceParent.querySelector('.total-price-table'));
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  teleportElements();
+  window.addEventListener('resize', teleportElements);
+});
+

@@ -44,10 +44,8 @@
                 </div>
               </div>
               <div class='quantity-x-price-container'>
+                {%- render 'quantity-input', item: item -%}
                 <div class='total-price-table'>
-                  <div class='quantity-input'>
-                    {%- render 'quantity-input', item: item -%}
-                  </div>
                   <div class='cart-item-loader-spinner hidden' id='loading__{{ item.id }}'>
                     <span class='spinner h-7 w-7'></span>
                   </div>
@@ -58,21 +56,8 @@
                 </div>
               </div>
             </div>
-            <div class='cell quantity-input'>
-              {%- render 'quantity-input', item: item -%}
-            </div>
-            <div class='cell total-price-table'>
-              <div
-                class='cart-item-loader-spinner hidden'
-                id='loading__{{ item.id }}'
-              >
-              <span class='spinner h-7 w-7'></span>
-              </div>
-              <div class="total-price-wrapper">
-                <span class="total-price">{{ item.price | times: item.quantity }}</span>
-                <span class="product-currency"></span>
-              </div>
-            </div>
+            <div class='cell quantity-input'></div>
+            <div class='cell total-price-table'></div>
             <div class="cell close-btn">
               <button onclick="removeItem('{{ item.id }}', '{{ item.product_variant_id }}')" class='yc-btn-close'>
                 <ion-icon name="trash-outline"></ion-icon>
@@ -139,7 +124,7 @@
                 </div>
               {%- endfor %}
             </div>
-          {%- endif %}
+            {%- endif %}
           <div class="border-divider"></div>
           <div class='total-price-wrapper'>
             <div class='total-items'>
