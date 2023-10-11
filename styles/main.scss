@@ -192,7 +192,6 @@ span {
 }
 
 .nice-select .nice-select-dropdown,
-.yc-cart .summary-box,
 .yc-pagination {
   box-shadow: var(--yc-primary-shadow) !important;
   border: 1px solid #f2f2f2 !important;
@@ -242,7 +241,7 @@ input:not([type='radio']),
   font-weight: 400;
   border: 1px solid #B7B7B7;
   cursor: pointer;
-  
+
   &.active {
     font-weight: 700;
     border: 1px solid #000000;
@@ -449,7 +448,7 @@ input:not([type='radio']),
     &.black-border {
       border-color: #000000;
     }
-    
+
   }
 
   /* Style the dropdown content */
@@ -498,7 +497,7 @@ input:not([type='radio']),
   display: inline-block;
   border: 2px solid rgb(128 128 128 / 30%);
   border-radius: 50%;
-  border-right: 1px solid currentColor;
+  border-right: 2px solid currentColor;
   animation-name: spin;
   animation-duration: 900ms;
   animation-iteration-count: infinite;
