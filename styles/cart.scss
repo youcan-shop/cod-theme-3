@@ -186,6 +186,10 @@ body {
           }
 
           .product-variant {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 14px;
+            row-gap: 6px;
             margin-top: 12px;
             margin-bottom: 16px;
 
@@ -237,6 +241,41 @@ body {
 
         @include breakpoint('md') {
           max-width: 428px;
+        }
+
+        .coupon-wrapper {
+          padding: 24px 20px 0 20px;
+          display: flex;
+          gap: 8px;
+
+          input {
+            font-family: inherit;
+            padding: 12px 13px;
+
+            &::placeholder {
+              font-family: inherit;
+            }
+          }
+
+          .yc-btn-secondary {
+            font-family: inherit;
+            border-radius: unset;
+            border: none;
+            background-color: #F1F1F1;
+            color: #A4A4A4;
+            flex-shrink: 0;
+
+            .spinner {
+              margin-top: unset;
+            }
+
+            .content {
+              color: inherit;
+              font-size: 14px;
+              font-weight: 700;
+              line-height: 120%;
+            }
+          }
         }
 
         .summary-item {

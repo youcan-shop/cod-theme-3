@@ -465,7 +465,7 @@ input:not([type=radio]),
   display: inline-block;
   border: 2px solid rgba(128, 128, 128, 0.3);
   border-radius: 50%;
-  border-right: 1px solid currentColor;
+  border-right: 2px solid currentColor;
   animation-name: spin;
   animation-duration: 900ms;
   animation-iteration-count: infinite;

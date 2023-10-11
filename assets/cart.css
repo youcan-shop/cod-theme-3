@@ -172,6 +172,10 @@ body {
   line-height: 120%;
 }
 .yc-cart .cart-table .table-container .row .cell .product-variant {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 14px;
+  row-gap: 6px;
   margin-top: 12px;
   margin-bottom: 16px;
 }
@@ -219,6 +223,35 @@ body {
   .yc-cart .cart-table .summary-box #summary {
     max-width: 428px;
   }
+}
+.yc-cart .cart-table .summary-box #summary .coupon-wrapper {
+  padding: 24px 20px 0 20px;
+  display: flex;
+  gap: 8px;
+}
+.yc-cart .cart-table .summary-box #summary .coupon-wrapper input {
+  font-family: inherit;
+  padding: 12px 13px;
+}
+.yc-cart .cart-table .summary-box #summary .coupon-wrapper input::placeholder {
+  font-family: inherit;
+}
+.yc-cart .cart-table .summary-box #summary .coupon-wrapper .yc-btn-secondary {
+  font-family: inherit;
+  border-radius: unset;
+  border: none;
+  background-color: #F1F1F1;
+  color: #A4A4A4;
+  flex-shrink: 0;
+}
+.yc-cart .cart-table .summary-box #summary .coupon-wrapper .yc-btn-secondary .spinner {
+  margin-top: unset;
+}
+.yc-cart .cart-table .summary-box #summary .coupon-wrapper .yc-btn-secondary .content {
+  color: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 120%;
 }
 .yc-cart .cart-table .summary-box #summary .summary-item {
   display: flex;

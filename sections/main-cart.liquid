@@ -35,7 +35,6 @@
                 {% for variant in item.variations %}
                   {% if variant[0] != 'default' or variant[1] != 'default' %}
                     <span>{{ variant[0] }}: {{ variant[1] }}</span>
-                    <span class="variant-space"></span>
                   {% endif %}
                 {% endfor %}
                 <div class="hidden">
@@ -72,26 +71,23 @@
           {% if section.settings.show_coupon %}
             <form name='promo'>
               <div class='coupon-wrapper'>
-                <label for='promo' class="promo">{{ 'cart.summary.promo' | t }}</label>
-                <div class="flex gap-2">
-                  <input
-                    type='text'
-                    name='coupon'
-                    id='promo'
-                    placeholder='{{ "cart.summary.promo_input" | t }}'
-                    class='w-full'
-                  >
-                  <button
-                    type='submit'
-                    class='yc-btn-secondary'
-                  >
-                    <span
-                      class='spinner hidden'
-                      id='loading__coupon'
-                    ></span>
-                    <span>{{ 'cart.summary.checkout_cta' | t }}</span>
-                  </button>
-                </div>
+                <input
+                  type='text'
+                  name='coupon'
+                  id='promo'
+                  placeholder='{{ "cart.summary.promo_input" | t }}'
+                  class='w-full'
+                >
+                <button
+                  type='submit'
+                  class='yc-btn-secondary'
+                >
+                  <span
+                    class='spinner hidden'
+                    id='loading__coupon'
+                  ></span>
+                  <span class="content">{{ 'cart.summary.checkout_cta' | t }}</span>
+                </button>
               </div>
             </form>
           {% endif %}
