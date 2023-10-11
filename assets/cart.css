@@ -243,6 +243,7 @@ body {
   font-family: inherit;
   border-radius: unset;
   border: none;
+  width: unset;
   background-color: #F1F1F1;
   color: #A4A4A4;
   flex-shrink: 0;
