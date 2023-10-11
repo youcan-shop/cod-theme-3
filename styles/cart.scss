@@ -178,6 +178,10 @@ body {
             }
           }
 
+          .cart-item-loader-spinner .spinner {
+            border-right: 2px solid #A4A4A4;
+          }
+
           .product-name {
             color: #000;
             font-size: 14px;

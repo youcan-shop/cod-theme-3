@@ -165,6 +165,9 @@ body {
   height: 100%;
   object-fit: contain;
 }
+.yc-cart .cart-table .table-container .row .cell .cart-item-loader-spinner .spinner {
+  border-right: 2px solid #A4A4A4;
+}
 .yc-cart .cart-table .table-container .row .cell .product-name {
   color: #000;
   font-size: 14px;
