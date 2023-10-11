@@ -61,7 +61,7 @@
                   "settings": {
                       "text_content": "Add to cart",
                       "is_sticky": false,
-                      "background_color": "#E7412FFF",
+                      "background_color": "#E52B2A",
                       "text_color": "#FFFFFFFF",
                       "skip_cart": false
                   }
