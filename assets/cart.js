@@ -187,18 +187,18 @@ function teleportElements() {
   const smallScreen = window.matchMedia("(max-width: 768px)").matches;
 
   cartItems.forEach((item) => {
-    const oldElement = item.querySelector('.quantity-x-price-container');
-    const quantityElement = oldElement.querySelector('.quantity-wrapper');
-    const priceElement = oldElement.querySelector('.subtotal-price-table');
+    const oldParent = item.querySelector('.quantity-x-price-container');
+    const quantityElement = oldParent.querySelector('.quantity-wrapper');
+    const priceElement = oldParent.querySelector('.subtotal-price-table');
     const newQuantityParent = item.querySelector('.cell.quantity-input');
     const newPriceParent = item.querySelector('.cell.subtotal-price-table');
 
     if (largeScreen && hasNoChild(newQuantityParent) && hasNoChild(newPriceParent)) {
       newQuantityParent.appendChild(quantityElement);
       newPriceParent.appendChild(priceElement);
-    } else if(smallScreen && hasNoChild(oldElement)) {
-      oldElement.appendChild(newQuantityParent.querySelector('.quantity-wrapper'));
-      oldElement.appendChild(newPriceParent.querySelector('.subtotal-price-table'));
+    } else if(smallScreen && hasNoChild(oldParent)) {
+      oldParent.appendChild(newQuantityParent.querySelector('.quantity-wrapper'));
+      oldParent.appendChild(newPriceParent.querySelector('.subtotal-price-table'));
     }
   });
 }
