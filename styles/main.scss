@@ -240,12 +240,12 @@ input:not([type='radio']),
   font-size: 14px;
   line-height: 120%;
   font-weight: 400;
-  border: 1px solid #BDBDBD;
-  border-radius: 8px;
+  border: 1px solid #B7B7B7;
   cursor: pointer;
-
+  
   &.active {
     font-weight: 700;
+    border: 1px solid #000000;
   }
 }
 
@@ -257,11 +257,10 @@ input:not([type='radio']),
 
   .yc-image-options-item {
     aspect-ratio: 1;
-    width: 62px;
-    height: 52px;
-    padding: 3px;
-    border: 1px solid var(--yc-neutral-light-color);
-    border-radius: 4px;
+    width: 75px;
+    height: 90px;
+    padding: 4px;
+    border: 1px solid transparent;
     cursor: pointer;
 
     img {
@@ -274,15 +273,16 @@ input:not([type='radio']),
 
 .yc-upload {
   border: 1px dashed var(--yc-neutral-light-color);
+  background-color: #F9F9F9;
   color: var(--yc-neutral-color);
   width: 100%;
-  height: 120px;
+  height: 130px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  gap: 12px;
+  gap: 8px;
   font-weight: 300;
   font-size: 12px;
   line-height: 120%;
@@ -333,7 +333,7 @@ input:not([type='radio']),
       width: 26px;
       background-color: white;
       border-radius: 50%;
-      border: 1px solid var(--yc-neutral-light-color);
+      border: 2px solid #B7B7B7;
 
       &:after {
         content: "";
@@ -350,7 +350,11 @@ input:not([type='radio']),
     }
 
     input[type='radio']:checked + .checkmark {
-      background: var(--yc-primary-color);
+      background: white;
+      border: 2px solid #000000;
+      &:after {
+        background-color: #000;
+      }
     }
 
     &:hover .checkmark {
@@ -381,7 +385,7 @@ input:not([type='radio']),
     width: 34px;
     height: 34px;
     border-radius: 50%;
-    border: 1px solid #E7E7E7;
+    border: 2px solid #E7E7E7;
     cursor: pointer;
 
     &:focus {
@@ -401,6 +405,7 @@ input:not([type='radio']),
 
     &.active {
       padding: 4px;
+      border: 2px solid #000000;
     }
   }
 }
@@ -409,8 +414,6 @@ input:not([type='radio']),
 /* ---------------------------------- */
 .dropdown-input {
   position: relative;
-  border: 1px solid #B8B8B8;
-  border-radius: 4px;
   width: 100%;
   min-width: 335px;
   max-width: max-content;
@@ -419,10 +422,11 @@ input:not([type='radio']),
   .dropbtn {
     display: flex;
     align-items: center;
-    padding: 10px 15px;
+    padding: 12px 16px;
     gap: 6px;
     text-align: start;
     font-size: 12px;
+    border: 1px solid #B8B8B8;
 
     span {
       font-weight: 700;
@@ -441,22 +445,25 @@ input:not([type='radio']),
         right: 10px;
       }
     }
+
+    &.black-border {
+      border-color: #000000;
+    }
+    
   }
 
   /* Style the dropdown content */
   .dropdown-content {
     display: none;
-    margin-top: 5px;
+    margin-top: 3px;
     position: absolute;
     top: 40px;
     left: 0;
     z-index: 1;
     width: 100%;
     background: #FFFFFF;
-    border: 1px solid #ECECEC;
+    border: 1px solid black;
     box-shadow: 0px 10px 55px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-
 
     li {
       color: black;
@@ -486,8 +493,8 @@ input:not([type='radio']),
 /* ----- spinner loading ----- */
 /* --------------------------- */
 .spinner {
-  width: 23px;
-  height: 23px;
+  width: 20px;
+  height: 20px;
   display: inline-block;
   border: 2px solid rgb(128 128 128 / 30%);
   border-radius: 50%;
@@ -557,7 +564,6 @@ input:not([type='radio']),
 .progress-bar {
   height: 10px;
   background-color: #ddd;
-  margin-top: 15px;
   border-radius: 50rem;
 
   .progress {
