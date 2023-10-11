@@ -2,10 +2,9 @@
 
 .countdown-wrapper {
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
-  flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 
   @include breakpoint('md') {
     flex-direction: row;
@@ -14,8 +13,8 @@
 
   .message {
     text-align: center;
-    font-size: 23px;
-    display: none;
+    font-size: 15px;
+    font-weight: 400;
   }
 
   @include breakpoint('md') {
@@ -35,6 +34,7 @@
 
     .countdown-icon {
       font-size: 20px;
+      margin-right: 4px;
     }
 
     & .day,
@@ -61,19 +61,16 @@
 
     & .sec .num {
       border: 0;
-      width: 42px;
       display: flex;
+      font-weight: 700;
       justify-content: center;
-      color: #E52B2A;
-      @media screen and (max-width: 600px) {
-        width: 35px;
-      }
+      color: var(--yc-primary-color);
     }
 
     .dots {
       color: #000000;
-      font-size: 40px;
-      margin-top: -11px;
+      font-size: 36px;
+      margin-top: -10px;
     }
 
     @media screen and (max-width: 600px) {

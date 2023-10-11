@@ -1,9 +1,8 @@
 .countdown-wrapper {
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
-  flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 @media (min-width: 768px) {
   .countdown-wrapper {
@@ -13,8 +12,8 @@
 }
 .countdown-wrapper .message {
   text-align: center;
-  font-size: 23px;
-  display: none;
+  font-size: 15px;
+  font-weight: 400;
 }
 @media (min-width: 768px) {
   .countdown-wrapper {
@@ -34,6 +33,7 @@
 }
 .countdown-wrapper .countdown .countdown-icon {
   font-size: 20px;
+  margin-right: 4px;
 }
 .countdown-wrapper .countdown .day, .countdown-wrapper .countdown .hour, .countdown-wrapper .countdown .min, .countdown-wrapper .countdown .sec {
   text-align: center;
@@ -51,20 +51,15 @@
 }
 .countdown-wrapper .countdown .sec .num {
   border: 0;
-  width: 42px;
   display: flex;
+  font-weight: 700;
   justify-content: center;
-  color: #E52B2A;
-}
-@media screen and (max-width: 600px) {
-  .countdown-wrapper .countdown .sec .num {
-    width: 35px;
-  }
+  color: var(--yc-primary-color);
 }
 .countdown-wrapper .countdown .dots {
   color: #000000;
-  font-size: 40px;
-  margin-top: -11px;
+  font-size: 36px;
+  margin-top: -10px;
 }
 @media screen and (max-width: 600px) {
   .countdown-wrapper .countdown {

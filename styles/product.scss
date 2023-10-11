@@ -305,16 +305,21 @@
     }
 
     .countdown-container {
-      border-radius: 4px;
-      padding: 18px 20px;
+      padding: 12px 10px;
 
-      .countdown-wrapper .countdown {
-        .num {
-          background: rgba(225, 225, 225, 0.3);
+      & .day .num,
+      & .hour .num,
+      & .min .num,
+      & .sec .num {
+        @include max-screen('md') {
+          font-size: 18px;
         }
+      }
 
-        .sec .num {
-          background-color: var(--yc-primary-color);
+      .dots {
+        @include max-screen('md') {
+          font-size: 30px;
+          margin-top: -7px;
         }
       }
     }

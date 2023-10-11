@@ -34,9 +34,9 @@
               "block_i2eoqu7m2iiucz": {
                   "type": "countdown_timer",
                   "settings": {
-                      "countdown_message": "عرض لفترة محدودة",
-                      "background_color": "#000000",
-                      "text_color": "#FFFFFF",
+                      "countdown_message": "ينتهي في :",
+                      "background_color": "#F5F5F5",
+                      "text_color": "#000000",
                       "countdown_year": 2024,
                       "countdown_month": 1,
                       "countdown_day": 14,
