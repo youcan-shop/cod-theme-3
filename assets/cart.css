@@ -211,8 +211,6 @@ body {
 .yc-cart .cart-table .summary-box {
   display: flex;
   flex-direction: column;
-  box-shadow: unset !important;
-  border: unset !important;
 }
 @media (min-width: 768px) {
   .yc-cart .cart-table .summary-box {
