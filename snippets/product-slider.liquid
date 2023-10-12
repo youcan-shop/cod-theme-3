@@ -38,11 +38,7 @@
           class='splide__slide'
           {{ block.youcan_attributes }}
         >
-          {% if settings.direct_add_to_cart %}
-            <div class='product-block' onclick="directAddToCart('{{ block.settings.product.variants[0].id }}')">
-          {% else %}
-            <div class='product-block' onclick="window.location.href='{{ block.settings.product.url }}'">
-          {% endif %}
+            <div class='product-block'>
             <div class="product-slider">
               <div class='product-thumbnail'>
                  <img
@@ -58,9 +54,15 @@
                     </div>
                   {% endif %}
                   <div class="product-link">
-                    <a href="{{ block.settings.product.url }}" class="yc-btn">
-                      {{ 'snippets.product_preview.cta_button' | t }}
-                    </a>
+                    {% if settings.direct_add_to_cart and block.settings.product.variants.size <= 1 %}
+                      <button class="yc-btn" onclick="directAddToCart(event, '{{ block.settings.product.variants[0].id }}');">
+                        {{ 'general.direct_add_to_cart' | t }}
+                      </button>
+                    {% else %}
+                    <button class="yc-btn">
+                      {{ 'general.buy_now' | t }}
+                    </button>
+                    {% endif %}
                   </div>
               </div>
               <div class='product-details'>
@@ -74,11 +76,17 @@
                   <span class='compare-at-price'>{{ block.settings.product.compare_at_price | money }}</span>
                 {% endif %}
               </div>
-              <div class="product-link">
-                <a href="{{ block.settings.product.url }}" class="yc-btn">
-                  {{ 'snippets.product_preview.cta_button' | t }}
-                </a>
-              </div>
+                <div class="product-link">
+                  {% if settings.direct_add_to_cart and block.settings.product.variants.size <= 1 %}
+                    <button class="yc-btn" onclick="directAddToCart(event, '{{ block.settings.product.variants[0].id }}');">
+                      {{ 'general.direct_add_to_cart' | t }}
+                    </button>
+                  {% else %}
+                  <button class="yc-btn">
+                    {{ 'general.buy_now' | t }}
+                  </button>
+                  {% endif %}
+                </div>
             </div>
           </div>
         </li>
