@@ -357,6 +357,18 @@
       font-size: 24px;
     }
   }
+
+  .accordion {
+    padding-bottom: unset;
+
+    .accordion-header {
+      padding: 20px 20px 18px 20px;
+    }
+
+    .accordion-content p {
+      padding-bottom: 20px;
+    }
+  }
 }
 
 /* ----- Quantity input ----- */

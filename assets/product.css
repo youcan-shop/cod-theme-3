@@ -329,6 +329,15 @@
     font-size: 24px;
   }
 }
+.yc-single-product .accordion {
+  padding-bottom: unset;
+}
+.yc-single-product .accordion .accordion-header {
+  padding: 20px 20px 18px 20px;
+}
+.yc-single-product .accordion .accordion-content p {
+  padding-bottom: 20px;
+}
 
 /* ----- Quantity input ----- */
 .quantity-field {
