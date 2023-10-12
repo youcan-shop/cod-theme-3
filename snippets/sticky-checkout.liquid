@@ -1,6 +1,6 @@
 {{ 'express-checkout.css' | asset_url | stylesheet_tag }}
 
-<div id="yc-sticky-checkout" class="yc-sticky-checkout">
+<section id="yc-sticky-checkout" class="yc-sticky-checkout">
   <div class="step_2" id="checkout_step_2">
     <div class="step-2-wrapper">
       <button class="close-icon" onclick="goToCheckoutStep(true)">
@@ -22,4 +22,5 @@
         <span>{{ settings.express_checkout_cta }}</span>
       </button>
     </div>
-</div>
+  </div>
+</section>
