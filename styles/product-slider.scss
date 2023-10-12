@@ -53,11 +53,11 @@
     @media (max-width: 768px) {
 
       & {
-        bottom: -50px;
+        bottom: -25px;
       }
 
       .splide__arrow.splide__arrow--prev,
-      .splide__arrow.splide__arrow--next 
+      .splide__arrow.splide__arrow--next
        {
         width: 42px;
         height: 42px;
@@ -65,7 +65,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        
        }
     }
 
