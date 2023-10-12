@@ -20,11 +20,7 @@
               "block_hrhh0m9ug5b5b35": {
                   "type": "product_price",
                   "settings": {
-                      "show_compare_at_price": true,
-                      "show_price_tag_banner": true,
-                      "price_tag_text": "خصم بقيمه 40% ",
-                      "price_tag_background_color": "#F33520FF",
-                      "price_tag_text_color": "#FFFFFFFF"
+                      "show_compare_at_price": true
                   }
               },
               "block_hsriwdae616bilt": {
