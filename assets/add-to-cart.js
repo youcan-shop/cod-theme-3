@@ -267,7 +267,9 @@ function preventCartDrawerOpening(templateName) {
   window.location.reload();
 }
 
-async function directAddToCart(productId) {
+async function directAddToCart(event, productId) {
+  event.preventDefault();
+
   try {
     const response = await youcanjs.cart.addItem({
       productVariantId: productId,
@@ -287,4 +289,3 @@ async function directAddToCart(productId) {
     stopLoad('#loading__cart');
   }
 }
-
