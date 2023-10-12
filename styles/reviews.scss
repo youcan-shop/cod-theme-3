@@ -2,7 +2,11 @@
 
 .yc-product-reviews {
   background-color: #FBFBFB;
-  padding: 36px 20px;
+  padding: 36px 0;
+
+  .container {
+    padding: 0;
+  }
 
   .head {
     display: flex;
@@ -20,63 +24,73 @@
   }
 
   .yc-reviews-wrapper {
-    display: grid;
-    gap: 17px;
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    gap: 16px;
 
-    @include breakpoint('md') {
-      grid-template-columns: repeat(2, 1fr);
+    &::-webkit-scrollbar {
+      display: none;
     }
 
-    @include breakpoint('lg') {
-      grid-template-columns: repeat(3, 1fr);
+    @include breakpoint('md') {
+      justify-content: center;
     }
 
     .review-item {
+      display: grid;
+      gap: 64px;
+      width: 300px;
       border: 1px solid #EBEBEB;
+      border-radius: 4px;
       border-radius: 4px;
       background-color: white;
       padding: 24px 20px;
+      scroll-snap-align: start;
+      flex-shrink: 0;
 
       .header {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 12px;
+      }
 
-        .profil {
-          display: flex;
-          gap: 18px;
+      .profil {
+        display: flex;
+        align-items: center;
+        gap: 12px;
 
-          .image {
-            width: 49px;
-            height: 49px;
-            border-radius: 50%;
-            aspect-ratio: 1/1;
-            object-fit: contain;
+        .image {
+          width: 49px;
+          height: 49px;
+          border-radius: 50%;
+          aspect-ratio: 1/1;
+          object-fit: contain;
+        }
+
+        .info {
+          display: grid;
+
+          .name {
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 120%;
+            font-family: inherit;
           }
 
-          .info {
-            display: grid;
-            gap: 3px;
-
-            .name {
-              font-weight: 700;
-              font-size: 18px;
-              line-height: 120%;
-            }
-
-            .created-at-date {
-              font-weight: 400;
-              font-size: 12px;
-              line-height: 120%;
-            }
+          .created-at-date {
+            font-weight: 400;
+            font-size: 12px;
+            color: #A6A6A6;
           }
         }
       }
 
-      .content {
-        margin-top: 20px;
-        font-weight: 400;
-        font-size: 13px;
-        line-height: 145%;
+      .content * {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 148%;
       }
     }
   }
@@ -96,6 +110,10 @@
 
   #show-more {
     display: none;
-    margin: 27px auto 0 auto;
+    margin: 26px auto 0 auto;
+    font-weight: 400;
+    font-size: 15px;
+    text-decoration: underline !important;
+    font-family: inherit;
   }
 }
