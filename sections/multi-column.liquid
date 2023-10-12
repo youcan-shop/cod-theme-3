@@ -2,19 +2,17 @@
 
 {% style %}
   .multi-column-{{ id }} {
-    margin-top: {{ section.settings.space_top }}px;
-    margin-bottom: {{ section.settings.space_bottom }}px;
     background-color: {{ section.settings.background_color.hex }};
     color: {{ section.settings.text_color.hex }};
-    max-width: 875px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: {{ section.settings.space_top }}px auto {{ section.settings.space_bottom }}px auto;
+    padding: 10px 0;
   }
 
-  .multi-column-{{ id }} .yc-section-title {
+  .multi-column-{{ id }} .multi-column-title {
     text-align: {{ section.settings.section_title_position }};
     font-weight: 700;
     font-size: 26px;
+    margin-bottom: 24px;
   }
 
   .multi-column-{{ id }} .multi-column-blocks {
@@ -23,6 +21,10 @@
     padding: 10px 0;
     align-items: start;
     gap: 16px;
+
+    @media screen and (min-width: 768px) {
+      margin: 0 56px;
+    }
   }
 
   .multi-column-{{ id }} .column-block {
@@ -32,7 +34,7 @@
   }
 
   .multi-column-{{ id }} .column-block .column-title {
-    margin-top: 16px;
+    margin-top: 18px;
     font-weight: 700;
     font-size: 18px;
     color: {{ section.settings.caption_color.hex }};
@@ -106,7 +108,7 @@
 
 <div class='multi-column-{{ id }}'>
   <div class="container">
-    <h3 class='yc-section-title'>{{ section.settings.title }}</h3>
+    <h3 class='multi-column-title'>{{ section.settings.title }}</h3>
     <div class='multi-column-blocks'>
       {% for block in section.blocks %}
         {% assign block_setting = block.settings %}
