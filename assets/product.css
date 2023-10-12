@@ -119,6 +119,8 @@
   width: 16px;
   height: 16px;
   display: flex !important;
+  margin: 0;
+  border: 0;
 }
 @media screen and (max-width: 767px) {
   .yc-single-product .product-images .product-images-container .splide__arrow {
