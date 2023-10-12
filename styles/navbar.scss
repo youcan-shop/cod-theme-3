@@ -119,6 +119,16 @@
       display: none;
       list-style: none;
 
+      .menu-itemactive {
+        display: flex;
+        align-items: center;
+        border-bottom: 3px solid var(--yc-primary-color);
+
+        a {
+          margin-bottom: -3px;
+        }
+      }
+
 
       @include breakpoint('md') {
         display: flex;
@@ -127,7 +137,11 @@
     }
 
     .menu-item {
+      height: calc(var(--yc-nav-height) + 1px);
+
       a {
+        display: flex;
+        align-items: center;
         color: var(--yc-nav-links-color);
         font-size: 16px;
         line-height: 140.5%;

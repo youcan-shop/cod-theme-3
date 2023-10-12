@@ -99,13 +99,26 @@
   display: none;
   list-style: none;
 }
+.yc-header .yc-navbar .menu-list .menu-itemactive {
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid var(--yc-primary-color);
+}
+.yc-header .yc-navbar .menu-list .menu-itemactive a {
+  margin-bottom: -3px;
+}
 @media (min-width: 768px) {
   .yc-header .yc-navbar .menu-list {
     display: flex;
     gap: 32px;
   }
 }
+.yc-header .yc-navbar .menu-item {
+  height: calc(var(--yc-nav-height) + 1px);
+}
 .yc-header .yc-navbar .menu-item a {
+  display: flex;
+  align-items: center;
   color: var(--yc-nav-links-color);
   font-size: 16px;
   line-height: 140.5%;
