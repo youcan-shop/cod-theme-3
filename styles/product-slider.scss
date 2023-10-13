@@ -33,7 +33,7 @@
     display: block;
     width: 80%;
     margin: 0 auto;
-    @include breakpoint('sm') {
+    @include breakpoint('md') {
       display: none;
     }
   }
