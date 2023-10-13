@@ -578,32 +578,35 @@ input:not([type='radio']),
 /* ---------------------- */
 /* ----- sticky CTA ----- */
 /* ---------------------- */
-
-.sticky-elements-container {
-  border-top: 1px solid #e3e3e3;
-  background: white;
+.sticky-elements-wrapper {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80px;
-  padding: 0 20px;
-  gap: 20px;
   z-index: 999;
 
-  @include breakpoint('xxl') {
-    padding: 0 196px;
+  @include breakpoint('md') {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
   }
 
-  & > * {
-    flex: 1 1 50%;
-  }
 
-  .is_sticky {
+  .sticky-elements-container {
+    border: 1px solid #e3e3e3;
+    box-shadow: 1px -13px 53px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding: 20px;
+    display: grid;
+    gap: 16px;
     width: 100%;
+    order: 2;
+
+    .is_sticky {
+      width: 100%;
+    }
   }
 }
 

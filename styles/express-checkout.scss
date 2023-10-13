@@ -67,7 +67,6 @@
   z-index: 99999;
   width: 100%;
   height: 70vh;
-  background-color: white;
   left: 0;
   bottom: 0;
   padding-bottom: 0;
@@ -90,6 +89,8 @@
   }
 
   .cta-bottom-wrapper {
+    display: grid;
+    gap: 16px;
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -101,7 +102,8 @@
   .checkout-form {
     padding-bottom: 20px;
 
-    .express-checkout-fields {
+    .express-checkout-fields,
+    #express-checkout-form {
       box-shadow: unset;
       border: unset;
       padding: unset;
@@ -118,7 +120,8 @@
       padding: unset;
       max-width: 940px;
       padding: 0 20px;
-      margin: 0 auto 100px auto;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .close-icon {
@@ -128,6 +131,7 @@
 
   .step_2 {
     position: relative;
+    background: #fff;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -164,42 +168,39 @@
     }
   }
 
-  .sticky-desktop-wrapper {
+  .sticky-container {
+    height: 100%;
+
     @include breakpoint('md') {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
       gap: 20px;
-      margin-top: 30px;
+      position: fixed;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 0);
+      max-height: 621px;
+    }
 
-      .variant-card-2 {
-        position: sticky;
-        top: 20px;
-        height: fit-content;
+    &.container {
+      padding: 0;
+
+      @include breakpoint('md') {
+        padding: 0 20px;
       }
+    }
 
-      .yc-product-card {
-        margin-top: 0;
+    .empty-spacer {
+      display: none;
 
-        .section-1 {
-          flex-direction: column;
-
-          .image {
-            width: 125px;
-            height: 106px;
-          }
-        }
-
-        .section-2 .selected-variants {
-          padding: 21px 10px;
-        }
+      @include breakpoint('md') {
+        display: block;
+        flex: 1 1 50%;
       }
+    }
 
-      .variant-card-2 {
-        margin-bottom: 0;
-      }
-
-      .checkout-form {
-        padding-bottom: 0;
+    .step_2 {
+      @include breakpoint('md') {
+        flex: 1 1 50%;
       }
     }
   }

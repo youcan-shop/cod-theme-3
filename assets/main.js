@@ -201,7 +201,32 @@ closeSearchBtn.addEventListener('click', closeSearch);
   });
 
   document.body.append(elementsContainer);
+
+  desktopStickyElements(elementsContainer);
 })();
+
+function desktopStickyElements(elementsContainer) {
+  const elementsWrapper = document.createElement('div');
+  const emptySpacer = document.createElement('div');
+
+  elementsWrapper.classList.add('sticky-elements-wrapper');
+  emptySpacer.classList.add('sticky-empty-spacer');
+  elementsWrapper.appendChild(elementsContainer);
+  elementsWrapper.appendChild(emptySpacer);
+  document.body.append(elementsWrapper);
+
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    elementsWrapper.classList.add('container');
+  }
+
+  window.addEventListener('resize', () => {
+    if(window.innerWidth >= 768) {
+      elementsWrapper.classList.add('container');
+    } else if(window.innerWidth < 768) {
+      elementsWrapper.classList.remove('container');
+    }
+  })
+}
 
 /* ------------------------------------------------------ */
 /* ----- Stick the footer at the bottom of the page ----- */
