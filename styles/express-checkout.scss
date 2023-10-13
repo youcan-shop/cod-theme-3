@@ -120,44 +120,36 @@ $sticky-checkout-padding: 20px;
     .close-icon {
       display: block;
     }
-
-    .back-icon {
-      @include breakpoint('md') {
-        display: none;
-      }
-    }
   }
 
-  .step_1, .step_2 {
+  .step_2 {
     position: relative;
     height: 100%;
     display: flex;
     flex-direction: column;
   }
 
-  .step_1 .yc-product-card .section-2 {
+  .yc-product-card .section-2 {
     display: none;
   }
 
-  .step_2 .yc-product-card .section-2 {
+  .yc-product-card .section-2 {
     display: block;
   }
 
-  #checkout_step_1, #checkout_step_2 {
+  #checkout_step_2 {
     animation: slideFromBottom 0.2s ease-in-out;
     will-change: transform;
   }
 
-  .variant-card-1, .variant-card-2 {
+  .variant-card-2 {
     margin-bottom: 15px;
   }
 
-  .back-icon,
   .close-icon {
     width: 40px;
     height: 40px;
-    background: white;
-    color: #C8C8C8;
+    color: #fff;
     position: absolute;
     left: 20px;
     top: -39px;
@@ -167,8 +159,8 @@ $sticky-checkout-padding: 20px;
     font-size: 16pt;
     border-radius: 4px 4px 0 0;
 
-    @include breakpoint('md') {
-      left: unset;
+    ion-icon {
+      font-size: 30px;
     }
   }
 
