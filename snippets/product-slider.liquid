@@ -59,9 +59,9 @@
                         {{ 'general.direct_add_to_cart' | t }}
                       </button>
                     {% else %}
-                    <button class="yc-btn">
+                    <a href="{{ block.settings.product.url }}" class="yc-btn">
                       {{ 'general.buy_now' | t }}
-                    </button>
+                    </a>
                     {% endif %}
                   </div>
               </div>
@@ -82,9 +82,9 @@
                       {{ 'general.direct_add_to_cart' | t }}
                     </button>
                   {% else %}
-                  <button class="yc-btn">
+                  <a href="{{ block.settings.product.url }}" class="yc-btn">
                     {{ 'general.buy_now' | t }}
-                  </button>
+                  </a>
                   {% endif %}
                 </div>
             </div>
