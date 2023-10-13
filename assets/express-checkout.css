@@ -12,7 +12,7 @@
 .express-checkout-fields {
   border-width: 1px;
   border-style: solid;
-  background: #F8F8F8;
+  background: #fff;
   box-shadow: 1px 13px 53px 0px rgba(0, 0, 0, 0.1);
   display: grid;
   grid-template-columns: 1fr;
@@ -96,10 +96,15 @@
 .yc-sticky-checkout .checkout-form {
   padding-bottom: 20px;
 }
+.yc-sticky-checkout .checkout-form .express-checkout-fields {
+  box-shadow: unset;
+  border: unset;
+  padding: unset;
+}
 .yc-sticky-checkout .step-2-wrapper {
   overflow-y: scroll;
-  padding: 0 20px;
-  margin-bottom: 90px;
+  padding: 20px 20px 0;
+  margin-bottom: 78px;
 }
 @media (min-width: 768px) {
   .yc-sticky-checkout .step-2-wrapper {
@@ -118,9 +123,6 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-}
-.yc-sticky-checkout .yc-product-card .section-2 {
-  display: none;
 }
 .yc-sticky-checkout .yc-product-card .section-2 {
   display: block;

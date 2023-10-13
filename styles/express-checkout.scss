@@ -1,7 +1,5 @@
 @import 'helpers/mixins';
 
-$sticky-checkout-padding: 20px;
-
 #express-checkout-form {
   @include breakpoint('md') {
     border-width: 1px;
@@ -16,7 +14,7 @@ $sticky-checkout-padding: 20px;
 .express-checkout-fields {
   border-width: 1px;
   border-style: solid;
-  background: #F8F8F8;
+  background: #fff;
   box-shadow: 1px 13px 53px 0px rgba(0, 0, 0, 0.10);
   display: grid;
   grid-template-columns: 1fr;
@@ -101,13 +99,19 @@ $sticky-checkout-padding: 20px;
   }
 
   .checkout-form {
-    padding-bottom: $sticky-checkout-padding;
+    padding-bottom: 20px;
+
+    .express-checkout-fields {
+      box-shadow: unset;
+      border: unset;
+      padding: unset;
+    }
   }
 
   .step-2-wrapper {
     overflow-y: scroll;
-    padding: 0 20px;
-    margin-bottom: 90px;
+    padding: 20px 20px 0;
+    margin-bottom: 78px;
 
     @include breakpoint('md') {
       width: 100%;
@@ -127,10 +131,6 @@ $sticky-checkout-padding: 20px;
     height: 100%;
     display: flex;
     flex-direction: column;
-  }
-
-  .yc-product-card .section-2 {
-    display: none;
   }
 
   .yc-product-card .section-2 {
