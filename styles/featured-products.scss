@@ -30,6 +30,10 @@
       font-weight: 700;
     }
 
+    .yc-section-title {
+      margin: 0;
+    }
+
     @media screen and (max-width: 845px) {
       grid-template-columns: 1fr;
       background-color: white;

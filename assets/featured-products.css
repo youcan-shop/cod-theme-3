@@ -25,6 +25,9 @@
   font-size: 26px;
   font-weight: 700;
 }
+.yc-featured-products .counter-wrapper .yc-section-title {
+  margin: 0;
+}
 @media screen and (max-width: 845px) {
   .yc-featured-products .counter-wrapper {
     grid-template-columns: 1fr;
