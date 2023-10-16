@@ -5,7 +5,7 @@
     <div class="empty-spacer"></div>
     <div class="step_2" id="checkout_step_2">
       <div class="step-2-wrapper">
-        <button class="close-icon" onclick="goToCheckoutStep(true)">
+        <button class="close-icon" onclick="hideCheckout()">
           <ion-icon name="close-outline"></ion-icon>
         </button>
         <div class="variant-card-2">
@@ -36,4 +36,14 @@
   document.addEventListener('DOMContentLoaded', (e) => {
     dynamicMarginBottom();
   });
+
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    const secondCheckoutStep = $("#checkout_step_2");
+
+    document.addEventListener("mousedown", function(event) {
+      if(secondCheckoutStep && !secondCheckoutStep.contains(event.target)) {
+        hideCheckout();
+      }
+    });
+  }
 </script>
