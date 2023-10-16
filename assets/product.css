@@ -182,7 +182,7 @@
 }
 @media (min-width: 768px) {
   .yc-single-product .product-details {
-    gap: 22px;
+    gap: 20px;
     width: 50%;
   }
 }

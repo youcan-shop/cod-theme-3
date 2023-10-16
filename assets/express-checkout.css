@@ -92,7 +92,8 @@
   bottom: 0;
   padding: 16px 20px;
   background-color: white;
-  border-top: 1px solid #EBEBEB;
+  border-top: 1px solid #EAEAEA;
+  box-shadow: 1px -13px 53px 0px rgba(0, 0, 0, 0.1);
 }
 .yc-sticky-checkout .checkout-form {
   padding-bottom: 20px;
@@ -104,22 +105,10 @@
   padding: unset;
 }
 .yc-sticky-checkout .step-2-wrapper {
+  width: 100%;
   overflow-y: scroll;
   padding: 20px 20px 0;
   margin-bottom: 78px;
-}
-@media (min-width: 768px) {
-  .yc-sticky-checkout .step-2-wrapper {
-    width: 100%;
-    padding: unset;
-    max-width: 940px;
-    padding: 0 20px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-.yc-sticky-checkout .step-2-wrapper .close-icon {
-  display: block;
 }
 .yc-sticky-checkout .step_2 {
   position: relative;
@@ -128,28 +117,23 @@
   display: flex;
   flex-direction: column;
 }
-.yc-sticky-checkout .yc-product-card .section-2 {
-  display: block;
-}
 .yc-sticky-checkout #checkout_step_2 {
   animation: slideFromBottom 0.2s ease-in-out;
   will-change: transform;
 }
 .yc-sticky-checkout .variant-card-2 {
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 .yc-sticky-checkout .close-icon {
   width: 40px;
   height: 40px;
   color: #fff;
   position: absolute;
-  left: 20px;
+  left: 10px;
   top: -39px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16pt;
-  border-radius: 4px 4px 0 0;
 }
 [dir=ltr] .yc-sticky-checkout .close-icon {
   left: unset;

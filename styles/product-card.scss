@@ -1,39 +1,22 @@
 @import 'helpers/mixins';
 
 .yc-product-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
   width: 100%;
   background: #fff;
   border: 1px solid #E7E7E7;
 
-  .section-1 {
-    display: flex;
-    align-items: start;
-    gap: 14px;
-    padding: 10px;
-  }
-
-  @include breakpoint('md') {
-    & .section-1,
-    & .selected-preview {
-      padding: 20px;
-    }
-  }
-
-  .section-2 {
-    border-top: 1px solid #EBEBEB;
-  }
-
   .image {
     width: 62px;
-    height: 52px;
-    background: white;
-    padding: 3px;
+    height: auto;
     flex-shrink: 0;
 
     .main-image {
-      width: auto;
-      height: 100%;
-      margin: 0 auto;
+      width: 100%;
+      height: auto;
       object-fit: contain;
     }
   }
@@ -41,12 +24,15 @@
   .details {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 10px;
+    width: 100%;
   }
 
   .product-name {
-    font-size: 15px !important;
-    margin-top: 4px;
+    font-size: 14px !important;
+    font-weight: 600;
+    line-height: 120%;
+    color: black;
   }
 
   .price {
@@ -57,18 +43,25 @@
   }
 
   #sticky-price {
-    font-weight: 700;
-    line-height: 120%;
     color: var(--yc-primary-color);
-    font-size: 16px;
+    font-size: 18px;
+    font-family: inherit;
+    font-weight: 700;
+    line-height: 97%;
   }
 
   .selected-preview {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding: 10px;
-    gap: 10px;
+    gap: 14px;
+
+    & * {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 150%;
+      color: black;
+    }
   }
 
   #selected-product-variants,
@@ -77,17 +70,15 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 10px;
+    gap: 4px;
   }
 
   #selected-product-variants {
     .yc-textual-item {
-      padding: 6.5px 10px;
+      padding: 4px 10px;
       text-align: center;
       border: 1px solid black;
       color: black;
-      font-size: 12px;
-      border-radius: 8px;
     }
 
     .colored-button {
@@ -108,9 +99,6 @@
 
     #variant_quantity .quantity-value {
       color: black;
-      font-weight: 700;
-      font-size: 15px;
-      line-height: 120%;
     }
 
     .image-container {
