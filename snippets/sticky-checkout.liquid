@@ -41,11 +41,11 @@
     const parent = $('.yc-sticky-checkout');
     const child  = $("#checkout_step_2");
 
-    parent.addEventListener('click', function(event) {
+    parent?.addEventListener('click', function(event) {
       hideCheckout();
     });
 
-    child.addEventListener('click', function(event) {
+    child?.addEventListener('click', function(event) {
       event.stopPropagation();
     });
   }
