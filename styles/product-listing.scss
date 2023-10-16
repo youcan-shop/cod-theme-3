@@ -41,9 +41,9 @@
         }
 
         .product-link {
+          display: none;
           width: 78%;
           margin: auto;
-          display: block;
           top: 120%;
           transition: all 0.25s;
 
@@ -53,6 +53,7 @@
           }
 
           @include breakpoint('md') {
+            display: block;
             width: 80%;
             position: absolute;
             z-index: 1;

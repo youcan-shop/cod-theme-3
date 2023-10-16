@@ -38,9 +38,9 @@
   }
 }
 .yc-product-listing-container .product-list .product-block .product-thumbnail .product-link {
+  display: none;
   width: 78%;
   margin: auto;
-  display: block;
   top: 120%;
   transition: all 0.25s;
 }
@@ -50,6 +50,7 @@
 }
 @media (min-width: 768px) {
   .yc-product-listing-container .product-list .product-block .product-thumbnail .product-link {
+    display: block;
     width: 80%;
     position: absolute;
     z-index: 1;
