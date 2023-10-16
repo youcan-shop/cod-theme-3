@@ -38,12 +38,15 @@
   });
 
   if (window.matchMedia("(min-width: 768px)").matches) {
-    const secondCheckoutStep = $("#checkout_step_2");
+    const parent = $('.yc-sticky-checkout');
+    const child  = $("#checkout_step_2");
 
-    document.addEventListener("mousedown", function(event) {
-      if(secondCheckoutStep && !secondCheckoutStep.contains(event.target)) {
-        hideCheckout();
-      }
+    parent.addEventListener('click', function(event) {
+      hideCheckout();
+    });
+
+    child.addEventListener('click', function(event) {
+      event.stopPropagation();
     });
   }
 </script>
