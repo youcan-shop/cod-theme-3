@@ -1,6 +1,6 @@
 .yc-product-card {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 16px;
   padding: 20px;
   width: 100%;
@@ -54,11 +54,15 @@
   line-height: 150%;
   color: black;
 }
-.yc-product-card #selected-product-variants,
+.yc-product-card #selected-product-variants {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
 .yc-product-card #selected-product-variants div,
 .yc-product-card .quantity-preview {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   gap: 4px;
 }

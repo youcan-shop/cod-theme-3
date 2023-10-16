@@ -2,7 +2,7 @@
 
 .yc-product-card {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 16px;
   padding: 20px;
   width: 100%;
@@ -64,11 +64,16 @@
     }
   }
 
-  #selected-product-variants,
+  #selected-product-variants {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+  }
+
   #selected-product-variants div,
   .quantity-preview {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     gap: 4px;
   }
