@@ -137,7 +137,7 @@
 }
 [dir=ltr] .yc-sticky-checkout .close-icon {
   left: unset;
-  right: 20px;
+  right: 10px;
 }
 .yc-sticky-checkout .close-icon ion-icon {
   font-size: 30px;

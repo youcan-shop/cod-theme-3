@@ -29,12 +29,6 @@
   line-height: 120%;
   color: black;
 }
-.yc-product-card .price {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 10px;
-}
 .yc-product-card #sticky-price {
   color: var(--yc-primary-color);
   font-size: 18px;
