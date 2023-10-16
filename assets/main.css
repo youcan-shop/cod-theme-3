@@ -540,30 +540,33 @@ input:not([type=radio]),
 /* ---------------------- */
 /* ----- sticky CTA ----- */
 /* ---------------------- */
-.sticky-elements-container {
-  border-top: 1px solid #e3e3e3;
-  background: white;
+.sticky-elements-wrapper {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80px;
-  padding: 0 20px;
-  gap: 20px;
   z-index: 999;
 }
-@media (min-width: 1400px) {
-  .sticky-elements-container {
-    padding: 0 196px;
+@media (min-width: 768px) {
+  .sticky-elements-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
   }
 }
-.sticky-elements-container > * {
-  flex: 1 1 50%;
+.sticky-elements-wrapper .sticky-elements-container {
+  border: 1px solid #e3e3e3;
+  box-shadow: 1px -13px 53px rgba(0, 0, 0, 0.1);
+  background: white;
+  padding: 20px;
+  display: grid;
+  gap: 16px;
+  width: 100%;
+  order: 2;
 }
-.sticky-elements-container .is_sticky {
+.sticky-elements-wrapper .sticky-elements-container .is_sticky {
   width: 100%;
 }
 

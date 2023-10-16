@@ -19,7 +19,7 @@
   .yc-single-product .product-images {
     position: sticky;
     top: calc(var(--yc-nav-height) + 20px);
-    width: 80%;
+    width: 50%;
     margin: unset;
   }
 }
@@ -183,6 +183,7 @@
 @media (min-width: 768px) {
   .yc-single-product .product-details {
     gap: 20px;
+    width: 50%;
   }
 }
 .yc-single-product .product-details .product-name {

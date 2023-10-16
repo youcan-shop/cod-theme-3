@@ -1,29 +1,25 @@
 @import 'helpers/mixins';
 
-$sticky-checkout-padding: 20px;
-
 #express-checkout-form {
   @include breakpoint('md') {
-    border-width: 2px;
+    border-width: 1px;
     border-style: solid;
-    background: #F8F8F8;
-    box-shadow: 1px -1px 23px rgba(0, 0, 0, 0.04);
-    border-radius: 4px;
+    background: #fff;
+    box-shadow: 1px 13px 53px 0px rgba(0, 0, 0, 0.10);
     padding: 20px;
     grid-gap: 18px;
   }
 }
 
 .express-checkout-fields {
-  border-width: 2px;
+  border-width: 1px;
   border-style: solid;
-  background: #F8F8F8;
-  box-shadow: 1px -1px 23px rgba(0, 0, 0, 0.04);
-  border-radius: 4px;
+  background: #fff;
+  box-shadow: 1px 13px 53px 0px rgba(0, 0, 0, 0.10);
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 14px;
-  padding: 10px;
+  padding: 16px;
 
   @include breakpoint('md') {
     border: unset;
@@ -43,6 +39,11 @@ $sticky-checkout-padding: 20px;
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
+
+  .spinner {
+    width: 21px;
+    height: 21px;
+  }
 }
 
 @keyframes slideFromBottom {
@@ -66,7 +67,6 @@ $sticky-checkout-padding: 20px;
   z-index: 99999;
   width: 100%;
   height: 70vh;
-  background-color: white;
   left: 0;
   bottom: 0;
   padding-bottom: 0;
@@ -89,122 +89,106 @@ $sticky-checkout-padding: 20px;
   }
 
   .cta-bottom-wrapper {
+    display: grid;
+    gap: 16px;
     width: 100%;
     position: fixed;
     bottom: 0;
     padding: 16px 20px;
     background-color: white;
-    border-top: 1px solid #EBEBEB;
+    border-top: 1px solid #EAEAEA;
+    box-shadow: 1px -13px 53px 0px rgba(0, 0, 0, 0.10);
   }
 
   .checkout-form {
-    padding-bottom: $sticky-checkout-padding;
+    padding-bottom: 20px;
+
+    .express-checkout-fields,
+    #express-checkout-form {
+      box-shadow: unset;
+      border: unset;
+      padding: unset;
+    }
   }
 
   .step-2-wrapper {
+    width: 100%;
     overflow-y: scroll;
-    padding: 0 20px;
-    margin-bottom: 90px;
-
-    @include breakpoint('md') {
-      width: 100%;
-      padding: unset;
-      max-width: 940px;
-      padding: 0 20px;
-      margin: 0 auto 100px auto;
-    }
-
-    .close-icon {
-      display: block;
-    }
-
-    .back-icon {
-      @include breakpoint('md') {
-        display: none;
-      }
-    }
+    padding: 20px 20px 0;
+    margin-bottom: 78px;
   }
 
-  .step_1, .step_2 {
+  .step_2 {
     position: relative;
+    background: #fff;
     height: 100%;
     display: flex;
     flex-direction: column;
   }
 
-  .step_1 .yc-product-card .section-2 {
-    display: none;
-  }
-
-  .step_2 .yc-product-card .section-2 {
-    display: block;
-  }
-
-  #checkout_step_1, #checkout_step_2 {
+  #checkout_step_2 {
     animation: slideFromBottom 0.2s ease-in-out;
     will-change: transform;
   }
 
-  .variant-card-1, .variant-card-2 {
-    margin-bottom: 15px;
+  .variant-card-2 {
+    margin-bottom: 16px;
   }
 
-  .back-icon,
   .close-icon {
     width: 40px;
     height: 40px;
-    background: white;
-    color: #C8C8C8;
+    color: #fff;
     position: absolute;
-    left: 20px;
+    left: 10px;
     top: -39px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16pt;
-    border-radius: 4px 4px 0 0;
 
-    @include breakpoint('md') {
+    [dir='ltr'] & {
       left: unset;
+      right: 10px;
+    }
+
+    ion-icon {
+      font-size: 30px;
     }
   }
 
-  .sticky-desktop-wrapper {
+  .sticky-container {
+    height: 100%;
+
     @include breakpoint('md') {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
       gap: 20px;
-      margin-top: 30px;
+      position: fixed;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 0);
+      max-height: 621px;
+    }
 
-      .variant-card-2 {
-        position: sticky;
-        top: 20px;
-        height: fit-content;
+    &.container {
+      padding: 0;
+
+      @include breakpoint('md') {
+        padding: 0 20px;
       }
+    }
 
-      .yc-product-card {
-        margin-top: 0;
+    .empty-spacer {
+      display: none;
 
-        .section-1 {
-          flex-direction: column;
-
-          .image {
-            width: 125px;
-            height: 106px;
-          }
-        }
-
-        .section-2 .selected-variants {
-          padding: 21px 10px;
-        }
+      @include breakpoint('md') {
+        display: block;
+        flex: 1 1 50%;
       }
+    }
 
-      .variant-card-2 {
-        margin-bottom: 0;
-      }
-
-      .checkout-form {
-        padding-bottom: 0;
+    .step_2 {
+      @include breakpoint('md') {
+        flex: 1 1 50%;
       }
     }
   }

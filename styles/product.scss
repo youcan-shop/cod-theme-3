@@ -19,7 +19,7 @@
     @include breakpoint('md') {
       position: sticky;
       top: calc(var(--yc-nav-height) + 20px);
-      width: 80%;
+      width: 50%;
       margin: unset;
     }
 
@@ -190,6 +190,7 @@
 
     @include breakpoint('md') {
       gap: 20px;
+      width: 50%;
     }
 
     .product-name {
