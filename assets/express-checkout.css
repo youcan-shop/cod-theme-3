@@ -151,6 +151,10 @@
   font-size: 16pt;
   border-radius: 4px 4px 0 0;
 }
+[dir=ltr] .yc-sticky-checkout .close-icon {
+  left: unset;
+  right: 20px;
+}
 .yc-sticky-checkout .close-icon ion-icon {
   font-size: 30px;
 }

@@ -163,6 +163,11 @@
     font-size: 16pt;
     border-radius: 4px 4px 0 0;
 
+    [dir='ltr'] & {
+      left: unset;
+      right: 20px;
+    }
+
     ion-icon {
       font-size: 30px;
     }
