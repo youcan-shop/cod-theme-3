@@ -136,8 +136,8 @@
     </div>
   {%- endif %}
   <div class='{% if cart and cart.items %}hidden {% endif %} container empty-cart pt-12'>
-    <div class='flex flex-col justify-center text-center items-center'>
-      <img class='cart-icon' src='{{ 'cart-icon.png' | asset_url }}'  alt='Cart icon'/>
+    <div class='empty-result'>
+      <img src='{{ 'cart-icon.png' | asset_url }}'  alt='Cart icon'/>
       <h3 class='title'>{{ 'cart.empty.title' | t }}</h3>
       <p class="description">{{ 'cart.empty.description' | t }}</p>
       <a

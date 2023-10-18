@@ -63,12 +63,11 @@
         {%- endfor %}
       </div>
     {%- else %}
-      <div class='flex flex-col justify-center text-center items-center gap-3 pt-12'>
-        <div class='text-2xl'>{{ 'search.empty.title' | t }}</div>
-        <div class='opacity-60'>
-          <p>{{ 'search.empty.description' | t }}</p>
-        </div>
-        <a href='/' class='yc-btn mt-5'>
+      <div class='empty-result pt-12'>
+        <img src='{{ 'not-found-icon.png' | asset_url }}' alt='scoop icon'/>
+        <h3 class='title'>{{ 'search.empty.title' | t }}</h3>
+        <p class='desciption'>{{ 'search.empty.description' | t }}</p>
+        <a href='/' class='yc-btn'>
           {{ 'search.empty.home_page' | t }}
         </a>
       </div>

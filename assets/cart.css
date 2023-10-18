@@ -2,24 +2,6 @@ body {
   background: #F7F7F7;
 }
 
-.yc-cart .empty-cart .title {
-  color: #000;
-  font-size: 26px;
-  font-weight: 700;
-  line-height: 105.5%;
-  margin-top: 26px;
-  margin-bottom: 16px;
-}
-.yc-cart .empty-cart .desciption {
-  color: #000;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 120%;
-}
-.yc-cart .empty-cart .yc-btn {
-  margin-top: 32px;
-  width: max-content;
-}
 .yc-cart .cart-table.container {
   padding: 0;
 }
