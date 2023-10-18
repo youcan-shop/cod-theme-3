@@ -237,21 +237,23 @@ function desktopStickyElements(elementsContainer) {
  */
 
 function stickFooterAtBottom() {
-  const stickFooter = $('#stick-footer');
+  const mainContent = $('.main-content');
   let htmlPageHeight = document.documentElement.clientHeight;
   let bodyHeight = document.body.offsetHeight;
   let emptySpaceHeight = `${htmlPageHeight - bodyHeight}px`;
 
   if (emptySpaceHeight < '0px') {
-    emptySpaceHeight = '32px';
+    emptySpaceHeight = '0px';
   }
 
-  if (stickFooter) {
-    stickFooter.style.marginBottom = emptySpaceHeight;
+  if (mainContent) {
+    mainContent.style.marginBottom = emptySpaceHeight;
   }
 }
 
-stickFooterAtBottom();
+window.addEventListener('load', (event) => {
+  stickFooterAtBottom();
+});
 
 /* ------------------------------------------------------ */
 /* ----- Display each video section -------------------- */
