@@ -2,9 +2,6 @@ body {
   background: #F7F7F7;
 }
 
-.yc-cart .empty-cart ion-icon {
-  --ionicon-stroke-width: 18px;
-}
 .yc-cart .cart-table.container {
   padding: 0;
 }

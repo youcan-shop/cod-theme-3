@@ -136,23 +136,14 @@
     </div>
   {%- endif %}
   <div class='{% if cart and cart.items %}hidden {% endif %} container empty-cart pt-12'>
-    <div class='flex flex-col justify-center text-center items-center gap-3'>
-      <ion-icon
-        name='cart-outline'
-        class='text-8xl'
-      ></ion-icon>
-      <div class='text-2xl md:text-3xl'>{{ 'cart.empty.title' | t }}</div>
-      <div class='opacity-60'>
-        <p>{{ 'cart.empty.description' | t }}</p>
-      </div>
+    <div class='empty-result'>
+      <img src='{{ 'cart-icon.png' | asset_url }}'  alt='Cart icon'/>
+      <h3 class='title'>{{ 'cart.empty.title' | t }}</h3>
+      <p class="description">{{ 'cart.empty.description' | t }}</p>
       <a
         href='/'
-        class='yc-btn flex gap-2 w-fit mt-5 items-center'
+        class='yc-btn'
       >
-        <ion-icon
-          name='arrow-back-outline'
-          class='yc-btn-responsive-icon'
-        ></ion-icon>
         {{ 'cart.empty.cta' | t }}
       </a>
     </div>
