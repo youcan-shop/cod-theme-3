@@ -277,6 +277,39 @@ body {
           }
         }
 
+        .coupon-container {
+          display: flex;
+          justify-content: space-between;
+          padding: 15px 24px 0;
+        }
+
+        .discount-text {
+          font-weight: 700;
+          font-size: 14px;
+        }
+
+        .discount-price {
+          font-size: 15px;
+          font-weight: 500;
+        }
+
+        .coupon-applied {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 14px;
+          padding: 15px 20px 0;
+
+          span {
+            font-weight: 600;
+          }
+        }
+
+        #remove-coupon {
+          cursor: pointer;
+          font-size: 18px;
+        }
+
         .summary-item {
           display: flex;
           align-items: center;
