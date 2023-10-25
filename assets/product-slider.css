@@ -165,13 +165,13 @@
 }
 @media (max-width: 576px) {
   .product-slider .product-thumbnail {
-    height: 267px;
+    height: 200px;
   }
 }
 .product-slider .product-thumbnail .product-link {
   width: 78%;
   margin: auto;
-  display: block;
+  display: none;
   top: 120%;
   transition: all 0.25s;
 }
@@ -181,6 +181,7 @@
 }
 @media (min-width: 768px) {
   .product-slider .product-thumbnail .product-link {
+    display: block;
     width: 80%;
     position: absolute;
     z-index: 1;

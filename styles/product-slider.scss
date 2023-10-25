@@ -178,13 +178,13 @@
     }
 
     @include max-screen('sm') {
-      height: 267px;
+      height: 200px;
     }
 
     .product-link {
       width: 78%;
       margin: auto;
-      display: block;
+      display: none;
       top: 120%;
       transition: all 0.25s;
 
@@ -194,6 +194,7 @@
       }
 
       @include breakpoint('md') {
+        display: block;
         width: 80%;
         position: absolute;
         z-index: 1;

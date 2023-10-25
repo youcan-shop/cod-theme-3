@@ -19,7 +19,6 @@
                 "block_qw91o394p69bv8l": {
                     "type": "image_picker",
                     "settings": {
-                        "image": "demo04_06_1024x-2WLkvwU18DXK06lAkymlKxC6CGq.png",
                         "caption": "<p><br><\/p>",
                         "button_text": "عرض المزيد",
                         "button_font_weight": "700"
@@ -28,7 +27,6 @@
                 "block_qx88dcfkmfmqpeh": {
                     "type": "image_picker",
                     "settings": {
-                        "image": "demo04_05_1024x-2WLl09EfxbWps3QQRYMlnp58I5K.png",
                         "button_font_weight": "700",
                         "caption": "<p><br><\/p>",
                         "button_text": ""

@@ -75,9 +75,15 @@
 
   @media only screen and (min-width: 768px) {
     .multi-column-{{ id }} .multi-column-blocks {
-      grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 2vw;
       align-items: stretch;
+    }
+  }
+
+  @media only screen and (min-width: 800px) {
+    .multi-column-{{ id }} .multi-column-blocks {
+      grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr);
     }
   }
 
