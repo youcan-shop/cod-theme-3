@@ -254,6 +254,33 @@ body {
   font-weight: 700;
   line-height: 120%;
 }
+.yc-cart .cart-table .summary-box #summary .coupon-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 24px 0;
+}
+.yc-cart .cart-table .summary-box #summary .discount-text {
+  font-weight: 700;
+  font-size: 14px;
+}
+.yc-cart .cart-table .summary-box #summary .discount-price {
+  font-size: 15px;
+  font-weight: 500;
+}
+.yc-cart .cart-table .summary-box #summary .coupon-applied {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  padding: 15px 20px 0;
+}
+.yc-cart .cart-table .summary-box #summary .coupon-applied span {
+  font-weight: 600;
+}
+.yc-cart .cart-table .summary-box #summary #remove-coupon {
+  cursor: pointer;
+  font-size: 18px;
+}
 .yc-cart .cart-table .summary-box #summary .summary-item {
   display: flex;
   align-items: center;
