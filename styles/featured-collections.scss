@@ -4,6 +4,14 @@
   @include max-screen ('md') {
     padding: 0;
   }
+
+  .yc-section-title {
+    padding: 0 20px;
+
+    @include breakpoint('md') {
+      padding: unset;
+    }
+  }
 }
 
 .yc-featured-collections {
@@ -46,17 +54,6 @@
       font-size: 32px;
       line-height: 48px;
     }
-
-    .slug-name {
-      margin-top: 6px;
-      font-weight: 800;
-      font-size: 32px;
-      line-height: 48px;
-
-      @include max-screen ('md') {
-        line-height: 32px;
-      }
-    }
   }
 
   .category-link {
@@ -90,11 +87,6 @@
 
     .category-text {
       .category-name {
-        font-size: 24px;
-      }
-
-      .slug-name {
-        margin-top: 4px;
         font-size: 24px;
       }
     }

@@ -3,6 +3,14 @@
     padding: 0;
   }
 }
+.yc-featured-container .yc-section-title {
+  padding: 0 20px;
+}
+@media (min-width: 768px) {
+  .yc-featured-container .yc-section-title {
+    padding: unset;
+  }
+}
 
 .yc-featured-collections {
   display: grid;
@@ -40,17 +48,6 @@
   font-size: 32px;
   line-height: 48px;
 }
-.yc-featured-collections .category-text .slug-name {
-  margin-top: 6px;
-  font-weight: 800;
-  font-size: 32px;
-  line-height: 48px;
-}
-@media (max-width: 768px) {
-  .yc-featured-collections .category-text .slug-name {
-    line-height: 32px;
-  }
-}
 .yc-featured-collections .category-link {
   background-color: var(--yc-primary-color);
   padding: 12px 18px;
@@ -79,10 +76,6 @@
     direction: initial;
   }
   .yc-featured-collections .category-text .category-name {
-    font-size: 24px;
-  }
-  .yc-featured-collections .category-text .slug-name {
-    margin-top: 4px;
     font-size: 24px;
   }
   .yc-featured-collections .category-link {
