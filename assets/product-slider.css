@@ -165,7 +165,7 @@
 }
 @media (max-width: 576px) {
   .product-slider .product-thumbnail {
-    height: 267px;
+    height: 200px;
   }
 }
 .product-slider .product-thumbnail .product-link {
