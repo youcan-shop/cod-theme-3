@@ -1,4 +1,8 @@
 {
+  "general":{
+    "show_more_button": "Show more",
+    "large_image_size": "Please upload image less than 2mb"
+  },
   "navbar": {
     "search": {
       "placeholder": "Enter keyword to search for..."
