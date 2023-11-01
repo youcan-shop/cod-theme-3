@@ -259,30 +259,30 @@ function uploadReviewImage(container, event) {
       reader.onload = async () => {
         try {
           const res = await youcanjs.product.upload(file);
-            if (res && res.link) {
-              reviewData.images.push(res.link);
-              uploadedImagesHistory.push(res.link);
+          if (res && res.link) {
+            reviewData.images.push(res.link);
+            uploadedImagesHistory.push(res.link);
 
-              const imageUrl = reader.result;
-              displayUploadedImg(container, imageUrl);
-              appendImageToPreview(res.link, container.parentElement);
+            const imageUrl = reader.result;
+            displayUploadedImg(container, imageUrl);
+            appendImageToPreview(res.link, container.parentElement);
             }
-            } catch (error) {
-                if (error.status === 422) {
-                    const imageErrors = error.meta.fields.image;
-                    if (imageErrors && imageErrors.length > 0) {
-                        notify(imageErrors[0], 'error');
-                    } else {
-                        notify(error.detail, 'error');
-                    }
+          } catch (error) {
+            if (error.status === 422) {
+              const imageErrors = error.meta.fields.image;
+                if (imageErrors && imageErrors.length > 0) {
+                  notify(imageErrors[0], 'error');
+                } else {
+                    notify(error.detail, 'error');
+                  }
                 } else {
                   notify(`${REVIEWS_TRANSLATED_TEXT.errorMessage}`, 'error');
-                }
+              }
             }
-        };
-    }
+          };
+        }
+      }
   }
-}
 
 function displayUploadedImg(container, imageUrl) {
   const imgElement = container.querySelector('.uploaded-image');
