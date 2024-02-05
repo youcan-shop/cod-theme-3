@@ -94,10 +94,11 @@
       }
     }
   }
+}
 
-  .product-placeholder {
-    .buy-btn {
-      cursor: not-allowed;
-    }
+.product-placeholder {
+  .buy-btn {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 }

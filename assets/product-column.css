@@ -89,6 +89,8 @@
     width: 100%;
   }
 }
-.product-home-container .product-placeholder .buy-btn {
+
+.product-placeholder .buy-btn {
+  opacity: 0.5;
   cursor: not-allowed;
 }
