@@ -70,7 +70,7 @@
   }
   {% endif %}
 
-  .express-checkout-placeholder .express-checkout-button {
+  .express-checkout-button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
   }
@@ -79,7 +79,6 @@
 <form
   id='express-checkout-form'
   class='custom-checkout-{{ checkout_id }}'
-  {% if is_placeholder %}express-checkout-placeholder{% endif %}'
   onsubmit="return false;"
 >
   <div class='express-checkout-fields'>
