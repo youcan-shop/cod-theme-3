@@ -1,6 +1,5 @@
 async function placeOrder() {
   const expressCheckoutForm = document.querySelector('#express-checkout-form');
-
   let fields = Object.fromEntries(new FormData(expressCheckoutForm));
 
   load('#loading__checkout');
@@ -37,30 +36,27 @@ async function placeOrder() {
 
 function displayValidationErrors(err) {
   const form = document.querySelector('#express-checkout-form');
-  const errorDetails = err.meta.fields;
+  const errorFields = err.meta.fields;
 
-  if (!form || !Object.keys(errorDetails).length) return;
+  if (!form || !errorFields) return;
 
-  form.querySelectorAll('.validation-error').forEach(el => {
-    el.textContent = '';
-    el.previousElementSibling?.classList.remove('error');
-  });
+  form.querySelectorAll('.validation-error').forEach(el => el.textContent = '');
 
-  Object.entries(errorDetails).forEach(([field, messages]) => {
-    const fieldName = `extra_fields[${field}]`;
-    const input = form.querySelector(`[name="${fieldName}"]`);
+  Object.keys(errorFields).forEach((field) => {
+    const fieldName = field.startsWith('extra_fields') ? `extra_fields[${field.split('.')[1]}]` : field;
+    const formElement = form.querySelector(`[name="${fieldName}"]`);
     const errorEl = form.querySelector(`.validation-error[data-error-for="${fieldName}"]`);
 
-    if (input && errorEl) {
-      input.classList.add('error');
-      errorEl.textContent = messages[0];
-
-      input.addEventListener('input', () => {
-        input.classList.remove('error');
+    if (formElement && errorEl) {
+      formElement.classList.add('error');
+      errorEl.textContent = errorFields[field][0];
+      formElement.addEventListener('input', () => {
+        formElement.classList.remove('error');
         errorEl.textContent = '';
       });
     } else {
-      notify(messages[0], 'error');
+      notify(`Please check the form's structure. ${fieldName}`, 'error');
     }
   });
 }
+

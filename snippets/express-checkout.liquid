@@ -83,32 +83,34 @@
 >
   <div class='express-checkout-fields'>
     <div class='express-checkout-title'>{{ settings.form_title }}</div>
-    {%- for field in checkout.fields %}
-      <div class='express-checkout-field'>
-        <input
-          type='{{ field.type }}'
-          class='w-full'
-          id='{{ field.name }}'
-          {% if field.custom %}
-            name='extra_fields[{{ field.name }}]'
-          {% else %}
-            name='{{ field.name }}'
-          {% endif %}
-          placeholder='{{ field.placeholder }}'
-          {% if field.required %}
-            required
-          {% endif %}
-        >
-        <div
-          class='validation-error'
-          {% if field.custom %}
-            data-error='extra_fields.{{ field.name }}'
-          {% else %}
-            data-error='{{ field.name }}'
-          {% endif %}
-        ></div>
+    {% for field in checkout.fields %}
+      <div class="express-checkout-field">
+        {% case field.type %}
+          {% when 'select' %}
+            <div class='dropdown-input select'>
+              <div class='dropbtn'>
+                <span class='option-name'>Select</span>
+                <ion-icon name='chevron-down-outline' class='dropdown-icon'></ion-icon>
+              </div>
+              <ul class='dropdown-content' name='{{ field.name }}'>
+                {% for option in field.options %}
+                  <li value='{{ option }}'>{{ option }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          <div class="validation-error" data-error-for="extra_fields[{{ field.name }}]"></div>
+            {% when 'textarea' %}
+              <textarea id='{{ field.name }}' name="extra_fields[{{ field.name }}]" class='w-full' placeholder='{{ field.placeholder }}'></textarea>
+          <div class="validation-error" data-error-for="extra_fields[{{ field.name }}]"></div>
+          {% when 'number' %}
+            <input type="{{ field.type }}" id="{{ field.name }}" name="{{ field.name }}" class="w-full" placeholder="{{ field.placeholder }}">
+            <div class="validation-error" data-error-for="extra_fields[{{ field.name }}]"></div>
+          {% when 'text' %}
+          <input type="{{ field.type }}" id="{{ field.name }}" name="{{ field.name }}" class="w-full" placeholder="{{ field.placeholder }}">
+          <div class="validation-error" data-error-for="{{ field.name }}"></div>
+      {% endcase %}
       </div>
-    {%- endfor %}
+    {% endfor %}
     {% if is_sticky == false %}
       <button
         type='submit'
