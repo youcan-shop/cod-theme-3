@@ -18,14 +18,14 @@
 
   .custom-checkout-{{ checkout_id }},
   .express-checkout-fields {
-    border-color: {{ settings.form_border_colour.hex }};
+    border: 1px solid {{ settings.form_border_colour.hex }};
   }
 
   .custom-checkout-{{ checkout_id }} .express-checkout-fields  {
     grid-gap: {{ settings.inputs_gap }}px;
   }
 
-  .custom-checkout-{{ checkout_id }} input {
+  .custom-checkout-{{ checkout_id }} input, textarea, .select {
     padding: 0 {{ settings.input_padding }}px;
     border-radius: {{ settings.input_border_radius }}px;
     font-size: {{ settings.input_text_size }}px !important;
@@ -40,7 +40,7 @@
     {% endif %}
 
     {% if settings.input_border_color %}
-    border-color: {{ settings.input_border_color.hex }};
+      border: 1px solid {{ settings.input_border_color.hex }};
     {% endif %}
   }
 
