@@ -1,6 +1,5 @@
 async function placeOrder() {
   const expressCheckoutForm = document.querySelector('#express-checkout-form');
-
   let fields = Object.fromEntries(new FormData(expressCheckoutForm));
 
   load('#loading__checkout');
@@ -20,37 +19,7 @@ async function placeOrder() {
         redirectToThankyouPage();
       })
       .onValidationErr((err) => {
-        const form = document.querySelector('#express-checkout-form');
-        const formFields = Object.keys(err.meta.fields);
-
-        if (!form || !formFields) return;
-
-        formFields.forEach((field) => {
-          const fieldName = field.indexOf('extra_fields') > -1 ? field.replace('extra_fields.', 'extra_fields[') + ']' : field;
-          const input = form.querySelector(`input[name="${fieldName}"]`);
-          const errorEl = form.querySelector(`.validation-error[data-error="${field}"]`);
-
-          if (input) {
-            input.classList.add('error');
-          }
-
-          if (errorEl) {
-            errorEl.innerHTML = err.meta.fields[field][0];
-          }
-
-          input.addEventListener('input', () => {
-            input.classList.remove('error');
-            errorEl.innerHTML = '';
-          });
-        });
-
-        notify(err.detail, 'error');
-
-        const formTop = form.getBoundingClientRect().top;
-
-        if(!document.querySelector('#yc-sticky-checkout')) {
-          window.scrollBy({ top: formTop - window.innerHeight / 3, behavior: 'smooth' });
-        }
+        displayValidationErrors(err);
       })
       .onSkipShippingStep((data, redirectToShippingPage) => {
         redirectToShippingPage();
@@ -64,3 +33,30 @@ async function placeOrder() {
     stopLoad('#loading__checkout');
   }
 }
+
+function displayValidationErrors(err) {
+  const form = document.querySelector('#express-checkout-form');
+  const errorFields = err.meta.fields;
+
+  if (!form || !errorFields) return;
+
+  form.querySelectorAll('.validation-error').forEach(el => el.textContent = '');
+
+  Object.keys(errorFields).forEach((field) => {
+    const fieldName = field.startsWith('extra_fields') ? `extra_fields[${field.split('.')[1]}]` : field;
+    const formElement = form.querySelector(`[name="${fieldName}"]`);
+    const errorEl = form.querySelector(`.validation-error[data-error-for="${fieldName}"]`);
+
+    if (formElement && errorEl) {
+      formElement.classList.add('error');
+      errorEl.textContent = errorFields[field][0];
+      formElement.addEventListener('input', () => {
+        formElement.classList.remove('error');
+        errorEl.textContent = '';
+      });
+    } else {
+      notify(`Please check the form's structure. ${fieldName}`, 'error');
+    }
+  });
+}
+
