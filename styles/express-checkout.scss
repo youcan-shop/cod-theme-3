@@ -25,11 +25,6 @@
   grid-gap: 14px;
   padding: 16px;
 
-  .dropdown-input {
-    min-width: 100%;
-    padding: 0;
-  }
-
   @include breakpoint('md') {
     border: unset;
     background: unset;
