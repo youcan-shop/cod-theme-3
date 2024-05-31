@@ -196,20 +196,20 @@ span {
   border: 1px solid #f2f2f2 !important;
 }
 
-input:not([type=radio]), select, textarea .nice-select,
+input:not([type=radio]), select,
+.nice-select,
 .selector-item_label {
   transition: box-shadow 100ms ease;
   padding-left: 13px !important;
   padding-right: 13px !important;
   font-size: 14px !important;
-  height: 38px !important;
-  line-height: 38px !important;
+  height: 45px !important;
+  line-height: 45px !important;
   outline: none;
 }
 
 textarea {
-  height: unset;
-  min-height: 38px;
+  min-height: 45px;
   font-family: var(--yc-font-family);
 }
 
