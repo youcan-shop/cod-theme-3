@@ -52,7 +52,7 @@ a.disabled {
   pointer-events: none;
 }
 
-input {
+input, textarea, select {
   font-weight: 300 !important;
   border: var(--yc-main-border);
 
@@ -203,7 +203,7 @@ span {
   border: 1px solid #f2f2f2 !important;
 }
 
-input:not([type='radio']),
+input:not([type='radio']), select, textarea
 .nice-select,
 .selector-item_label {
   transition: box-shadow 100ms ease;
@@ -213,6 +213,12 @@ input:not([type='radio']),
   height: 38px !important;
   line-height: 38px !important;
   outline: none;
+}
+
+textarea {
+  height: unset;
+  min-height: 38px;
+  font-family: var(--yc-font-family);
 }
 
 .product-imgs img {
