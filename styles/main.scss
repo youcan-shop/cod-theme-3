@@ -52,7 +52,7 @@ a.disabled {
   pointer-events: none;
 }
 
-input {
+input, textarea, select {
   font-weight: 300 !important;
   border: var(--yc-main-border);
 
@@ -203,15 +203,20 @@ span {
   border: 1px solid #f2f2f2 !important;
 }
 
-input:not([type='radio']),
+input:not([type='radio']), select,
 .nice-select,
 .selector-item_label {
   transition: box-shadow 100ms ease;
   padding-left: 13px !important;
   padding-right: 13px !important;
   font-size: 14px !important;
-  height: 38px !important;
-  line-height: 38px !important;
+  height: 45px !important;
+  line-height: 45px !important;
+  outline: none;
+}
+
+textarea {
+  min-height: 45px;
   outline: none;
 }
 
