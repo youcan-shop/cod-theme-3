@@ -15,17 +15,17 @@ const navMenuVariables = {
 let noticeHeight = notice ? notice.offsetHeight : '0';
 
 const makeNavbarFixed = () => {
-  document.body.style.paddingTop = fixedNavbar.offsetHeight + 'px';
-  fixedNavbar.classList.add('fixed');
+  document.body.style.paddingTop = fixedNavbar?.offsetHeight + 'px';
+  fixedNavbar?.classList.add('fixed');
 };
 
 const makeNavbarStatic = () => {
   document.body.style.paddingTop = '0';
-  fixedNavbar.classList.remove('fixed');
+  fixedNavbar?.classList.remove('fixed');
 };
 
 function toggleNavbar() {
-  if (window.scrollY >= fixedNavbar.offsetHeight + Number(noticeHeight)) {
+  if (window.scrollY >= fixedNavbar?.offsetHeight + Number(noticeHeight)) {
     makeNavbarFixed();
   } else {
     makeNavbarStatic();
@@ -111,14 +111,14 @@ overlay.addEventListener('click', (e) => {
 
     if(cartDrawer && cartDrawer.classList.contains('open')) {
       cartDrawer.classList.remove('open');
-      navMenuVariables.header.classList.remove('hide');
+      navMenuVariables.header?.classList.remove('hide');
     }
   }
 });
 /* ----------------------------- */
 /* ----- mobile navigation ----- */
 /* ----------------------------- */
-function closeMenu () {
+function closeMenu() {
   if(navMenuVariables.headerWrapper.classList.contains('open')) {
     navMenuVariables.headerWrapper.classList.remove('open');
     navMenuVariables.mobileMenu.classList.remove('is-open');
@@ -127,7 +127,7 @@ function closeMenu () {
 };
 
 // Toggle Menu
-navMenuVariables.menuButton.addEventListener('click', () => {
+navMenuVariables.menuButton?.addEventListener('click', () => {
   navMenuVariables.menuButton.classList.toggle('close');
 
   if (navMenuVariables.mobileMenu) {
@@ -183,7 +183,7 @@ function closeSearch() {
 }
 
 overlay.addEventListener('click', closeSearch);
-closeSearchBtn.addEventListener('click', closeSearch);
+closeSearchBtn?.addEventListener('click', closeSearch);
 
 /* ---------------------------------------------- */
 /* ----- Group Sticky elements in one place ----- */
@@ -267,8 +267,8 @@ function processVideoSections() {
     const facebookVideo = video.querySelector('.facebook-video');
     const youtubeVideo = video.querySelector('.youtube-video');
     const width = video.getAttribute('data-video-width') * (window.innerWidth / 100);
-    const height =  video.getAttribute('data-video-height');
-    const videoUrl=  video.getAttribute('data-video-link');
+    const height = video.getAttribute('data-video-height');
+    const videoUrl = video.getAttribute('data-video-link');
 
     function getBestThumbnailUrl(videoId) {
       return new Promise((resolve) => {
@@ -349,7 +349,7 @@ function decodeHtmlEntities(text) {
 function renderTextContent(htmlContent) {
   let tempElement = document.createElement('div');
   tempElement.innerHTML = htmlContent;
-  
+
   return tempElement.innerText || tempElement.textContent;
 }
 
